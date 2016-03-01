@@ -3,13 +3,15 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :clients
+  resources :clients do
+    resources :orders
+  end
 
   resources :chefs do
     resources :products
+    resources :orders
   end
 
-  resources :orders
   resources :line_items
 
 end
