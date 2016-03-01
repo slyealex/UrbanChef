@@ -7,10 +7,6 @@ class ChefsController < ApplicationController
     @chef = Chef.find(params[:id])
   end
 
-  def edit
-    @chef = Chef.find(params[:id])
-  end
-
   def create
     @chef = Chef.new(chef_params)
 
@@ -21,10 +17,25 @@ class ChefsController < ApplicationController
     end
   end
 
+  def edit
+    @chef = Chef.find(params[:id])
+  end
+
+  def updated
+    @chef = Chef.find(params[:id])
+
+    if @chef.update_attributes(chef_params)
+      redirect_to root_path, notice: 'Update Successfull!'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def chef_params
-    params.require(:chef).permit(:name, :email, :password, :password_confirmation, :experience, :location)
+    params.require(:chef).permit(:name, :email, :password, :password_confirmation, :experience, :location,
+                                products_attributes: [:name, :description, :url, :_destroy])
   end
 
 end
