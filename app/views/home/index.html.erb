@@ -4,6 +4,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
   <% stylesheet_link_tag "home.scss" %>
+  <script src="js/jquery.easing.min.js"></script>
 
   </head>
   <body id="page-top">
@@ -178,17 +179,6 @@
 </div>
      </div>
    </section>
-   <script>
 
-$(function() {
-  $('a.page-scroll').bind('click', function(event) {
-      var $anchor = $(this);
-      $('html, body').stop().animate({
-          scrollTop: $($anchor.attr('href')).offset().top
-      }, 1500, 'easeInOutExpo');
-      event.preventDefault();
-  });
-});
-   </script>
 </body>
 </html>
