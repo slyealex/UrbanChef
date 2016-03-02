@@ -1,10 +1,8 @@
-<h1>Chef show</h1>
 
-
-<div><%= @chef.name %></div>
-<div><%= @chef.email %></div>
-<div><%= @chef.location %></div>
-<div><%= @chef.experience %></div>
+<h1><%= @chef.name %></h1>
+<p><%= @chef.email %></p>
+<p><%= @chef.location %></p>
+<p><%= @chef.experience %></p>
 
 <h3>Dishes:</h3>
 
@@ -13,7 +11,6 @@
     <p>
       <%= product.name %>
       <%= product.description %>
-
       <%= image_tag product.product_picture.url(:pic) if product.product_picture %>
     </p>
   </div>
