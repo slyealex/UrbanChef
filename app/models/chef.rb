@@ -7,4 +7,7 @@ class Chef < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   accepts_nested_attributes_for :products
+
+  mount_uploader :chef_avatar, ChefAvatarUploader
+
 end

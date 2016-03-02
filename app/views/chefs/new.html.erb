@@ -31,6 +31,12 @@
     <%= f.password_field :password_confirmation %>
   </div>
 
+  <div class="chef_avatar">
+    <%= f.label :chef_avatar %>
+    <%= f.file_field :chef_avatar %>
+    <%= f.hidden_field :chef_avatar_cache %>
+  </div>
+
 
 
   <h1>Dish's</h1>
