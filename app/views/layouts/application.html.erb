@@ -7,6 +7,11 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+
+
+    <%= yield %>
+
+
     <p><%= link_to 'Home', root_path %></p>
     <p><%= link_to 'new chef', new_chef_registration_path %></p>
     <p><%= link_to 'new client', new_client_registration_path %></p>
@@ -21,11 +26,6 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-
-    <%= yield %>
-
-
 
     <% if current_client %>
       <p>Signed in as Client: <%= current_client.email %> </p>
