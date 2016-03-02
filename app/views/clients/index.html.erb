@@ -6,8 +6,6 @@
      <li>
        <%= link_to client.name, client_path(client) %>
        <%= client.location %>
-       <%= image_tag client.client_avatar.url(:avatar) if client.client_avatar %>
-
      </li>
    <% end %>
  </ul>

@@ -6,8 +6,6 @@
      <li>
        <%= link_to chef.name, chef_path(chef) %>
        <%= chef.location %>
-       <%= image_tag chef.chef_avatar.url(:thumb) if chef.chef_avatar %>
-
      </li>
    <% end %>
  </ul>

@@ -29,6 +29,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'cocoon'
 
+gem 'devise'
+
 gem 'carrierwave'
 gem 'mini_magick'
 
