@@ -1,4 +1,12 @@
 class ChefsController < ApplicationController
+
+
+
+  def index
+    @chefs = Chef.all
+  end
+
+
   def new
     @chef = Chef.new
   end
@@ -11,7 +19,7 @@ class ChefsController < ApplicationController
     @chef = Chef.new(chef_params)
 
     if @chef.save
-      redirect_to root_path, notice: "You are now a chef!"
+      redirect_to @chef, notice: "You are now a chef!"
     else
       render :new
     end
@@ -34,7 +42,7 @@ class ChefsController < ApplicationController
   private
 
   def chef_params
-    params.require(:chef).permit(:name, :email, :password, :password_confirmation, :experience, :location,
+    params.require(:chef).permit(:name, :email, :password, :password_confirmation, :experience, :location, :chef_avatar, :chef_avatar_cache,
                                 products_attributes: [:name, :description, :url, :_destroy])
   end
 

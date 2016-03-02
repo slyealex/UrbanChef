@@ -14,5 +14,14 @@
    <%= f.url_field :url %>
  </div>
 
+ <div class="product_picture">
+   <%= f.label :product_picture %>
+   <%= f.file_field :product_picture %>
+   <%= f.hidden_field :product_picture_cache %>
+ </div>
+
+ 
+
+
  <%= link_to_remove_association "Remove dish", f %>
 </div>

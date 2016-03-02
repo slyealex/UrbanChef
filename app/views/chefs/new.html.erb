@@ -31,10 +31,16 @@
     <%= f.password_field :password_confirmation %>
   </div>
 
+  <div class="chef_avatar">
+    <%= f.label :chef_avatar %>
+    <%= f.file_field :chef_avatar %>
+    <%= f.hidden_field :chef_avatar_cache %>
+  </div>
+
   <h1>Dish's</h1>
 
   <div id="products">
-    <%= f.fields_for :products do |product_fields| %>
+    <%= f.fields_for @product do |product_fields| %>
       <%= render 'product_fields', f: product_fields %>
     <% end %>
 

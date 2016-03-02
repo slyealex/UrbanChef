@@ -5,4 +5,6 @@ class Chef < ActiveRecord::Base
 
   accepts_nested_attributes_for :products, reject_if: :all_blank, allow_destroy: true
 
+  mount_uploader :chef_avatar, ChefAvatarUploader
+
 end
