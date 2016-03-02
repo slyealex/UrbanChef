@@ -1,5 +1,10 @@
 class ClientsController < ApplicationController
 
+  def index
+    @clients = Client.all
+  end
+
+
   def new
     @client = Client.new
   end
@@ -16,7 +21,7 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
 
     if @client.save
-      redirect_to root_path, notice: "You are now a client!"
+      redirect_to @client, notice: "You are now a client!"
     else
       render :new
     end
@@ -25,7 +30,7 @@ class ClientsController < ApplicationController
   private
 
   def client_params
-    params.require(:client).permit(:name, :email, :password, :password_confirmation, :location)
+    params.require(:client).permit(:name, :email, :password, :password_confirmation, :location, :client_avatar, :client_avatar_cache)
   end
 
 end

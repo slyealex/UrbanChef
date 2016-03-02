@@ -1,2 +1,6 @@
 <h1>Clients#show</h1>
-<p>Find me in app/views/clients/show.html.erb</p>
+
+<div><%= @client.name %></div>
+<div><%= @client.email %></div>
+<div><%= @client.location %></div>
+<div><%= image_tag @client.client_avatar.url(:avatar) if @client.client_avatar %></div>

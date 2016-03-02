@@ -26,6 +26,13 @@
     <%= f.password_field :password_confirmation %>
   </div>
 
+  <div class="client_avatar">
+    <%= f.label :client_avatar %>
+    <%= f.file_field :client_avatar %>
+    <%= f.hidden_field :client_avatar_cache %>
+  </div>
+
+
   <div class="action">
     <%= f.submit %>
   </div>
