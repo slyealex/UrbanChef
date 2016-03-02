@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
 
-  devise_for :chefs
-  devise_for :clients
+  devise_for :chefs, :controllers => { registrations: 'chefs' }
+  devise_for :clients, :controllers => { registrations: 'clients' }
   root 'home#index'
 
   resources :clients do
