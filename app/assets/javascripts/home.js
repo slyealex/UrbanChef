@@ -1,7 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-<script>
+
 $(function() {
 $('a.page-scroll').bind('click', function(event) {
    var $anchor = $(this);
@@ -11,4 +11,3 @@ $('a.page-scroll').bind('click', function(event) {
    event.preventDefault();
 });
 });
-</script>
