@@ -1,10 +1,10 @@
 class Chef < ActiveRecord::Base
-  has_secure_password
-  has_many :orders
   has_many :products
+  has_many :orders
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
-  accepts_nested_attributes_for :products, reject_if: :all_blank, allow_destroy: true
-
-  mount_uploader :chef_avatar, ChefAvatarUploader
-
+  accepts_nested_attributes_for :products
 end

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  devise_for :chefs
+  devise_for :clients
   root 'home#index'
 
   resources :clients do
