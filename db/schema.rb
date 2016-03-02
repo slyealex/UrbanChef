@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302180703) do
+ActiveRecord::Schema.define(version: 20160302210406) do
 
   create_table "chefs", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160302180703) do
     t.string   "name"
     t.text     "experience"
     t.string   "location"
+    t.string   "chef_avatar"
   end
 
   add_index "chefs", ["email"], name: "index_chefs_on_email", unique: true
@@ -49,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160302180703) do
     t.datetime "updated_at",                          null: false
     t.string   "name"
     t.string   "location"
+    t.string   "client_avatar"
   end
 
   add_index "clients", ["email"], name: "index_clients_on_email", unique: true

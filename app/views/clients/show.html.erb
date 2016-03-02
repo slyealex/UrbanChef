@@ -4,4 +4,4 @@
 <div><%= @client.email %></div>
 <div><%= @client.location %></div>
 
-<div><%= image_tag @client.client_avatar.url(:small) if @client.client_avatar %></div>
+<div><%= image_tag @client.client_avatar.url(:medium) if @client.client_avatar %></div>
