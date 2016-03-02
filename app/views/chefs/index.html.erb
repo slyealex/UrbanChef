@@ -6,6 +6,7 @@
      <li>
        <%= link_to chef.name, chef_path(chef) %>
        <%= chef.location %>
+       <%= image_tag chef.chef_avatar.url(:small) %>
      </li>
    <% end %>
  </ul>

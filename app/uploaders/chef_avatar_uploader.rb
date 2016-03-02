@@ -33,10 +33,16 @@ class ChefAvatarUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
 
-  process resize_to_fit: [250, 250]
+  version :small do
+    process :resize_to_fit => [150, 150]
+  end
 
-  version :thumb do
+  version :medium do
     process :resize_to_fit => [250, 250]
+  end
+
+  version :large do
+    process :resize_to_fit => [400, 400]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
