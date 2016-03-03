@@ -3,7 +3,19 @@ class ChefsController < ApplicationController
 
 
   def index
-    @chefs = Chef.all
+    if params[:search]
+      @chefs = Chef.near(params[:search], 1, units: :km)
+    elsif params[:longitude] && params[:latitude]
+      @chefs = Chef.near([params[:latitude], params[:longitude]], 1, units: :km)
+    else
+      @chefs = Chef.all
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
 
@@ -13,6 +25,8 @@ class ChefsController < ApplicationController
 
   def show
     @chef = Chef.find(params[:id])
+    @product = @chef.products.build
+
   end
 
   def create

@@ -11,46 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302210406) do
+ActiveRecord::Schema.define(version: 20160303125633) do
 
   create_table "chefs", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                                          default: "", null: false
+    t.string   "encrypted_password",                             default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                                  default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                                  null: false
+    t.datetime "updated_at",                                                  null: false
     t.string   "name"
     t.text     "experience"
     t.string   "location"
     t.string   "chef_avatar"
+    t.decimal  "longitude",              precision: 9, scale: 6
+    t.decimal  "latitude",               precision: 9, scale: 6
   end
 
   add_index "chefs", ["email"], name: "index_chefs_on_email", unique: true
   add_index "chefs", ["reset_password_token"], name: "index_chefs_on_reset_password_token", unique: true
 
   create_table "clients", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                                          default: "", null: false
+    t.string   "encrypted_password",                             default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                                  default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                                  null: false
+    t.datetime "updated_at",                                                  null: false
     t.string   "name"
     t.string   "location"
     t.string   "client_avatar"
+    t.decimal  "longitude",              precision: 9, scale: 6
+    t.decimal  "latitude",               precision: 9, scale: 6
   end
 
   add_index "clients", ["email"], name: "index_clients_on_email", unique: true
