@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
-  def new
+  before_action :load_chef
+
     def new
       @order = Order.new
     end
@@ -13,7 +14,9 @@ class OrdersController < ApplicationController
     end
 
     def create
-      @order = Order.new(order_params)
+      @order = @chef.orders.build(order_params)
+      @order.client = current_client
+      @order.chef = current_chef
 
       if @order.save
         redirect_to root_path, notice: "Order created!"
@@ -27,4 +30,9 @@ class OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:client_id, :chef_id)
     end
+
+    def load_chef
+      @chef = Chef.find(params[:chef_id])
+    end
+
 end

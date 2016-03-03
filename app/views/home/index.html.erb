@@ -9,9 +9,12 @@
   <body id="page-top">
     <div class="jumbotron">
       <div class="container">
-        <h1>Find a personal Chef</h1>
+        <h1>UrbanChef</h1>
+        <h4>Find or become a personal Chef</h4>
           <div>
-            <form type="login" name="login" action="index_submit" method="get" accept-charset="utf-8">
+            <%= link_to 'Client Log In', new_client_session_path, class: 'button_login' %>
+            <%= link_to 'Chef Log In', new_chef_session_path, class: 'button_login' %>
+            <!-- <form type="login" name="login" action="index_submit" method="get" accept-charset="utf-8">
               <ul class="login_form">
                 <li>
                   <label for="usermail">Email</label>
@@ -21,7 +24,7 @@
                   <input class="button_login" type="submit" value="Login">
                 </li>
               </ul>
-            </form>
+            </form> -->
           </div>
       </div>
     </div>
@@ -29,11 +32,11 @@
       <div class="container">
         <div class="row col-md-12">
           <div class="col-md-4">
-            <input class="button" type="submit" value="Sign Up"></li>
+            <%= link_to 'Sign Up', new_client_registration_path, class: 'button' %></li>
             <p>Join in on our large community of connoisseurs enjoying quality meals at home for fair prices.</p>
           </div>
           <div class="col-md-4">
-            <input class="button" type="submit" value="Become a Chef"></li>
+            <%= link_to 'Become a Chef', new_chef_registration_path, class: 'button' %></li>
             <p>become a Chef and start your new freelancing career, work from home, set your own hours and take controll over your cooking.</p>
           </div>
           <div class="col-md-4">

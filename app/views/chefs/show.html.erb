@@ -1,20 +1,36 @@
-<h1>Chef show</h1>
 
-
-<div><%= @chef.name %></div>
-<div><%= @chef.email %></div>
-<div><%= @chef.location %></div>
-<div><%= @chef.experience %></div>
+<h1><%= @chef.name %></h1>
+<p><%= @chef.email %></p>
+<p><%= @chef.location %></p>
+<p><%= @chef.experience %></p>
 
 <h3>Dishes:</h3>
 
-<% @chef.products.each do |product| %>
-  <div class="product">
-    <p>
-      <%= product.name %>
-      <%= product.description %>
 
-      <%= image_tag product.product_picture.url(:pic) if product.product_picture %>
-    </p>
-  </div>
+
+<% if current_client %>
+  <%= form_for [@chef, @client, Order.new] do |f| %>
+
+    <% @chef.products.each do |product| %>
+
+      <div class="field">
+          <p><strong><%= product.name %></strong></p>
+          <p><%= product.description %></p>
+          <p><%= image_tag product.product_picture.url(:pic) if product.product_picture %></p>
+      </div>
+
+      <div class="field">
+        <%= f.label :select_dish %>
+        <%= f.check_box :products %>
+      </div>
+
+    <% end %>
+    <br>
+    <div class="action">
+      <%= f.submit 'Subscribe to this Chef' %>
+    </div>
+
+  <% end %>
+<% else %>
+  <p>Please log in to select & view dish's!</p>
 <% end %>

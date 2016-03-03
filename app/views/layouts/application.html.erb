@@ -24,14 +24,8 @@
 
 
     <p><%= link_to 'Home', root_path %></p>
-    <p><%= link_to 'new chef', new_chef_registration_path %></p>
-    <p><%= link_to 'new client', new_client_registration_path %></p>
     <p><%= link_to 'index client', clients_path %></p>
     <p><%= link_to 'index chef', chefs_path %></p>
-    <p><%= link_to 'Chef Log In', new_chef_session_path %></p>
-    <p><%= link_to 'Client Log In', new_client_session_path %></p>
-    <p><%= link_to 'Client Log Out', destroy_client_session_path, method: :delete %></p>
-    <p><%= link_to 'Chef Log Out', destroy_chef_session_path, method: :delete %></p>
 
 
 
@@ -40,8 +34,10 @@
 
     <% if current_client %>
       <p>Signed in as Client: <%= current_client.email %> </p>
+      <p><%= link_to 'Client Log Out', destroy_client_session_path, method: :delete %></p>
     <% elsif current_chef %>
       <p>Signed in as Chef: <%= current_chef.email %></p>
+      <p><%= link_to 'Chef Log Out', destroy_chef_session_path, method: :delete %></p>
     <% end %>
 
   </body>
