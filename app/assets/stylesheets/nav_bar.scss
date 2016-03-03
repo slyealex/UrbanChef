@@ -1,8 +1,15 @@
 .navbar-brand {
-  height: auto;
-  width: auto;
+  height: 70px;
+  width: 200px;
 }
 
 .navbar-header {
   background-color: #4775d1;
+}
+
+.logo {
+  display: inline-block;
+  height: 49px;
+  width: 152px;
+  background-image: url("logo2b.png")
 }

@@ -3,53 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <title>Client Sign Up</title>
-  <%= stylesheet_link_tag 'clients.scss', media: 'all', 'data-turbolinks-track' => true %>
-
 </head>
 <body>
 
-<form>
 
   <h1>Client Sign-Up</h1>
 
-  <%= form_for @client do |f| %>
-    <div class="question">
-      <%= f.label :name, class: 'label' %>
-      <%= f.text_field :name, class: 'input' %>
+  <%= form_for @client, :html => {:class => "new_client_form"} do |f| %>
+    <div class="new_client_question">
+      <%= f.text_field :name, class: 'new_client_input' %>
+      <%= f.label :name, class: 'new_client_label' %>
     </div>
 
-    <div class="question">
-      <%= f.label :email, class: 'label' %>
-      <%= f.email_field :email, class: 'input' %>
+    <div class="new_client_question">
+      <%= f.email_field :email, class: 'new_client_input' %>
+      <%= f.label :email, class: 'new_client_label' %>
     </div>
 
-    <div class="question">
-      <%= f.label :location, class: 'label' %>
-      <%= f.text_field :location, class: 'input' %>
+    <div class="new_client_question">
+      <%= f.text_field :location, class: 'new_client_input' %>
+      <%= f.label :location, class: 'new_client_label' %>
     </div>
 
-    <div class="question">
-      <%= f.label :password, class: 'label' %>
-      <%= f.password_field :password, class: 'input' %>
+    <div class="new_client_question">
+      <%= f.password_field :password, class: 'new_client_input' %>
+      <%= f.label :password, class: 'new_client_label' %>
     </div>
 
-    <div class="question">
-      <%= f.label :password_confirmation, class: 'label' %>
-      <%= f.password_field :password_confirmation, class: 'input' %>
+    <div class="new_client_question">
+      <%= f.password_field :password_confirmation, class: 'new_client_input' %>
+      <%= f.label :password_confirmation, class: 'new_client_label' %>
     </div>
 
-    <div class="client_avatar">
-      <%= f.label :client_avatar, class: 'label' %>
-      <%= f.file_field :client_avatar, class: 'input' %>
+    <div class="new_client_avatar">
+      <%= f.file_field :client_avatar, class: 'new_client_input' %>
+      <%= f.label :client_avatar, class: 'new_client_label' %>
       <%= f.hidden_field :client_avatar_cache %>
     </div>
 
-    <div class="action">
-      <%= f.submit class: 'button' %>
+    <div class="new_client_action">
+      <%= f.submit class: 'new_client_button' %>
     </div>
   <% end %>
 
-</form>
 
 
 </body>
