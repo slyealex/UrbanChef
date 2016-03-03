@@ -12,19 +12,14 @@
         <h1>UrbanChef</h1>
         <h4>Find or become a personal Chef</h4>
           <div>
-            <%= link_to 'Client Log In', new_client_session_path, class: 'button_login' %>
-            <%= link_to 'Chef Log In', new_chef_session_path, class: 'button_login' %>
-            <!-- <form type="login" name="login" action="index_submit" method="get" accept-charset="utf-8">
-              <ul class="login_form">
-                <li>
-                  <label for="usermail">Email</label>
-                  <input type="email" name="usermail" placeholder="yourname@email.com" required>
-                  <label for="password">Password</label>
-                  <input type="password" name="password" placeholder="password" required>
-                  <input class="button_login" type="submit" value="Login">
-                </li>
-              </ul>
-            </form> -->
+            <% if current_client %>
+              <%= link_to 'View local Chefs', chefs_path, class: 'button' %>
+            <% elsif current_chef %>
+              <%= link_to 'Your Chef Dashboard', clients_path, class: 'button' %>
+            <% else %>
+              <%= link_to 'Client Log In', new_client_session_path, class: 'button_login' %>
+              <%= link_to 'Chef Log In', new_chef_session_path, class: 'button_login' %>
+            <% end %>
           </div>
       </div>
     </div>
