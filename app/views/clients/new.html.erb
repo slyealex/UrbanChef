@@ -1,43 +1,42 @@
-<h1>Client Sign-Up</h1>
+<form>
 
-<div class="form-style-3">
+  <h1>Client Sign-Up</h1>
 
   <%= form_for @client do |f| %>
-    <div class="field1">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+    <div class="question">
+      <label><%= f.label :name %></label>
+      <input><%= f.text_field :name %></input>
     </div>
 
-    <div class="field2">
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+    <div class="question">
+      <label><%= f.label :email %></label>
+      <input><%= f.email_field :email %></input>
     </div>
 
-    <div class="field3">
-      <%= f.label :location %>
-      <%= f.text_field :location %>
+    <div class="question">
+      <label><%= f.label :location %></label>
+      <input><%= f.text_field :location %></input>
     </div>
 
-    <div class="field4">
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+    <div class="question">
+      <label><%= f.label :password %></label>
+      <input><%= f.password_field :password %></input>
     </div>
 
-    <div class="field5">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
+    <div class="question">
+      <label><%= f.label :password_confirmation%></label>
+      <input><%= f.password_field :password_confirmation %></input>
     </div>
-
 
     <div class="client_avatar">
-      <%= f.label :client_avatar %>
-      <%= f.file_field :client_avatar %>
+      <label><%= f.label :client_avatar %></label>
+      <input><%= f.file_field :client_avatar %></input>
       <%= f.hidden_field :client_avatar_cache %>
     </div>
 
     <div class="action">
-      <%= f.submit %>
+      <button><%= f.submit %></button>
     </div>
   <% end %>
 
-</div>
+</form>
