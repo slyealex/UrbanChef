@@ -5,9 +5,6 @@
 <div><%= @chef.email %></div>
 <div><%= @chef.location %></div>
 <div><%= @chef.experience %></div>
-<div><%= image_tag @chef.chef_avatar.url(:large) if @chef.chef_avatar %></div>
-
-
 
 <h3>Dishes:</h3>
 
@@ -17,7 +14,7 @@
       <%= product.name %>
       <%= product.description %>
 
-      <%= image_tag product.product_picture.url(:medium) if product.product_picture %>
+      <%= image_tag product.product_picture.url(:pic) if product.product_picture %>
     </p>
   </div>
 <% end %>
