@@ -8,19 +8,17 @@
   <body id="page-top">
     <div class="jumbotron">
       <div class="container">
-        <h1>Find a personal Chef</h1>
+        <h1>UrbanChef</h1>
+        <h4>Find or become a personal Chef</h4>
           <div>
-            <form type="login" name="login" action="index_submit" method="get" accept-charset="utf-8">
-              <ul class="login_form">
-                <li>
-                  <label for="usermail">Email</label>
-                  <input type="email" name="usermail" placeholder="yourname@email.com" required>
-                  <label for="password">Password</label>
-                  <input type="password" name="password" placeholder="password" required>
-                  <input class="button_login" type="submit" value="Login">
-                </li>
-              </ul>
-            </form>
+            <% if current_client %>
+              <%= link_to 'View local Chefs', chefs_path, class: 'button' %>
+            <% elsif current_chef %>
+              <%= link_to 'Your Chef Dashboard', clients_path, class: 'button' %>
+            <% else %>
+              <%= link_to 'Client Log In', new_client_session_path, class: 'button_login' %>
+              <%= link_to 'Chef Log In', new_chef_session_path, class: 'button_login' %>
+            <% end %>
           </div>
       </div>
     </div>
@@ -28,11 +26,11 @@
       <div class="container">
         <div class="row col-md-12">
           <div class="col-md-4">
-            <input class="button" type="submit" value="Sign Up"></li>
+            <%= link_to 'Sign Up', new_client_registration_path, class: 'button' %></li>
             <p>Join in on our large community of connoisseurs enjoying quality meals at home for fair prices.</p>
           </div>
           <div class="col-md-4">
-            <input class="button" type="submit" value="Become a Chef"></li>
+            <%= link_to 'Become a Chef', new_chef_registration_path, class: 'button' %></li>
             <p>become a Chef and start your new freelancing career, work from home, set your own hours and take controll over your cooking.</p>
           </div>
           <div class="col-md-4">
@@ -51,9 +49,84 @@
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
     <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+    <li data-target="#myCarousel" data-slide-to="6"></li>
   </ol>
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
+
+<div>
+    </div>
+    <div class="item">
+      <div class="col-md-4">
+        <h1> About us </h1>
+        <p>
+          Urban Chef is designed to connect busy professionals with a restaurant quality dining experience
+          in the comfort of their own home. Our chefs offer a wide selection of their premium dishes which
+          are delivered weekly to Urban Chef clients. All you have to do is choose a Chef from one listed
+          in your area and choose your delicious meals for the week. Pricing is competitive with local
+          takeout options but without the need to leave your home to enjoy your meal. Want more details? Click
+          on the buttons to either side and learn more Urban Chef is designed to connect busy professionals with a restaurant quality dining experience
+          in the comfort of their own home. Our chefs offer a wide selection of their premium dishes which
+          are delivered weekly to Urban Chef clients. All you have to do is choose a Chef from one listed
+          in your area and choose your delicious meals for the week. Pricing is competitive with local
+          takeout options but without the need to leave your home to enjoy your meal. Want more details? Click
+          on the buttons to either side and learn moreUrban Chef is designed to connect busy professionals with a restaurant quality dining experience
+          in the comfort of their own home. Our chefs offer a wide selection of their premium dishes which
+          are delivered weekly to Urban Chef clients. All you have to do is choose a Chef from one listed
+          in your area and choose your delicious meals for the week. Pricing is competitive with local
+          takeout options but without the need to leave your home to enjoy your meal. Want more details? Click
+          on the buttons to either side and learn more
+        </p>
+    </div>
+    </div>
+    <div class="item">
+      <div class="col-md-4">
+        <h1> About us </h1>
+        <p>
+          Urban Chef is designed to connect busy professionals with a restaurant quality dining experience
+          in the comfort of their own home. Our chefs offer a wide selection of their premium dishes which
+          are delivered weekly to Urban Chef clients. All you have to do is choose a Chef from one listed
+          in your area and choose your delicious meals for the week. Pricing is competitive with local
+          takeout options but without the need to leave your home to enjoy your meal. Want more details? Click
+          on the buttons to either side and learn more Urban Chef is designed to connect busy professionals with a restaurant quality dining experience
+          in the comfort of their own home. Our chefs offer a wide selection of their premium dishes which
+          are delivered weekly to Urban Chef clients. All you have to do is choose a Chef from one listed
+          in your area and choose your delicious meals for the week. Pricing is competitive with local
+          takeout options but without the need to leave your home to enjoy your meal. Want more details? Click
+          on the buttons to either side and learn moreUrban Chef is designed to connect busy professionals with a restaurant quality dining experience
+          in the comfort of their own home. Our chefs offer a wide selection of their premium dishes which
+          are delivered weekly to Urban Chef clients. All you have to do is choose a Chef from one listed
+          in your area and choose your delicious meals for the week. Pricing is competitive with local
+          takeout options but without the need to leave your home to enjoy your meal. Want more details? Click
+          on the buttons to either side and learn more
+        </p>
+    </div>
+    </div>
+    <div class="item">
+      <div class="col-md-4">
+        <h1> About us </h1>
+        <p>
+          Urban Chef is designed to connect busy professionals with a restaurant quality dining experience
+          in the comfort of their own home. Our chefs offer a wide selection of their premium dishes which
+          are delivered weekly to Urban Chef clients. All you have to do is choose a Chef from one listed
+          in your area and choose your delicious meals for the week. Pricing is competitive with local
+          takeout options but without the need to leave your home to enjoy your meal. Want more details? Click
+          on the buttons to either side and learn more Urban Chef is designed to connect busy professionals with a restaurant quality dining experience
+          in the comfort of their own home. Our chefs offer a wide selection of their premium dishes which
+          are delivered weekly to Urban Chef clients. All you have to do is choose a Chef from one listed
+          in your area and choose your delicious meals for the week. Pricing is competitive with local
+          takeout options but without the need to leave your home to enjoy your meal. Want more details? Click
+          on the buttons to either side and learn moreUrban Chef is designed to connect busy professionals with a restaurant quality dining experience
+          in the comfort of their own home. Our chefs offer a wide selection of their premium dishes which
+          are delivered weekly to Urban Chef clients. All you have to do is choose a Chef from one listed
+          in your area and choose your delicious meals for the week. Pricing is competitive with local
+          takeout options but without the need to leave your home to enjoy your meal. Want more details? Click
+          on the buttons to either side and learn more
+        </p>
+    </div>
+    </div>
     <div class="item active">
       <div class="text_info">
         <div class="col-md-4">
@@ -89,8 +162,6 @@
     </div>
   </div>
 </div>
-<div>
-    </div>
     <div class="item">
       <div class="col-md-4">
         <h1> About us </h1>
@@ -166,6 +237,7 @@
   $('.carousel').carousel({
     wrap: false
     });
+        $('#myCarousel').carousel(3);
   </script>
 
 <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
