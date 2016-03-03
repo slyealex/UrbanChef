@@ -34,3 +34,13 @@
 <% else %>
   <p>Please log in to select & view dish's!</p>
 <% end %>
+
+
+<% if @nearby_chefs.any? %>
+  <h2>Nearby Chefs</h2>
+    <ul>
+      <% @nearby_chefs.each do |nc| %>
+        <li><%= "#{nc.name}, #{nc.distance} km" %></li>
+      <% end %>
+    </ul>
+  <% end %>

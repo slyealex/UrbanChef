@@ -7,4 +7,7 @@ class Client < ActiveRecord::Base
 
   mount_uploader :client_avatar, ClientAvatarUploader
 
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
+
 end

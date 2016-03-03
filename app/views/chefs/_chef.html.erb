@@ -1,0 +1,13 @@
+<% if @chefs.any? %>
+ <ul>
+   <% @chefs.each do |chef| %>
+     <li>
+       <%= link_to chef.name, chef_path(chef) %>
+       <%= chef.location %>
+       <%= image_tag chef.chef_avatar.url(:small) %>
+     </li>
+   <% end %>
+ </ul>
+<% else %>
+ <h2>No chef yet</h2>
+<% end %>

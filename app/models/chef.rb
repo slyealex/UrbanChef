@@ -1,4 +1,7 @@
 class Chef < ActiveRecord::Base
+
+  include ActiveModel::Dirty
+
   has_many :products
   has_many :orders
   # Include default devise modules. Others available are:
@@ -9,5 +12,8 @@ class Chef < ActiveRecord::Base
   accepts_nested_attributes_for :products
 
   mount_uploader :chef_avatar, ChefAvatarUploader
+
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
 
 end

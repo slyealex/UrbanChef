@@ -11,6 +11,11 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
+    # To make nearby chefs accessable in client_show
+    # @chef = Chef.find(params[:id])
+    # @product = @chef.products.build
+    # @nearby_chefs = @chef.nearbys(20, units: :km)
+    # @nearby_chefs_client = @chef.near(@client)
   end
 
   def edit
