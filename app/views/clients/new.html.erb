@@ -4,33 +4,33 @@
 
   <%= form_for @client do |f| %>
     <div class="question">
-      <label><%= f.label :name %></label>
-      <input><%= f.text_field :name %></input>
+      <%= f.label :name, class: 'label' %>
+      <%= f.text_field :name, class: 'input' %>
     </div>
 
     <div class="question">
-      <label><%= f.label :email %></label>
-      <input><%= f.email_field :email %></input>
+      <%= f.label :email, class: 'label' %>
+      <%= f.email_field :email, class: 'input' %>
     </div>
 
     <div class="question">
-      <label><%= f.label :location %></label>
-      <input><%= f.text_field :location %></input>
+      <%= f.label :location, class: 'label' %>
+      <%= f.text_field :location, class: 'input' %>
     </div>
 
     <div class="question">
-      <label><%= f.label :password %></label>
-      <input><%= f.password_field :password %></input>
+      <%= f.label :password, class: 'label' %>
+      <%= f.password_field :password, class: 'input' %>
     </div>
 
     <div class="question">
-      <label><%= f.label :password_confirmation%></label>
-      <input><%= f.password_field :password_confirmation %></input>
+      <%= f.label :password_confirmation, class: 'label' %>
+      <%= f.password_field :password_confirmation, class: 'input' %>
     </div>
 
     <div class="client_avatar">
-      <label><%= f.label :client_avatar %></label>
-      <input><%= f.file_field :client_avatar %></input>
+      <%= f.label :client_avatar, class: 'label' %>
+      <%= f.file_field :client_avatar, class: 'input' %>
       <%= f.hidden_field :client_avatar_cache %>
     </div>
 
