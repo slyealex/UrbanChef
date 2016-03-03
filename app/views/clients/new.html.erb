@@ -1,39 +1,42 @@
-<h1>Client Sign-Up</h1>
+<form>
 
-<%= form_for @client do |f| %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+  <h1>Client Sign-Up</h1>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </div>
+  <%= form_for @client do |f| %>
+    <div class="question">
+      <%= f.label :name, class: 'label' %>
+      <%= f.text_field :name, class: 'input' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-  </div>
+    <div class="question">
+      <%= f.label :email, class: 'label' %>
+      <%= f.email_field :email, class: 'input' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
+    <div class="question">
+      <%= f.label :location, class: 'label' %>
+      <%= f.text_field :location, class: 'input' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
+    <div class="question">
+      <%= f.label :password, class: 'label' %>
+      <%= f.password_field :password, class: 'input' %>
+    </div>
 
+    <div class="question">
+      <%= f.label :password_confirmation, class: 'label' %>
+      <%= f.password_field :password_confirmation, class: 'input' %>
+    </div>
 
-  <div class="client_avatar">
-    <%= f.label :client_avatar %>
-    <%= f.file_field :client_avatar %>
-    <%= f.hidden_field :client_avatar_cache %>
-  </div>
+    <div class="client_avatar">
+      <%= f.label :client_avatar, class: 'label' %>
+      <%= f.file_field :client_avatar, class: 'input' %>
+      <%= f.hidden_field :client_avatar_cache %>
+    </div>
 
-  <div class="action">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <div class="action">
+      <button><%= f.submit %></button>
+    </div>
+  <% end %>
+
+</form>
