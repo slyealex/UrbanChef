@@ -13,6 +13,8 @@ class ChefsController < ApplicationController
 
   def show
     @chef = Chef.find(params[:id])
+
+    @order = @chef.orders.build
   end
 
   def create
