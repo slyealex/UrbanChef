@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Client Sign Up</title>
+  <%= stylesheet_link_tag 'clients.scss', media: 'all', 'data-turbolinks-track' => true %>
+
+</head>
+<body>
+
 <form>
 
   <h1>Client Sign-Up</h1>
@@ -35,8 +45,12 @@
     </div>
 
     <div class="action">
-      <button><%= f.submit %></button>
+      <%= f.submit class: 'button' %>
     </div>
   <% end %>
 
 </form>
+
+
+</body>
+</html>

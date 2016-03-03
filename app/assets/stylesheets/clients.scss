@@ -7,13 +7,13 @@
 
 * {
   font-family: Helvetica, sans-serif;
-  font-weight: light;
+  font-weight: bold;
   -webkit-font-smoothing: antialiased;
 }
 
 html {
   // background-color: #ff4a56;
-  background-color: orange;
+  background-color: #e65c00;
 }
 
 form {
@@ -34,7 +34,7 @@ form {
 }
 form h1 {
   // color: #ff4a56;
-  color: orange;
+  color: #e65c00;
   font-weight: 100;
   letter-spacing: 0.01em;
   margin-left: 15px;
@@ -45,7 +45,7 @@ form button {
   margin-top: 35px;
   background-color: white;
   // border: 1px solid #ff4a56;
-  border: 1px solid orange;
+  border: 1px solid #e65c00;
   line-height: 0;
   font-size: 17px;
   display: inline-block;
@@ -53,7 +53,7 @@ form button {
   padding: 20px 15px;
   border-radius: 60px;
   // color: #ff4a56;
-  color: orange;
+  color: #e65c00;
   font-weight: 100;
   letter-spacing: 0.01em;
   position: relative;
@@ -62,7 +62,7 @@ form button {
 form button:hover, form button:focus {
   color: white;
   // background-color: #ff4a56;
-  background-color: orange;
+  background-color: #e65c00;
 }
 form .question {
   position: relative;
@@ -77,7 +77,7 @@ form .question:last-of-type {
 form .question label {
   transform-origin: left center;
   // color: #ff4a56;
-  color: orange;
+  color: #e65c00;
   font-weight: 100;
   letter-spacing: 0.01em;
   font-size: 17px;
@@ -110,7 +110,7 @@ form .question input {
   appearance: none;
   background-color: none;
   // border: 1px solid #ff4a56;
-  border: 1px solid orange;
+  border: 1px solid #e65c00;
   line-height: 0;
   font-size: 17px;
   width: 100%;
@@ -119,7 +119,7 @@ form .question input {
   padding: 10px 15px;
   border-radius: 60px;
   // color: #ff4a56;
-  color: orange;
+  color: #e65c00;
   font-weight: 100;
   letter-spacing: 0.01em;
   position: relative;
@@ -135,7 +135,7 @@ form .question input {
 form .question input:focus {
   outline: none;
   // background: #ff4a56;
-  background: orange;
+  background: #e65c00;
   color: white;
   margin-top: 30px;
 }
