@@ -4,6 +4,8 @@
     <title>UrbanChef</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -11,7 +13,7 @@
     <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <%= link_to "UrbanChef", root_path, class: 'navbar-brand' %>
+        <%= link_to "", root_path, class: 'logo' %>
 
         <ul class="nav navbar-nav">
           <% if current_client %>
