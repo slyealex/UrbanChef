@@ -17,7 +17,7 @@
   <div class="field">
       <p><strong><%= product.name %></strong></p>
       <p><%= product.description %></p>
-      <p><%= image_tag product.product_picture.url(:) if product.product_picture %></p>
+      <p><%= image_tag product.product_picture.url(:small) if product.product_picture %></p>
   </div>
 
 <% end %>
@@ -32,7 +32,7 @@
       <div class="field">
           <p><strong><%= product.name %></strong></p>
           <p><%= product.description %></p>
-          <p><%= image_tag product.product_picture.url(:pic) if product.product_picture %></p>
+          <p><%= image_tag product.product_picture.url(:small) if product.product_picture %></p>
       </div>
 
       <div class="field">
