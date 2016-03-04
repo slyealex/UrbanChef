@@ -1,10 +1,26 @@
+<h1>Chefs#show</h1>
 
-<h1><%= @chef.name %></h1>
-<p><%= @chef.email %></p>
-<p><%= @chef.location %></p>
-<p><%= @chef.experience %></p>
+<div><%= @chef.name %></div>
+<div><%= @chef.email %></div>
+<div><%= @chef.location %></div>
+<div><%= @chef.experience %></div>
+
+<div><%= image_tag @chef.chef_avatar.url(:medium) if @chef.chef_avatar %></div>
+
 
 <h3>Dishes:</h3>
+
+<!-- Take a loop bellow out of the 'loging to select and view dishes' to see dishes created by chef right away to verify the dish is created and image is uploaded.  -->
+
+<% @chef.products.each do |product| %>
+
+  <div class="field">
+      <p><strong><%= product.name %></strong></p>
+      <p><%= product.description %></p>
+      <p><%= image_tag product.product_picture.url(:) if product.product_picture %></p>
+  </div>
+
+<% end %>
 
 
 
@@ -32,5 +48,16 @@
 
   <% end %>
 <% else %>
-  <p>Please log in to select & view dish's!</p>
+  <p>Please log in to select and view dish's!</p>
 <% end %>
+
+
+
+<% if @nearby_chefs.any? %>
+  <h2>Nearby Chefs</h2>
+    <ul>
+      <% @nearby_chefs.each do |nc| %>
+        <li><%= "#{nc.name}, #{nc.distance} km" %></li>
+      <% end %>
+    </ul>
+  <% end %>
