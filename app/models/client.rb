@@ -1,4 +1,7 @@
 class Client < ActiveRecord::Base
+
+  include ActiveModel::Dirty
+
   has_many :orders
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

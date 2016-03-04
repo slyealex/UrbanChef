@@ -27,6 +27,7 @@ class ChefsController < ApplicationController
     @chef = Chef.find(params[:id])
     @order = @chef.orders.build
     @product = @chef.products.build
+    @nearby_chefs = @chef.nearbys(1, units: :km)
   end
 
   def create
