@@ -11,21 +11,17 @@
     <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-          <span class="logo"></span>
-        </a>
 
-          <button type="button" class="btn btn-default navbar-btn"><%= link_to 'Home', root_path %></button>
-          <button type="button" class="btn btn-default navbar-btn"><%= link_to 'new chef', new_chef_registration_path %></button>
-          <button type="button" class="btn btn-default navbar-btn"><%= link_to 'new client', new_client_registration_path %></button>
-          <button type="button" class="btn btn-default navbar-btn"><%= link_to 'index client', clients_path %></button>
-          <button type="button" class="btn btn-default navbar-btn"><%= link_to 'index chef', chefs_path %></button>
-          <button type="button" class="btn btn-default navbar-btn"><%= link_to 'chef login', new_chef_session_path %></button>
-          <button type="button" class="btn btn-default navbar-btn"><%= link_to 'client login', new_client_session_path %></button>
-          <button type="button" class="btn btn-default navbar-btn"><%= link_to 'client logout', destroy_client_session_path, method: :delete %></button>
-          <button type="button" class="btn btn-default navbar-btn"><%= link_to 'chef logout', destroy_chef_session_path, method: :delete %></button>
-
-
+        <a class="navbar-brand" href="#"> <span class="logo"></span></a>
+        <button type="button" class="btn btn-default navbar-btn"><%= link_to 'Home', root_path %></button>
+        <button type="button" class="btn btn-default navbar-btn"><%= link_to 'new chef', new_chef_registration_path %></button>
+        <button type="button" class="btn btn-default navbar-btn"><%= link_to 'new client', new_client_registration_path %></button>
+        <button type="button" class="btn btn-default navbar-btn"><%= link_to 'index client', clients_path %></button>
+        <button type="button" class="btn btn-default navbar-btn"><%= link_to 'index chef', chefs_path %></button>
+        <button type="button" class="btn btn-default navbar-btn"><%= link_to 'chef login', new_chef_session_path %></button>
+        <button type="button" class="btn btn-default navbar-btn"><%= link_to 'client login', new_client_session_path %></button>
+        <button type="button" class="btn btn-default navbar-btn"><%= link_to 'client logout', destroy_client_session_path, method: :delete %></button>
+        <button type="button" class="btn btn-default navbar-btn"><%= link_to 'chef logout', destroy_chef_session_path, method: :delete %></button>
 
       </div>
     </div>

@@ -1,3 +1,5 @@
+//stylesheet for views/clients/new.html.erb
+
 .transition, .new_client_form .new_client_button, .new_client_form .new_client_question .new_client_label, .new_client_form .new_client_question .new_client_input {
   -moz-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
   -o-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
@@ -58,11 +60,6 @@ html {
   letter-spacing: 0.01em;
   position: relative;
   z-index: 1;
-}
-.new_client_form .new_client_button:hover, form button:focus {
-  color: white;
-  // background-color: #ff4a56;
-  background-color: #e65c00;
 }
 .new_client_form .new_client_question {
   position: relative;
@@ -178,4 +175,9 @@ html {
   background: #e65c00;
   color: white;
   margin-top: 30px;
+}
+.new_client_form .new_client_button:hover, .new_client_form .new_client_button:focus {
+  color: white;
+  // background-color: #ff4a56;
+  background-color: #e65c00;
 }
