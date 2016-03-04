@@ -1,6 +1,12 @@
+// this is the stylesheet for the nav bar
+
 html {
   // background-color: #ff4a56;
   background-color: #4775d1;
+}
+
+.navbar-nav {
+  background-color: blue;
 }
 
 .navbar-brand {
@@ -23,3 +29,5 @@ html {
 .btn {
   background-color: #e65c00;
 }
+
+// button tutorial on designmodo.com/3d-css3-button/
