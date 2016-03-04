@@ -25,7 +25,7 @@
 
 
 <% if current_client %>
-  <%= form_for [@chef, @client, Order.new] do |f| %>
+  <%= form_for [@client, Order.new] do |f| %>
 
     <% @chef.products.each do |product| %>
 
@@ -37,7 +37,7 @@
 
       <div class="field">
         <%= f.label :select_dish %>
-        <%= f.check_box :products %>
+        <%= f.check_box :line_items %>
       </div>
 
     <% end %>

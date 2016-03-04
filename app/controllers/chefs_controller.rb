@@ -17,6 +17,7 @@ class ChefsController < ApplicationController
     end
 
   end
+  
 
 
   def new
