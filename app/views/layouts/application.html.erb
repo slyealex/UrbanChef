@@ -10,9 +10,14 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <p><%= link_to 'Home', root_path %></p>
+    <p><%= link_to 'index client', clients_path %></p>
+    <p><%= link_to 'index chef', chefs_path %></p>
+
+
 <!-- Navbar styles are in nav_bar.scss -->
 <div class="container-fluid">
-    <nav class="navbar navbar-default">
+    <nav class="navbar">
       <div class="navbar-header">
         <%= link_to "", root_path, class: 'logo' %>
 
@@ -33,10 +38,6 @@
 
     <%= yield %>
 
-
-    <p><%= link_to 'Home', root_path %></p>
-    <p><%= link_to 'index client', clients_path %></p>
-    <p><%= link_to 'index chef', chefs_path %></p>
 
 
 
