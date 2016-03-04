@@ -9,7 +9,7 @@
   display: inline;
 }
 .jumbotron {
-  background-color: #4775d1;
+  background-image: url(http://i.imgur.com/RWk5OXM.png);
   height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,10 +23,12 @@
   font-size: 48px;
   font-family: 'Shift', sans-serif;
   font-weight: bold;
+  margin-bottom: -2%;
 }
-.jumbotron p {
+.jumbotron h4 {
   font-size: 20px;
-  color: #white;
+  color: white;
+  margin-left: 4px;
 }
 .learn-more {
 }
@@ -125,5 +127,5 @@
 }
 
 .index_p2 {
-  margin: -1%;
+  margin: 1%;
 }
