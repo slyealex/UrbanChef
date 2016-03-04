@@ -1,3 +1,4 @@
+<!-- This is the Main layout, html here will apply to all views -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,11 +10,12 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-
+<!-- Navbar styles are in nav_bar.scss -->
     <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
         <%= link_to "", root_path, class: 'logo' %>
+
 
         <ul class="nav navbar-nav">
           <% if current_client %>
