@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>UrbanChef</title>
@@ -11,9 +11,16 @@
     <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-          <span class="logo"></span>
-        </a>
+        <%= link_to "UrbanChef", root_path, class: 'navbar-brand' %>
+
+        <ul class="nav navbar-nav">
+          <% if current_client %>
+            <li><button type="button" class="button"><%= link_to 'client logout', destroy_client_session_path, method: :delete %></button></li>
+            <li><button type="button" class="button"><%= link_to 'index chef', chefs_path %></button></li>
+          <% elsif current_chef %>
+            <li><button type="button" class="button"><%= link_to 'chef logout', destroy_chef_session_path, method: :delete %></button></li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </nav>
