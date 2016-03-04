@@ -1,39 +1,45 @@
-<h1>Become a Chef</h1>
+<h1>Chef Sign-Up</h1>
 
-<%= form_for @chef do |f| %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<%= form_for @chef, :html => {:class => "new_chef_form"} do |f| %>
+  <div class="new_chef_question">
+    <%= f.text_field :name, class: 'new_chef_input' %>
+    <%= f.label :name, class: 'new_chef_label' %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+  <div class="new_chef_question">
+    <%= f.email_field :email, class: 'new_chef_input' %>
+    <%= f.label :email, class: 'new_chef_label' %>
   </div>
 
-  <div class="field">
-    <%= f.label :location %>
-    <%= f.text_field :location %>
+  <div class="new_chef_question">
+    <%= f.text_field :location, class: 'new_chef_input' %>
+    <%= f.label :location, class: 'new_chef_label' %>
   </div>
 
-  <div class="field">
-    <%= f.label :experience %>
-    <%= f.text_area :experience %>
+  <div class="new_chef_question">
+    <%= f.text_area :experience, class: 'new_chef_input' %>
+    <%= f.label :experience, class: 'new_chef_label' %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+  <div class="new_chef_question">
+    <%= f.password_field :password, class: 'new_chef_input' %>
+    <%= f.label :password, class: 'new_chef_label' %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+  <div class="new_chef_question">
+    <%= f.password_field :password_confirmation, class: 'new_chef_input' %>
+    <%= f.label :password_confirmation, class: 'new_chef_label' %>
   </div>
+
 
   <div class="field">
     <%= f.label :chef_avatar %>
     <%= f.file_field :chef_avatar %>
+  </div>
+  
+  <div class="chef_avatar">
+    <%= f.file_field :chef_avatar, class: 'new_chef_input' %>
+    <%= f.label :chef_avatar, class: 'new_chef_label' %>
     <%= f.hidden_field :chef_avatar_cache %>
   </div>
 
@@ -47,12 +53,12 @@
     <% end %>
 
     <div class="links">
-      <%= link_to_add_association "Add Dish", f, :products %>
+      <button><%= link_to_add_association "Add Dish", f, :products %></button>
     </div>
   </div>
 
   <div class="action">
-    <%= f.submit %>
+    <%= f.submit class: 'new_chef_button' %>
   </div>
 
 <% end %>
