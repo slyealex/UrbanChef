@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303125633) do
+ActiveRecord::Schema.define(version: 20160305185715) do
 
   create_table "chefs", force: :cascade do |t|
     t.string   "email",                                          default: "", null: false
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20160303125633) do
     t.string   "chef_avatar"
     t.decimal  "longitude",              precision: 9, scale: 6
     t.decimal  "latitude",               precision: 9, scale: 6
+    t.integer  "service_radius"
   end
 
   add_index "chefs", ["email"], name: "index_chefs_on_email", unique: true
