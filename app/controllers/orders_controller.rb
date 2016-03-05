@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
     end
 
     def create
-      @order = @client.orders.build(order_params)
+      @order = current_client.orders.build(order_params)
       @order.client = current_client
       @order.chef = current_chef
 

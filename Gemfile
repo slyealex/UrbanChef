@@ -40,6 +40,8 @@ gem 'mini_magick'
 
 gem "geocoder"
 
+gem 'better_errors'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
