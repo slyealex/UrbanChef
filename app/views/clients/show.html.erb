@@ -12,11 +12,45 @@
 
 <% if current_client %>
     <% if @chefs_near_client.any? %>
-    <h2>Nearby Chefs</h2>
+    <h2>Nearby Chefs (within 10 km)</h2>
       <ul>
         <% @chefs_near_client.each do |chef| %>
             <li><%= link_to chef.name, chef_path(chef) %>
             <%= "#{chef.distance} km" %></li>
+        <% end %>
+      </ul>
+    <% end %>
+<% end %>
+
+<!-- When refresh page randomly shows me list of chefs, sometimes distance is presented as NaN -->
+
+<% if current_client %>
+    <% if @chefs.any? %>
+    <h2>Distance to all chefs</h2>
+      <ul>
+        <% @chefs.each do |chef| %>
+            <li><%= link_to chef.name, chef_path(chef) %>
+            <%= chef.distance_to(current_client.location, :km) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+<% end %>
+
+
+<!-- Chefs who can serve you (client is within radius of service) -->
+
+<% if current_client %>
+    <% if @chefs.any? %>
+    <h2>Chefs who can serve you (you are within their range of service)</h2>
+      <ul>
+        <% @chefs.each do |chef| %>
+          <% if (chef.distance_to(current_client.location).round(2)).to_f <
+              (chef.service_radius).to_f %>
+              <li>
+                <%= link_to chef.name, chef_path(chef) %>
+              </li>
+              <!-- this link disappears randomly when I refresh the page then reappers???? -->
+          <% end %>
         <% end %>
       </ul>
     <% end %>

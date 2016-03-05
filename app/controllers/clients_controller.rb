@@ -15,8 +15,9 @@ class ClientsController < ApplicationController
     @chef = Chef.find(params[:id])
     # @product = @chef.products.build
     # @nearby_chefs = @chef.nearbys(20, units: :km)
-    @chefs_near_client = Chef.near(current_client, 1, units: :km )
-    # how to set up a distance from a client to the chef?
+    @chefs_near_client = Chef.near(current_client, 10, units: :km )
+    @chefs = Chef.all
+
   end
 
   def edit
