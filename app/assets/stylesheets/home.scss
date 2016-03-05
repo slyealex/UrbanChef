@@ -1,7 +1,11 @@
 // This is the stylesheet for the main page
 
 .container-fluid {
-  background-color: #4775d1;
+  // background-color: #4775d1;
+}
+
+#page-top {
+  // background-color: #4775d1;
 }
 
 .nav a {
@@ -36,6 +40,11 @@
   color: white;
   margin-left: 4px;
 }
+
+.carousel_container {
+  // background-color: #4775d1;
+}
+
 .learn-more {
 }
 .learn-more h3 {
@@ -139,3 +148,13 @@
 .index_p2 {
   margin: 1%;
 }
+
+.carousel_list {
+list-style-type: none;
+}
+
+.carousel-inner {
+  background-image: url(http://i.imgur.com/RWk5OXM.png);
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;}
