@@ -5,3 +5,19 @@
 <div><%= @client.location %></div>
 
 <div><%= image_tag @client.client_avatar.url(:medium) if @client.client_avatar %></div>
+
+
+<!-- List of all chefs near the client -->
+
+
+<% if current_client %>
+    <% if @chefs_near_client.any? %>
+    <h2>Nearby Chefs</h2>
+      <ul>
+        <% @chefs_near_client.each do |chef| %>
+            <li><%= link_to chef.name, chef_path(chef) %>
+            <%= "#{chef.distance} km" %></li>
+        <% end %>
+      </ul>
+    <% end %>
+<% end %>

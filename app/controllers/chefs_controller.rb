@@ -4,9 +4,9 @@ class ChefsController < ApplicationController
 
   def index
     if params[:search]
-      @chefs = Chef.near(params[:search], 1, units: :km)
+      @chefs = Chef.near(params[:search], 0.7, units: :km)
     elsif params[:longitude] && params[:latitude]
-      @chefs = Chef.near([params[:latitude], params[:longitude]], 1, units: :km)
+      @chefs = Chef.near([params[:latitude], params[:longitude]], 0.7, units: :km)
     else
       @chefs = Chef.all
     end
@@ -28,6 +28,7 @@ class ChefsController < ApplicationController
     @order = @chef.orders.build
     @product = @chef.products.build
     @nearby_chefs = @chef.nearbys(1, units: :km)
+    @clients_near_chef = Client.near(current_chef, 1, units: :km)
   end
 
   def create
