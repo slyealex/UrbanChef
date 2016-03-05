@@ -120,8 +120,12 @@
   text-align: center;
   margin-bottom: 2%
 }
-.carousel-control.left, .carousel-control.right {
-    background-image: none
+.carousel-control.right {
+    background-image: url(http://i.imgur.com/rSY0nIh.png?1);
+}
+
+.carousel-control.left, {
+  background-image: url(http://i.imgur.com/m6h9lq9.png?1);
 }
 
 .index_button {
