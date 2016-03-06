@@ -40,6 +40,8 @@ gem 'mini_magick'
 
 gem "geocoder"
 
+gem "figaro"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
