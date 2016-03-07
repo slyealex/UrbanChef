@@ -17,9 +17,9 @@ class ClientsController < ApplicationController
     # @nearby_chefs = @chef.nearbys(20, units: :km)
     @chefs_near_client = Chef.near(current_client, 10, units: :km )
     @chefs = Chef.all
+    @serving_chefs = Chef.select{ |x| x.service_radius.to_f > x.distance_to(current_client, :km) }
 
   end
-
   def edit
     @client = Client.find(params[:id])
   end

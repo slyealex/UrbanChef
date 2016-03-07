@@ -58,7 +58,7 @@ class ChefsController < ApplicationController
   private
 
   def chef_params
-    params.require(:chef).permit(:name, :email, :password, :password_confirmation, :experience, :location, :chef_avatar, :chef_avatar_cache, :service_radius,
+    params.require(:chef).permit(:name, :email, :password, :password_confirmation, :experience, :location, :chef_avatar, :chef_avatar_cache, :service_radius, :specialty,
                                 products_attributes: [:name, :description, :url, :_destroy, :product_picture, :product_picture_cache])
   end
 
