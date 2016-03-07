@@ -17,17 +17,17 @@ class ChefsController < ApplicationController
     end
 
   end
-  
+
 
 
   def new
     @chef = Chef.new
+    @project = Project.new
   end
 
   def show
     @chef = Chef.find(params[:id])
-    @order = @chef.orders.build
-    @product = @chef.products.build
+    @order = Order.new
     @nearby_chefs = @chef.nearbys(1, units: :km)
   end
 
