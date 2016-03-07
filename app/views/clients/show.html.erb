@@ -7,12 +7,10 @@
 <div><%= image_tag @client.client_avatar.url(:medium) if @client.client_avatar %></div>
 
 
-<!-- List of all chefs near the client -->
-
-
-<% if current_client %>
+<!-- List of all chefs near the client, this is not gonna be in a final show page -->
+<!-- <% if current_client %>
     <% if @chefs_near_client.any? %>
-    <h2>Nearby Chefs</h2>
+    <h2>Nearby Chefs (within 10 km)</h2>
       <ul>
         <% @chefs_near_client.each do |chef| %>
             <li><%= link_to chef.name, chef_path(chef) %>
@@ -20,4 +18,66 @@
         <% end %>
       </ul>
     <% end %>
+<% end %> -->
+
+<!-- Distance to chef is not ganna be in final code -->
+<!-- <% if current_client %>
+    <% if @chefs.any? %>
+    <h2>Distance to all chefs</h2>
+      <ul>
+        <% @chefs.each do |chef| %>
+            <li><%= link_to chef.name, chef_path(chef) %>
+            <%= chef.distance_to(current_client, :km) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+<% end %> -->
+
+
+<!-- Chefs who can serve you (client is within radius of service) will be rendered on the page -->
+<% if current_client %>
+    <% if @chefs.any? %>
+    <h2>Chefs who can serve you (you are within their range of service)</h2>
+      <ul>
+        <% @chefs.each do |chef| %>
+
+          <% if (chef.distance_to(current_client, :km)).to_f <
+              (chef.service_radius).to_f %>
+              <li>
+                <p><%= image_tag @chef.chef_avatar.url(:small) if @chef.chef_avatar %></p>
+                <p><%= link_to chef.name, chef_path(chef) %></p>
+                <p><%= " Experience: #{chef.experience}. " %></p>
+                <p><%= " Specialty: #{chef.specialty}. " %></p>
+                <p><%= " #{chef.distance_to(current_client, :km).round(2)} km away." %></p></li>
+              </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% end %>
 <% end %>
+
+
+
+
+<!--
+  <% if current_client %>
+      <% if @serving_chefs.any? %>
+      <h2>Chefs who can serve you (serving chefs):</h2>
+        <ul>
+          <% @serving_chefs.each do |chef| %>
+              <li><p><%= link_to chef.name, chef_path(chef) %>
+              </li>
+          <% end %>
+        </ul>
+      <% end %>
+  <% end %> -->
+
+
+
+
+<!-- <div id="map-canvas" style="height:500px;width:700px;" data-latitude="<%= @client.latitude.to_f %>" data-longitude="<%= @client.longitude.to_f %>"></div>
+
+<%=  javascript_tag do %>
+  window.nearbys = <%= raw @serving_chefs.map {|chef| {latitude: chef.latitude, longitude: chef.longitude} }.to_json
+  %>
+<% end %> -->

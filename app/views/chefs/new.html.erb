@@ -22,6 +22,16 @@
   </div>
 
   <div class="new_chef_question">
+    <%= f.text_area :specialty, class: 'new_chef_input' %>
+    <%= f.label :specialty, class: 'new_chef_label' %>
+  </div>
+
+  <div class="new_chef_question">
+    <%= f.number_field :service_radius, class: 'new_chef_input' %>
+    <%= f.label :service_radius, class: 'new_chef_label' %>
+  </div>
+
+  <div class="new_chef_question">
     <%= f.password_field :password, class: 'new_chef_input' %>
     <%= f.label :password, class: 'new_chef_label' %>
   </div>
@@ -30,10 +40,6 @@
     <%= f.password_field :password_confirmation, class: 'new_chef_input' %>
     <%= f.label :password_confirmation, class: 'new_chef_label' %>
   </div>
-
-
-
-
 
   <div class="chef_avatar">
     <%= f.file_field :chef_avatar, class: 'new_chef_input' %>

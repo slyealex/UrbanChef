@@ -29,7 +29,7 @@ class ChefsController < ApplicationController
     @chef = Chef.find(params[:id])
     @order = Order.new
     @nearby_chefs = @chef.nearbys(1, units: :km)
-    @clients_near_chef = Client.near(current_chef, 1, units: :km)
+    @clients_near_chef = Client.near(current_chef, 1.5, units: :km)
   end
 
   def create
@@ -59,7 +59,7 @@ class ChefsController < ApplicationController
   private
 
   def chef_params
-    params.require(:chef).permit(:name, :email, :password, :password_confirmation, :experience, :location, :chef_avatar, :chef_avatar_cache,
+    params.require(:chef).permit(:name, :email, :password, :password_confirmation, :experience, :location, :chef_avatar, :chef_avatar_cache, :service_radius, :specialty,
                                 products_attributes: [:name, :description, :url, :_destroy, :product_picture, :product_picture_cache])
   end
 
