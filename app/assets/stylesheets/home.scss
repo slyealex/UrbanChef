@@ -1,33 +1,4 @@
 // This is the stylesheet for the main page
-.button-3d {
-  position: relative;
-  width: auto;
-  display: inline-block;
-  color: #ecf0f1;
-  text-decoration: none;
-  border-radius: 5px;
-  border: solid 1px #f39c12;
-  background: #e67e22;
-  text-align: centre;
-  padding: 16px 18px 14px;
-  margin: 12px;
-
-  -webkit-transition: all 0.1s;
-    -moz-transition: all 0.1s;
-    transition: all 0.1s;
-
-  -webkit-box-shadow: 0px 6px 0px #d35400;
-  -moz-box-shadow: 0px 6px 0px #d35400;
-  box-shadow: 0px 6px 0px #d35400;
-}
-
-.button-3d:active{
-    -webkit-box-shadow: 0px 2px 0px #d35400;
-    -moz-box-shadow: 0px 2px 0px #d35400;
-    box-shadow: 0px 2px 0px #d35400;
-    position:relative;
-    top:4px;
-}
 
 .container-fluid {
 }
@@ -92,25 +63,42 @@
 
   // Styling for General Buttons
 .button {
+  display: inline-block;
+  position: relative;
+  border-radius: 5px;
+  // background: #e67e22;
   background-color: #e65c00;
-  border: none;
+  border: 2px solid #black;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
   -webkit-transition-duration: 1.0s; /* Safari */
-   transition-duration: 1.0s;
    border-radius: 4px;
-}
-.button {
-    background-color: #e65c00;
-    border: 2px solid #black;
+     -webkit-transition: all 0.1s;
+       -moz-transition: all 0.1s;
+       transition: all 0.1s;
+
+     -webkit-box-shadow: 0px 6px 0px #d35400;
+     -moz-box-shadow: 0px 6px 0px #d35400;
+     box-shadow: 0px 6px 0px #d35400;
+
 }
   //Hover Animations
 .button:hover {
     background-color: #4d79ff;
     color: white;
+    transition-duration: 1.0s;
+
+}
+
+.button:active{
+    -webkit-box-shadow: 0px 2px 0px #d35400;
+    -moz-box-shadow: 0px 2px 0px #d35400;
+    box-shadow: 0px 2px 0px #d35400;
+    position:relative;
+    top:4px;
 }
 
   //Styling for main image login buttons
@@ -119,7 +107,7 @@
 }
 .button_login {
   background-color: #e65c00;
-  border: none;
+  border: 2px solid #black;
   color: white;
   padding: 5px 32px;
   text-align: center;
@@ -129,10 +117,6 @@
   -webkit-transition-duration: .5s; /* Safari */
    transition-duration: .5s;
       border-radius: 4px;
-}
-.button_login {
-    background-color: #e65c00;
-    border: 2px solid #black;
 }
 
 //Hover animation for login buttons
@@ -144,7 +128,7 @@
 //Button2 Styling
 .button2 {
   background-color: #e65c00;
-  border: none;
+  border: 2px solid #black;
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -154,10 +138,6 @@
   -webkit-transition-duration: 1.0s; /* Safari */
    transition-duration: 1.0s;
    border-radius: 4px;
-}
-.button2 {
-    background-color: #e65c00;
-    border: 2px solid #black;
 }
 
 //button2 hover animation
