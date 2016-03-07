@@ -21,7 +21,7 @@
   box-sizing: border-box;
   padding: 30px 25px;
   background-color: #4775d1;
-  background-image: url();
+  // background-image: url();
   border-radius: 40px;
   margin: 40px 0;
   left: 50%;
@@ -123,15 +123,15 @@
 .new_client_form .new_client_question .new_client_input:valid ~ .new_client_label {
   text-transform: uppercase;
   font-style: italic;
-  // -moz-transform: translate(5px, -35px) scale(0.6);
-  // -ms-transform: translate(5px, -35px) scale(0.6);
-  // -webkit-transform: translate(5px, -35px) scale(0.6);
-  transform: translate(5px, 0px) scale(0.6);
+  -moz-transform: translate(5px, -35px) scale(0.6);
+  -ms-transform: translate(5px, -35px) scale(0.6);
+  -webkit-transform: translate(5px, -35px) scale(0.6);
+  transform: translate(5px, -35px) scale(0.6);
 }
 
 .new_client_form .new_client_question .new_client_input:focus ~ .new_client_label {
-  // -moz-transform: translate(0, -35px);
-  // -ms-transform: translate(0, -35px);
-  // -webkit-transform: translate(0, -35px);
+  -moz-transform: translate(0, -35px);
+  -ms-transform: translate(0, -35px);
+  -webkit-transform: translate(0, -35px);
   transform: translate(0, -35px);
 }

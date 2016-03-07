@@ -1,20 +1,20 @@
 // This is the stylesheet for the main page
 
 .container-fluid {
-  // background-color: #4775d1;
 }
 
 #page-top {
-  // background-color: #4775d1;
+  background-image: url(white_dents);
 }
 
   //Styling for nav bar
 .nav a {
-  color: #white;
+  color: white;
   font-size: 11px;
   font-weight: bold;
   padding: 14px 10px;
   text-transform: uppercase;
+  text-decoration: none;
 }
 .nav li {
   display: inline;
@@ -52,37 +52,44 @@
   // background-color: #4775d1;
 }
 
-  // Styling for learn more Button
-.learn-more h3 {
-  font-family: 'Shift', sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-}
-.learn-more a {
-  color: #white;
-}
 
   // Styling for General Buttons
 .button {
+  display: inline-block;
+  position: relative;
+  border-radius: 5px;
   background-color: #e65c00;
-  border: none;
+  border: 2px solid #black;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
   -webkit-transition-duration: 1.0s; /* Safari */
-   transition-duration: 1.0s;
    border-radius: 4px;
+     -webkit-transition: all 0.1s;
+       -moz-transition: all 0.1s;
+       transition: all 3s;
 }
+
 .button {
     background-color: #e65c00;
-    border: 2px solid #black;
 }
   //Hover Animations
 .button:hover {
     background-color: #4d79ff;
     color: white;
+    text-decoration: none;
+    transition-duration: 1.0s;
+
+}
+
+.button:active{
+    -webkit-box-shadow: 0px 2px 0px #d35400;
+    -moz-box-shadow: 0px 2px 0px #d35400;
+    box-shadow: 0px 2px 0px #d35400;
+    position:relative;
+    top:4px;
 }
 
   //Styling for main image login buttons
@@ -91,7 +98,7 @@
 }
 .button_login {
   background-color: #e65c00;
-  border: none;
+  border: 2px solid #black;
   color: white;
   padding: 5px 32px;
   text-align: center;
@@ -102,21 +109,18 @@
    transition-duration: .5s;
       border-radius: 4px;
 }
-.button_login {
-    background-color: #e65c00;
-    border: 2px solid #black;
-}
 
 //Hover animation for login buttons
 .button_login:hover {
     background-color: #4d79ff;
+    text-decoration: none;
     color: white;
 }
 
 //Button2 Styling
 .button2 {
   background-color: #e65c00;
-  border: none;
+  border: 2px solid #black;
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -127,14 +131,11 @@
    transition-duration: 1.0s;
    border-radius: 4px;
 }
-.button2 {
-    background-color: #e65c00;
-    border: 2px solid #black;
-}
 
 //button2 hover animation
 .button2:hover {
     background-color: #4d79ff;
+    text-decoration: none;
     color: white;
 }
 
@@ -151,15 +152,16 @@
   margin-bottom: 2%
 }
 .carousel-control.right {
-
+background-image: none;
 }
 
 .carousel-control.left, {
-
+background-image: none;
 }
 
 .index_button {
   margin-top: 5%;
+  text-decoration: none;
 }
 
 .index_p {
@@ -168,6 +170,7 @@
 
 .index_p2 {
   margin: 1%;
+  margin-bottom: 10%
 }
 
 .carousel_list {
@@ -176,11 +179,54 @@ list-style-type: none;
 
 .carousel-inner {
   background-image: url(http://i.imgur.com/RWk5OXM.png);
-  height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .item {
   color: white;
+}
+
+.profile_image {
+  width: 250px;
+  height: 250px;
+  float: left;
+  margin-left: 10px;
+  border-style: groove;
+  border-width: thin;
+}
+
+.chef_info {
+  margin-top: 7%;
+  margin-left: 25%;
+}
+
+.button_nav {
+  margin-top: 0;
+  float: left;
+  margin: 0;
+  padding: 0;
+  display: block;
+  background-color: #e65c00;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  -webkit-transition-duration: 1.0s; /* Safari */
+   transition-duration: 1.0s;
+   border-right: 1px solid #bbb
+}
+.button_nav {
+    background-color: #e65c00;
+}
+  //Hover Animations
+.button_nav:hover {
+    background-color: #4d79ff;
+    color: white;
+}
+
+.background_nav {
+  background-color: #e65c00;
 }
