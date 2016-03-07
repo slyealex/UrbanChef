@@ -126,7 +126,7 @@
   // -moz-transform: translate(5px, -35px) scale(0.6);
   // -ms-transform: translate(5px, -35px) scale(0.6);
   // -webkit-transform: translate(5px, -35px) scale(0.6);
-  transform: translate(5px, 0px) scale(0.6);
+  transform: translate(5px, -35px) scale(0.6);
 }
 
 .new_client_form .new_client_question .new_client_input:focus ~ .new_client_label {
