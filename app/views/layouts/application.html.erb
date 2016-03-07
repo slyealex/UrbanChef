@@ -9,20 +9,20 @@
 
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <!-- <body>
     <p><%= link_to 'Home', root_path %></p>
     <p><%= link_to 'index client', clients_path %></p>
-    <p><%= link_to 'index chef', chefs_path %></p>
+    <p><%= link_to 'index chef', chefs_path %></p> -->
 
 
 <!-- Navbar styles are in nav_bar.scss -->
-<div class="container-fluid">
-    <nav class="navbar">
-      <div class="navbar-header">
-        <%= link_to "", root_path, class: 'logo' %>
+<!-- <div class="container-fluid">
+    <nav class="navbar"> -->
+      <!-- <div class="navbar-header">
+        <%= link_to "", root_path, class: 'logo' %> -->
 
 
-        <ul class="navbar-nav">
+        <!-- <ul class="navbar-nav">
           <% if current_client %>
             <li><button type="button" class="button"><%= link_to 'client logout', destroy_client_session_path, method: :delete %></button></li>
             <li><button type="button" class="button"><%= link_to 'index chef', chefs_path %></button></li>
@@ -32,7 +32,7 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
 
 
 
@@ -41,8 +41,8 @@
 
 
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
 
     <% if current_client %>
       <p>Signed in as Client: <%= current_client.email %> </p>
