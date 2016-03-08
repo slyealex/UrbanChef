@@ -14,13 +14,18 @@
    <%= f.url_field :url %>
  </div>
 
+ <div class="field">
+   <%= f.label :price %>
+   <%= f.number_field :price, step: "any" %>
+ </div>
+
  <div class="product_picture">
    <%= f.label :product_picture %>
    <%= f.file_field :product_picture %>
    <%= f.hidden_field :product_picture_cache %>
  </div>
 
- 
+
 
 
  <%= link_to_remove_association "Remove dish", f %>
