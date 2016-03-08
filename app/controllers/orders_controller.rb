@@ -1,6 +1,11 @@
 class OrdersController < ApplicationController
   # before_action :load_chef
 
+    def index
+      @chef = Chef.find(params[:chef_id])
+      # @line_item = Order.find(para)
+    end
+
     def new
       @order = Order.new
     end
