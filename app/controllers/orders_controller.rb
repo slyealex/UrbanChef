@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
     def index
       @chef = Chef.find(params[:chef_id])
       # @line_item = Order.find(para)
+      @chefs_clients = current_chef.clients
     end
 
     def new

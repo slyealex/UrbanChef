@@ -36,14 +36,14 @@ class ClientsController < ApplicationController
     end
   end
 
-  private
+  privatenmbuyt
 
   def client_params
     params.require(:client).permit(:name, :email, :password, :password_confirmation, :location, :client_avatar, :client_avatar_cache)
   end
 
   def load_order
-    @order = current_chef.orders
+    # @order = current_chef.orders
   end
 
 end

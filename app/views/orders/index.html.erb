@@ -21,3 +21,10 @@
     </div>
   <% end %>
 </div>
+
+
+<p>Client'f for Map</p>
+<!-- this won't be rendered -->
+<% @chefs_clients.each do |client| %>
+  <%= client.name %>
+<% end %>
