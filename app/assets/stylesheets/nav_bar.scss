@@ -1,4 +1,7 @@
 // This is the stylesheet for the navbar
+.navbar_header {
+
+}
 
 .navbar_header li {
   display: inline;
@@ -30,4 +33,33 @@ a {
   -webkit-transition-duration: .5s; /* Safari */
    transition-duration: .5s;
       border-radius: 4px;
+}
+
+.visibledevice {
+  display:none;
+  background-image: url(http://i.imgur.com/Qjb41gO.jpg);
+
+}
+.visibledesktop {
+  display:display;
+  background-image: url(http://i.imgur.com/Qjb41gO.jpg);
+
+}
+
+@media (max-width : 843px) {
+.visibledevice {
+  display:block;
+}
+.visibledesktop {
+  display:none;
+  }
+}
+#logo {
+  float: left;
+
+}
+
+.glyphicon-menu-hamburger {
+  height: 80px;
+  font-size: 60px;
 }
