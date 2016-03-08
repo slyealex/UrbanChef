@@ -22,7 +22,6 @@ class ChefsController < ApplicationController
 
   def new
     @chef = Chef.new
-    # @project = Project.new
     @product = Product.new
   end
 
