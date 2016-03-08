@@ -26,6 +26,7 @@
         <p><strong><%= product.name %></strong></p>
         <p><%= product.description %></p>
         <p><%= image_tag product.product_picture.url(:small) if product.product_picture %></p>
+        <p><%= "$#{product.price}" %></p>
         <%= f.fields_for :line_items, @order.line_items.new do |line_item_form| %>
 
         <p><%= line_item_form.label :product_id, "Select Dish" %></p>

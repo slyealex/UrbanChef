@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160307230351) do
+ActiveRecord::Schema.define(version: 20160308020631) do
 
   create_table "chefs", force: :cascade do |t|
     t.string   "email",                                          default: "", null: false
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20160307230351) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "product_picture"
+    t.decimal  "price"
   end
 
   add_index "products", ["chef_id"], name: "index_products_on_chef_id"
