@@ -59,9 +59,6 @@
        transition: all 3s;
 }
 
-.button {
-    background-color: #e65c00;
-}
   //Hover Animations
 .button:hover {
     background-color: #4d79ff;
@@ -138,13 +135,6 @@
   text-align: center;
   margin-bottom: 2%
 }
-.carousel-control.right {
-background-image: none;
-}
-
-.carousel-control.left, {
-background-image: none;
-}
 
 .index_button {
   margin-top: 5%;
@@ -160,20 +150,6 @@ background-image: none;
   margin-bottom: 10%
 }
 
-.carousel_list {
-list-style-type: none;
-}
-
-.carousel-inner {
-  background-image: url(http://i.imgur.com/RWk5OXM.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.item {
-  color: white;
-}
-
 .profile_image {
   width: 250px;
   height: 250px;
@@ -186,4 +162,34 @@ list-style-type: none;
 .chef_info {
   margin-top: 7%;
   margin-left: 25%;
+}
+
+
+#myCarousel {
+  height: 400px;
+  width: auto;
+
+}
+
+.carousel-control.right {
+background-image: none;
+}
+
+.carousel-control.left, {
+background-image: none;
+}
+
+.carousel_list {
+list-style-type: none;
+}
+
+.carousel-inner {
+  height: inherit;
+  background-image: url(http://i.imgur.com/RWk5OXM.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item {
+  color: white;
 }

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :clients, :controllers => { registrations: 'clients' }
   root 'home#index'
 
+
   resources :clients do
     resources :orders
   end
