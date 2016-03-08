@@ -1,4 +1,7 @@
 // This is the stylesheet for the navbar
+.navbar_header {
+
+}
 
 .navbar_header li {
   display: inline;
@@ -34,9 +37,13 @@ a {
 
 .visibledevice {
   display:none;
+  background-image: url(http://i.imgur.com/Qjb41gO.jpg);
+
 }
 .visibledesktop {
   display:display;
+  background-image: url(http://i.imgur.com/Qjb41gO.jpg);
+
 }
 
 @media (max-width : 843px) {
@@ -49,6 +56,7 @@ a {
 }
 #logo {
   float: left;
+
 }
 
 .glyphicon-menu-hamburger {

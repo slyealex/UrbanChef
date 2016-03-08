@@ -43,7 +43,7 @@ class ClientsController < ApplicationController
   end
 
   def load_order
-    @order = current_chef.orders
+    # @order = current_chef.orders
   end
 
 end
