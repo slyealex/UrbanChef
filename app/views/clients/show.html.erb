@@ -76,6 +76,7 @@
 
 
 <!-- <div id="map-canvas" style="height:500px;width:700px;" data-latitude="<%= @client.latitude.to_f %>" data-longitude="<%= @client.longitude.to_f %>"></div>
+
 <%=  javascript_tag do %>
   window.nearbys = <%= raw @serving_chefs.map {|chef| {latitude: chef.latitude, longitude: chef.longitude} }.to_json
   %>
