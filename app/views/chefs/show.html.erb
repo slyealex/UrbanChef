@@ -1,13 +1,10 @@
-<h1><%= @chef.name %></h1>
-
-
-<div><%= @chef.email %></div>
-<div><%= @chef.location %></div>
-<div><%= @chef.experience %></div>
-
-<div><%= @chef.service_radius %></div>
-
-
+<h2><%= @chef.name %></h2>
+<!-- <div><%= @chef.email %></div> -->
+<div><%= "Address: #{@chef.location}" %></div>
+<div><%= "Experience: #{@chef.experience}" %></div>
+<!-- service_radius wont' be rendered eventually -->
+<div><%= "Specialty: #{@chef.specialty}" %></div>
+<div><%= "#{@chef.service_radius} km away" %></div>
 
 <div><%= image_tag @chef.chef_avatar.url(:medium) if @chef.chef_avatar %></div>
 
@@ -15,7 +12,7 @@
 
 <br>
 <br>
-<p><%= @chef.name %> offers these dish's:</p>
+<h3><%= @chef.name %> offers these dish's:</h3>
 
 <% if current_client %>
   <%= form_for [@client, @chef, @order] do |f| %>
@@ -23,10 +20,11 @@
     <% @chef.products.each do |product| %>
 
       <div class="field">
+        <p><%= image_tag product.product_picture.url(:small) if product.product_picture %></p>
         <p><strong><%= product.name %></strong></p>
         <p><%= product.description %></p>
-        <p><%= image_tag product.product_picture.url(:small) if product.product_picture %></p>
         <p><%= "$#{product.price}" %></p>
+
         <%= f.fields_for :line_items, @order.line_items.new do |line_item_form| %>
 
         <p><%= line_item_form.label :product_id, "Select Dish" %></p>

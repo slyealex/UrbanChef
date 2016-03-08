@@ -2,8 +2,8 @@
 
 <div><%= @client.name %></div>
 <div><%= @client.email %></div>
+<!-- location won't be rendered eventually -->
 <div><%= @client.location %></div>
-
 <div><%= image_tag @client.client_avatar.url(:medium) if @client.client_avatar %></div>
 
 
@@ -73,9 +73,8 @@
   <% end %> -->
 
 
-
-
-<!-- <div id="map-canvas" style="height:500px;width:700px;" data-latitude="<%= @client.latitude.to_f %>" data-longitude="<%= @client.longitude.to_f %>"></div>
+<!--
+<div id="map-canvas" style="height:500px;width:700px;" data-latitude="<%= @client.latitude.to_f %>" data-longitude="<%= @client.longitude.to_f %>"></div>
 
 <%=  javascript_tag do %>
   window.nearbys = <%= raw @serving_chefs.map {|chef| {latitude: chef.latitude, longitude: chef.longitude} }.to_json
