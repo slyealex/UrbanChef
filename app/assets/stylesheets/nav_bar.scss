@@ -31,3 +31,19 @@ a {
    transition-duration: .5s;
       border-radius: 4px;
 }
+
+.visibledevice {
+  display:none;
+}
+.visibledesktop {
+  display:display;
+}
+
+@media (max-width : 620px) {
+.visibledevice {
+  display:block;
+}
+.visibledesktop {
+  display:none;
+  }
+}
