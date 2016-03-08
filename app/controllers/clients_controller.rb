@@ -1,7 +1,9 @@
 class ClientsController < ApplicationController
+  before_action :load_order
 
   def index
     @clients = Client.all
+    @chef = current_chef
   end
 
 
@@ -38,6 +40,10 @@ class ClientsController < ApplicationController
 
   def client_params
     params.require(:client).permit(:name, :email, :password, :password_confirmation, :location, :client_avatar, :client_avatar_cache)
+  end
+
+  def load_order
+    @order = current_chef.orders
   end
 
 end
