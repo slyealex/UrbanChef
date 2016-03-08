@@ -2,8 +2,8 @@
 
 <div><%= @client.name %></div>
 <div><%= @client.email %></div>
+<!-- location won't be rendered eventually -->
 <div><%= @client.location %></div>
-
 <div><%= image_tag @client.client_avatar.url(:medium) if @client.client_avatar %></div>
 
 
