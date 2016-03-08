@@ -1,23 +1,5 @@
+// This is the stylesheet for the navbar
 
-// html {
-//   // background-color: #ff4a56;
-//   background-color: #4775d1;
-// }
-// this is the stylesheet for the nav bar
-
-// html {
-//   // background-color: #ff4a56;
-//   background-color: #4775d1;
-// }
-
-.navbar-nav {
-  // background-color: blue;
-}
-
-.navbar-brand {
-  height: 70px;
-  width: 200px;
-}
 
 .navbar-header {
   // background-color: #4775d1;
@@ -35,3 +17,15 @@
 }
 
 // button tutorial on designmodo.com/3d-css3-button/
+//Styling for nav bar
+.nav a {
+color: white;
+font-size: 11px;
+font-weight: bold;
+padding: 14px 10px;
+text-transform: uppercase;
+text-decoration: none;
+}
+.nav li {
+display: inline;
+}
