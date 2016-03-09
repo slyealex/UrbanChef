@@ -1,20 +1,44 @@
-<nav class="navbar">
+<nav class="navbar visibledesktop">
   <div class="container-fluid">
-    <ul class="navbar-header">
+    <ul class="navbar_header">
       <li><a class="logo" href="#"></a></li>
-      <li> <button type="button" name="button" class="button_nav">About Us</button>   </li>
-      <li> <button type="button" name="button" class="button_nav href"><a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Contact Us</a></button>   </li>
+      <li> <button class="button_nav">Learn More</button>   </li>
+      <li> <button class="button_nav"><a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Contact Us</a></button>   </li>
       <% if current_client %>
-        <li><button type="button" class="button_nav"><%= link_to 'client logout', destroy_client_session_path, method: :delete %></button></li>
-        <li><button type="button" class="button_nav"><%= link_to 'index chef', chefs_path %></button></li>
-        <li><button type="button" class="button_nav"><%= link_to 'View local Chefs', chefs_path, class: 'button' %></button></li>
+        <li><button class="button_nav"><%= link_to 'client logout', destroy_client_session_path, method: :delete %></button></li>
+        <li><button class="button_nav"><%= link_to 'index chef', chefs_path %></button></li>
+        <li><button class="button_nav"><%= link_to 'View local Chefs', chefs_path, class: 'button' %></button></li>
       <% elsif current_chef %>
-        <li><button type="button" class="button_nav"><%= link_to 'chef logout', destroy_chef_session_path, method: :delete %></button></li>
-        <li><button type="button" class="button_nav"><%= link_to 'Your Chef Dashboard', clients_path%></button></li>
+        <li><button class="button_nav"><%= link_to 'chef logout', destroy_chef_session_path, method: :delete %></button></li>
+        <li><button class="button_nav"><%= link_to 'Your Chef Dashboard', clients_path%></button></li>
       <% else %>
-        <li><button type="button" class="button_nav"><%= link_to 'Client Log In', new_client_session_path%></button></li>
-        <li><button type="button" class="button_nav"><%= link_to 'Chef Log In', new_chef_session_path%></button></li>
+        <li><button class="button_nav"><%= link_to 'Client Log In', new_client_session_path%></button></li>
+        <li><button class="button_nav"><%= link_to 'Chef Log In', new_chef_session_path%></button></li>
       <% end %>
     </ul>
-</div>
+  </div>
 </nav>
+
+
+<div class="dropdown visibledevice">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a class="logo" href="#"></a></li>
+    <li> <button type="button" name="button" class="button_nav">About Us</button>   </li>
+    <li> <button type="button" name="button" class="button_nav href"><a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Contact Us</a></button>   </li>
+    <% if current_client %>
+      <li><button type="button" class="button_nav"><%= link_to 'client logout', destroy_client_session_path, method: :delete %></button></li>
+      <li><button type="button" class="button_nav"><%= link_to 'index chef', chefs_path %></button></li>
+      <li><button type="button" class="button_nav"><%= link_to 'View local Chefs', chefs_path, class: 'button' %></button></li>
+    <% elsif current_chef %>
+      <li><button type="button" class="button_nav"><%= link_to 'chef logout', destroy_chef_session_path, method: :delete %></button></li>
+      <li><button type="button" class="button_nav"><%= link_to 'Your Chef Dashboard', clients_path%></button></li>
+    <% else %>
+      <li><button type="button" class="button_nav"><%= link_to 'Client Log In', new_client_session_path%></button></li>
+      <li><button type="button" class="button_nav"><%= link_to 'Chef Log In', new_chef_session_path%></button></li>
+    <% end %>
+  </ul>
+</div>
