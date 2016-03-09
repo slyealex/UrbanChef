@@ -1,6 +1,6 @@
 <%= render '/shared/navbar' %>
-<h1 class="chef_h1">Chef Sign-Up</h1>
 
+<h1 class="chef_h1">Chef Sign-Up</h1>
 <%= form_for @chef, :html => {:class => "new_chef_form"} do |f| %>
   <div class="new_chef_question">
     <%= f.text_field :name, class: 'new_chef_input' %>

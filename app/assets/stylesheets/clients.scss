@@ -1,4 +1,8 @@
 //stylesheet for views/clients/new.html.erb
+.client_h1 {
+  margin-top: 50px;
+  text-align: center;
+}
 
 .transition, .new_client_form .new_client_button, .new_client_form .new_client_question .new_client_label, .new_client_form .new_client_question .new_client_input {
   -moz-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);

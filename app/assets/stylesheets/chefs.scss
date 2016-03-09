@@ -1,4 +1,8 @@
 //stylesheet for views/chefs/new.html.erb
+.chef_h1 {
+  text-align: center;
+  margin-top: 50px;
+}
 
 .transition, .new_chef_form .new_chef_button, .new_chef_form .new_chef_question .new_chef_label, .new_chef_form .new_chef_question .new_chef_input {
   -moz-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
