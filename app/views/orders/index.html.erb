@@ -28,3 +28,11 @@
 <% @chefs_clients.each do |client| %>
   <%= client.name %>
 <% end %>
+
+<!-- Map -->
+
+<div id="map-canvas" style="height:500px;width:700px;" data-latitude="<%= current_chef.latitude.to_f %>" data-longitude="<%= current_chef.longitude.to_f %>"></div>
+
+<%=  javascript_tag do %>
+  window.nearbys = <%= raw @chefs_clients.map {|client| {latitude: client.latitude, longitude: client.longitude} }.to_json %>
+<% end %>

@@ -36,7 +36,7 @@ class ClientsController < ApplicationController
     end
   end
 
-  privatenmbuyt
+  private
 
   def client_params
     params.require(:client).permit(:name, :email, :password, :password_confirmation, :location, :client_avatar, :client_avatar_cache)
