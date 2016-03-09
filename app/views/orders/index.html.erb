@@ -1,0 +1,23 @@
+<h1><%= @chef.name %>'s Dashboard</h1>
+
+<div>
+  <h3>Order Up!</h3>
+  <p>Here is what you need to cook this week:</p>
+  <% @chef.product_totals.each do |k, v| %>
+    <p><%= k %> : <%= v %></p>
+  <% end %>
+</div>
+
+
+<div>
+  <h3>Your Clients</h3>
+
+  <p>Current Subscriber Count: <%= @chef.orders.count %></p>
+
+  <% @chef.orders.each do |order| %>
+    <div>
+      <p>Name: <%= order.client.name %></p>
+      <p>Location: <%= order.client.location %></p>
+    </div>
+  <% end %>
+</div>

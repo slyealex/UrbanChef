@@ -1,7 +1,14 @@
 // This is the stylesheet for the navbar
 
-.navbar-header {
-  // background-color: #4775d1;
+.navbar_header li {
+  display: inline;
+  float: left;
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+a {
+  color: white;
 }
 
 .logo {
@@ -10,54 +17,19 @@
   width: 152px;
   background-image: url("logo2b.png")
 }
-
-.btn {
-  background-color: #e65c00;
-}
-
-// button tutorial on designmodo.com/3d-css3-button/
 .button_nav {
-  margin-top: 0;
-  float: left;
-  margin: 0;
-  padding: 0;
-  display: block;
   background-color: #e65c00;
-  border: none;
+  border: 2px solid #black;
   color: white;
-  padding: 15px 32px;
+  padding: 5px 32px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
-  -webkit-transition-duration: 1.0s; /* Safari */
-   transition-duration: 1.0s;
-   border-right: 1px solid #bbb
-}
-
-
-.button_nav {
-    background-color: #e65c00;
-}
-  //Hover Animations
-.button_nav:hover {
-    background-color: #4d79ff;
-    color: white;
-}
-
-.background_nav {
-  background-color: #e65c00;
-}
-
-.nav a {
-  color: white;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 14px 10px;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-.nav li {
-  display: inline;
+  list-style: none;
+  font-size: 14px;
+  margin-left: 5px;
+  -webkit-transition-duration: .5s; /* Safari */
+   transition-duration: .5s;
+      border-radius: 4px;
 }
 
 .visibledevice {
