@@ -1,72 +1,9 @@
 // This is the stylesheet for the navbar
 .container-fluid {
-  // background-image: url(http://i.imgur.com/Qjb41gO.jpg);
-
-}
-
-
-
-.navbar_header {
-
-}
-
-.navbar_header li {
-  display: inline;
-  float: left;
-  text-decoration: none;
-  list-style: none;
-  color: white;
-}
-a {
-  color: white;
-}
-
-.logo {
-  display: inline-block;
-  height: 49px;
-  width: 152px;
-  background-image: url("logo2b.png")
-}
-.button_nav {
-  background-color: #e65c00;
-  border: 2px solid #black;
-  color: white;
-  padding: 5px 32px;
-  text-align: center;
-  text-decoration: none;
-  list-style: none;
-  font-size: 14px;
-  margin-left: 5px;
-  -webkit-transition-duration: .5s; /* Safari */
-   transition-duration: .5s;
-      border-radius: 4px;
-}
-
-.visibledevice {
-  display:none;
-  background-image: url(http://i.imgur.com/Qjb41gO.jpg);
-
-}
-.visibledesktop {
-  display:display;
   background-image: url(http://i.imgur.com/Qjb41gO.jpg);
 
 }
 
-@media (max-width : 843px) {
-.visibledevice {
-  display:block;
-}
-.visibledesktop {
-  display:none;
-  }
-}
-#logo {
-  float: left;
-
-}
-
-.glyphicon-menu-hamburger {
-  height: 80px;
-  font-size: 60px;
-}
+// .testalex {
+//   float: left;
+// }

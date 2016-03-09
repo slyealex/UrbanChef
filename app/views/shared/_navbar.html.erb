@@ -1,25 +1,23 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to 'UrbanChef', root_path, class: 'navbar-brand' %>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <!-- Add links here -->
-            <% if current_client %>
-              <li class="active"><%= link_to 'Log Out', destroy_client_session_path, method: :delete %></li>
-              <li class="active"><%= link_to 'Client Dashboard', client_path(current_client) %></li>
-            <% elsif current_chef %>
-              <li class="active"><%= link_to 'Log Out', destroy_chef_session_path, method: :delete %></li>
-              <li class="active"><%= link_to 'Chef Dashboard', chef_orders_path(current_chef) %></li>
-            <% end %>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to 'UrbanChef', root_path, class: 'navbar-brand' %>
+  </div>
+  <div id="navbar" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <!-- Add links here -->
+      <% if current_client %>
+        <li class="active"><%= link_to 'Log Out', destroy_client_session_path, method: :delete %></li>
+        <li class="active"><%= link_to 'Client Dashboard', client_path(current_client) %></li>
+      <% elsif current_chef %>
+        <li class="active"><%= link_to 'Log Out', destroy_chef_session_path, method: :delete %></li>
+        <li class="active"><%= link_to 'Chef Dashboard', chef_orders_path(current_chef) %></li>
+      <% end %>
+    </ul>
+  </div><!--/.nav-collapse -->
+</nav>
