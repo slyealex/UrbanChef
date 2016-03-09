@@ -59,3 +59,19 @@
 .nav li {
   display: inline;
 }
+
+.visibledevice {
+  display:none;
+}
+.visibledesktop {
+  display:display;
+}
+
+@media (max-width : 620px) {
+.visibledevice {
+  display:block;
+}
+.visibledesktop {
+  display:none;
+  }
+}
