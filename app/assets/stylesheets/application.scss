@@ -1,4 +1,3 @@
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "home.scss";
@@ -7,6 +6,8 @@
 @import "line_items.scss";
 @import "orders.scss";
 @import "products.scss";
-@import "nav_bar.scss"
-// *=require_tree
-// *=require_self
+@import "nav_bar.scss";
+@import "chef_login.scss";
+@import "chef_show.scss";
+@import "client_login.scss";
+@import "order_index.scss";
