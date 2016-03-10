@@ -1,49 +1,48 @@
 <%= render '/shared/navbar' %>
 
-<div class="wrapper ">
 
-  <%= form_for @chef, :html => {:class => "form-signup"} do |f| %>
+  <%= form_for @chef do |f| %>
 
     <h1 class="form-signup-heading">Chef Sign-Up</h1>
 
     <div class="form-signup-control">
       <%= f.label :name %>
-      <%= f.text_field :name, id: "name", type: "text" %>
+      <%= f.text_field :name %>
     </div>
 
     <div class="form-signup-control">
       <%= f.label :email %>
-      <%= f.email_field :email, id: "email", type: "email" %>
+      <%= f.email_field :email %>
     </div>
 
     <div class="form-signup-control">
       <%= f.label :location %>
-      <%= f.text_field :location, id: "location", type: "text_field" %>
+      <%= f.text_field :location %>
     </div>
 
     <div class="form-signup-control">
       <%= f.label :experience %>
-      <%= f.text_area :experience, id: "experience", type: "text_area" %>
+      <%= f.text_area :experience %>
     </div>
 
     <div class="form-signup-control">
       <%= f.label :specialty %>
-      <%= f.text_area :specialty, id: "specialty", type: "text_area" %>
+      <%= f.text_area :specialty %>
     </div>
 
     <div class="form-signup-control">
       <%= f.label :service_radius %>
-      <%= f.number_field :service_radius, id: "service_radius", type: "number_field" %>
+      <%= f.number_field :service_radius %>
     </div>
 
     <div class="form-signup-control">
       <%= f.label :password %>
-      <%= f.password_field :password, id: "password", type: "password_field" %>
+      <%= f.password_field :password %>
     </div>
 
     <div class="form-signup-control">
       <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, id: "password_confirmation", type: "password_field" %>
+      <%= f.password_field :password_confirmation %>
     </div>
 
     <div class="form-signup-control">
@@ -67,7 +66,7 @@
     </div>
   </div>
 
-  <div class="action btn btn-lg btn-custom btn-block">
-    <%= f.submit class: 'sbutton' %>
+  <div class="action">
+    <%= f.submit %>
   </div>
   <% end %>
