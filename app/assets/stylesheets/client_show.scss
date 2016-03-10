@@ -1,0 +1,53 @@
+.client-info {
+  margin: 60px 0 0 15px;
+  padding: 15px 15px 15px 15px;
+  background-color: #f2f2f2;
+  display: inline-block;
+  border: 2px solid #4775d1;
+  box-shadow: 2px 2px 5px black;
+}
+
+.sub-header {
+  padding: 0 0 15px 15px;
+}
+
+.map-style {
+  margin: 80px 20% 30px 20%;
+  border: 2px solid #4775d1;
+  box-shadow: 2px 2px 5px black;
+}
+
+.sub-list-style {
+  list-style: none;
+  padding: 0 10px 10px 15px;
+}
+
+img {
+  // border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin:0 20px -2px 0;
+  float: left;
+  border-style: groove;
+  border-width: thin;
+  border: 2px solid #4775d1;
+  box-shadow: 2px 2px 5px black;
+}
+
+.chef_info {
+  margin-top: 7%;
+  margin-left: 25%;
+}
+
+.sub-name {
+  border-bottom: 2px solid #4775d1;
+  display: inline-block;
+}
+
+.sub-exp {
+  margin-left: 14%;
+}
+
+.available-chef {
+  display: inline-block;
+}
