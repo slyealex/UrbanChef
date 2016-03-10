@@ -9,17 +9,17 @@
 
 
 <h2>You subscribed to the following chef:</h2>
+<% if @serving_chefs.any? %>
+  <ul>
+    <% current_client.chefs.each do |chef| %>
+      <li><%= image_tag chef.chef_avatar.url(:small) if chef.chef_avatar %></li>
+      <li><%= chef.name %></li>
+      <li><%= chef.experience %></li>
+      <li><%= chef.specialty %></li>
 
-<ul>
-  <% current_client.chefs.each do |chef| %>
-    <li><%= image_tag chef.chef_avatar.url(:small) if chef.chef_avatar %></li>
-    <li><%= chef.name %></li>
-    <li><%= chef.experience %></li>
-    <li><%= chef.specialty %></li>
-
-  <% end %>
-</ul>
-
+    <% end %>
+  </ul>
+<% end %>
 
 
 <% if current_client %>
