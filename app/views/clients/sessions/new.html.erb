@@ -1,15 +1,15 @@
 <%= render '/shared/navbar' %>
-<h1>Client Login</h1>
 
+<h1 class="title_login">Client Login</h1>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "client_login_form"}) do |f| %>
 
-    <div>
+    <div class="email_login">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true %>
     </div>
 
-    <div class="client_login_question">
+    <div class="client_login_password">
       <%= f.label :password %><br />
       <%= f.password_field :password, autocomplete: "off" %>
     </div>
@@ -21,7 +21,7 @@
       </div>
     <% end -%>
 
-    <div class="actions">
+    <div class="actions submit_login">
       <%= f.submit "Log in"%>
     </div>
   <% end %>
