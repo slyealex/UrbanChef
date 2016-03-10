@@ -9,9 +9,9 @@
         <h4>Find or become a personal Chef</h4>
           <div>
             <% if current_client %>
-              <%= link_to 'View local Chefs', chefs_path, class: 'button' %>
+              <%= link_to 'View local Chefs', client_path(current_client), class: 'button' %>
             <% elsif current_chef %>
-              <%= link_to 'Your Chef Dashboard', clients_path, class: 'button' %>
+              <%= link_to 'Your Chef Dashboard', chef_orders_path(current_chef), class: 'button' %>
             <% else %>
               <%= link_to 'Client Log In', new_client_session_path, class: 'button_login' %>
               <%= link_to 'Chef Log In', new_chef_session_path, class: 'button_login' %>
