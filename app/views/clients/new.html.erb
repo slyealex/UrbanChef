@@ -31,10 +31,12 @@
       <%= f.password_field :password_confirmation %>
     </div>
 
-    <div class="form-signup-control">
-      <%= f.label :client_avatar %>
-      <%= f.file_field :client_avatar %>
+    <div class="form-signup-control avatar_pic">
+      <table>
+      <tr class="avatar_label"><%= f.label :client_avatar %></tr>
+      <tr class="avatar_input"><%= f.file_field :client_avatar %> </tr>
       <%= f.hidden_field :client_avatar_cache %>
+    </table>
     </div>
 
     <div class="action btn btn-lg btn-custom btn-block">
