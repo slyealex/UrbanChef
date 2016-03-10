@@ -1,69 +1,73 @@
 <%= render '/shared/navbar' %>
 
-<h1 class="chef_h1">Chef Sign-Up</h1>
-<%= form_for @chef, :html => {:class => "new_chef_form"} do |f| %>
-  <div class="new_chef_question">
-    <%= f.text_field :name, class: 'new_chef_input' %>
-    <%= f.label :name, class: 'new_chef_label' %>
+<div class="wrapper ">
+
+  <%= form_for @chef, :html => {:class => "form-signup"} do |f| %>
+
+    <h1 class="form-signup-heading">Chef Sign-Up</h1>
+
+    <div class="form-signup-control">
+      <%= f.label :name %>
+      <%= f.text_field :name, id: "name", type: "text" %>
+    </div>
+
+    <div class="form-signup-control">
+      <%= f.label :email %>
+      <%= f.email_field :email, id: "email", type: "email" %>
+    </div>
+
+    <div class="form-signup-control">
+      <%= f.label :location %>
+      <%= f.text_field :location, id: "location", type: "text_field" %>
+    </div>
+
+    <div class="form-signup-control">
+      <%= f.label :experience %>
+      <%= f.text_area :experience, id: "experience", type: "text_area" %>
+    </div>
+
+    <div class="form-signup-control">
+      <%= f.label :specialty %>
+      <%= f.text_area :specialty, id: "specialty", type: "text_area" %>
+    </div>
+
+    <div class="form-signup-control">
+      <%= f.label :service_radius %>
+      <%= f.number_field :service_radius, id: "service_radius", type: "number_field" %>
+    </div>
+
+    <div class="form-signup-control">
+      <%= f.label :password %>
+      <%= f.password_field :password, id: "password", type: "password_field" %>
+    </div>
+
+    <div class="form-signup-control">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, id: "password_confirmation", type: "password_field" %>
+    </div>
+
+    <div class="form-signup-control">
+      <%= f.label :chef_avatar %>
+      <%= f.file_field :chef_avatar %>
+      <%= f.hidden_field :chef_avatar_cache %>
+    </div>
   </div>
 
-  <div class="new_chef_question">
-    <%= f.email_field :email, class: 'new_chef_input' %>
-    <%= f.label :email, class: 'new_chef_label' %>
-  </div>
 
-  <div class="new_chef_question">
-    <%= f.text_field :location, class: 'new_chef_input' %>
-    <%= f.label :location, class: 'new_chef_label' %>
-  </div>
-
-  <div class="new_chef_question">
-    <%= f.text_area :experience, class: 'new_chef_input' %>
-    <%= f.label :experience, class: 'new_chef_label' %>
-  </div>
-
-  <div class="new_chef_question">
-    <%= f.text_area :specialty, class: 'new_chef_input' %>
-    <%= f.label :specialty, class: 'new_chef_label' %>
-  </div>
-
-  <div class="new_chef_question">
-    <%= f.number_field :service_radius, class: 'new_chef_input' %>
-    <%= f.label :service_radius, class: 'new_chef_label' %>
-  </div>
-
-  <div class="new_chef_question">
-    <%= f.password_field :password, class: 'new_chef_input' %>
-    <%= f.label :password, class: 'new_chef_label' %>
-  </div>
-
-  <div class="new_chef_question">
-    <%= f.password_field :password_confirmation, class: 'new_chef_input' %>
-    <%= f.label :password_confirmation, class: 'new_chef_label' %>
-  </div>
-
-  <div class="chef_avatar">
-    <%= f.file_field :chef_avatar, class: 'new_chef_input' %>
-    <%= f.label :chef_avatar, class: 'new_chef_label' %>
-    <%= f.hidden_field :chef_avatar_cache %>
-  </div>
-
-
-
-  <h1>Dish's</h1>
+  <h1 class="form-signup-heading">Dish's</h1>
 
   <div id="products">
     <%= f.fields_for :products do |product_fields| %>
       <%= render 'product_fields', f: product_fields %>
     <% end %>
 
+<!-- the f, below...is that a typo? -->
     <div class="links">
       <button><%= link_to_add_association "Add Dish", f, :products %></button>
     </div>
   </div>
 
-  <div class="action">
-    <%= f.submit class: 'new_chef_button' %>
+  <div class="action btn btn-lg btn-custom btn-block">
+    <%= f.submit class: 'sbutton' %>
   </div>
-
-<% end %>
+  <% end %>
