@@ -7,6 +7,9 @@ Map.prototype.init = function(latitude, longitude) {
   var options = {
     center: {lat: latitude, lng: longitude},
     zoom: 15,
+    scrollwheel: false,
+    draggable: false,
+    // How to set a fixed zoom?
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
@@ -22,8 +25,7 @@ Map.prototype.addMarker = function(latitude, longitude, markerImage) {
   if (markerImage) {
     options.icon = markerImage;
   }
-
-  var myMarker = new google.maps.Marker(options);
+   var myMarker = new google.maps.Marker(options);
   this.markers.push(myMarker);
 
   Map.prototype.removeMarker = function(marker) {

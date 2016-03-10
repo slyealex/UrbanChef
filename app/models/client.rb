@@ -3,6 +3,7 @@ class Client < ActiveRecord::Base
   include ActiveModel::Dirty
 
   has_many :orders
+  has_many :chefs, through: :orders
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
