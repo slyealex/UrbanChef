@@ -1,6 +1,6 @@
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
-// @import "compass";
 @import "home.scss";
 @import "chefs.scss";
 @import "clients.scss";
@@ -8,3 +8,5 @@
 @import "orders.scss";
 @import "products.scss";
 @import "nav_bar.scss"
+// *=require_tree
+// *=require_self

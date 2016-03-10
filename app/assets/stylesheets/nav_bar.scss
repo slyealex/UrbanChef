@@ -1,9 +1,19 @@
 // This is the stylesheet for the navbar
-.container-fluid {
+.background-logo {
   background-image: url(http://i.imgur.com/Qjb41gO.jpg);
-
 }
 
-// .testalex {
-//   float: left;
-// }
+.navbar .nav > li > a {
+  background-color: #e65c00;
+  color: white;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.navbar-nav {
+  float:right;
+}
+
+.urbanchef-logo {
+  background-image: image("uchef_logo2.jpg");
+}
