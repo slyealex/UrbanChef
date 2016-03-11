@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160308020631) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "chefs", force: :cascade do |t|
     t.string   "email",                                          default: "", null: false
     t.string   "encrypted_password",                             default: "", null: false
@@ -36,8 +39,8 @@ ActiveRecord::Schema.define(version: 20160308020631) do
     t.string   "specialty"
   end
 
-  add_index "chefs", ["email"], name: "index_chefs_on_email", unique: true
-  add_index "chefs", ["reset_password_token"], name: "index_chefs_on_reset_password_token", unique: true
+  add_index "chefs", ["email"], name: "index_chefs_on_email", unique: true, using: :btree
+  add_index "chefs", ["reset_password_token"], name: "index_chefs_on_reset_password_token", unique: true, using: :btree
 
   create_table "clients", force: :cascade do |t|
     t.string   "email",                                          default: "", null: false
@@ -59,8 +62,8 @@ ActiveRecord::Schema.define(version: 20160308020631) do
     t.decimal  "latitude",               precision: 9, scale: 6
   end
 
-  add_index "clients", ["email"], name: "index_clients_on_email", unique: true
-  add_index "clients", ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
+  add_index "clients", ["email"], name: "index_clients_on_email", unique: true, using: :btree
+  add_index "clients", ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true, using: :btree
 
   create_table "line_items", force: :cascade do |t|
     t.integer  "order_id"
@@ -70,8 +73,8 @@ ActiveRecord::Schema.define(version: 20160308020631) do
     t.integer  "quantity"
   end
 
-  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id"
-  add_index "line_items", ["product_id"], name: "index_line_items_on_product_id"
+  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id", using: :btree
+  add_index "line_items", ["product_id"], name: "index_line_items_on_product_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.integer  "client_id"
@@ -80,8 +83,8 @@ ActiveRecord::Schema.define(version: 20160308020631) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "orders", ["chef_id"], name: "index_orders_on_chef_id"
-  add_index "orders", ["client_id"], name: "index_orders_on_client_id"
+  add_index "orders", ["chef_id"], name: "index_orders_on_chef_id", using: :btree
+  add_index "orders", ["client_id"], name: "index_orders_on_client_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -94,6 +97,6 @@ ActiveRecord::Schema.define(version: 20160308020631) do
     t.decimal  "price"
   end
 
-  add_index "products", ["chef_id"], name: "index_products_on_chef_id"
+  add_index "products", ["chef_id"], name: "index_products_on_chef_id", using: :btree
 
 end
