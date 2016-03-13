@@ -1,0 +1,96 @@
+// stylesheet for client and chef sign up forms
+body {
+  background: #eee !important;
+}
+
+.wrapper {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+.form-signup-control label {
+  width: 100px;
+  float: left;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+}
+#chef_avatar {
+  width: 100px;
+  color: green;
+  float: left;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+}
+#service_radius {
+  line-height: 40px;
+}
+#password_confirmation {
+  line-height: 30px;
+}
+
+.form-signup {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+}
+
+.form-signup-heading {
+  color: #e65c00;
+  text-align: center;
+}
+.form-signup .form-signup-heading,
+.form-signup {
+  margin-bottom: 30px;
+}
+
+.form-signup .form-signup-control {
+  text-align: center;
+  color: #e65c00;
+  background-color: #4775d1;
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form-signup .form-signup-control:focus {
+  z-index: 2;
+}
+.form-signup input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signup input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.sbutton {
+  background-color: #e65c00;
+  color: white;
+  text-align: center;
+}
+.btn-custom {
+  background-color: #4775d1;
+}
+
+.avatar_pic {
+  width:310px;
+  display: inline-flex;
+}
+
+.avatar_label {
+  margin-left: 19px;
+  margin-right: -21;
+}
+#client_client_avatar {
+      margin-top: 12px;
+  margin-left: 55px;
+}
+.avatar_input {
+
+}

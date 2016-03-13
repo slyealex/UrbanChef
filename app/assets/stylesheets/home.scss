@@ -169,7 +169,22 @@
 #myCarousel {
   height: 400px;
   width: auto;
-
+}
+.content_text {
+  font-size: 16px;
+  display: block;
+  color: white;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.carousel_title {
+  text-align: center;
+}
+.glyph_title {
+  padding-top: 125px;
+  text-align: center;
+  color: #e65c00;
+  font-weight: bolder;
 }
 
 .carousel-control.right {
@@ -189,6 +204,16 @@ list-style-type: none;
   background-image: url(http://i.imgur.com/RWk5OXM.png);
   background-repeat: no-repeat;
   background-size: cover;
+}
+.glyphicon.glyphicon-chevron-left {
+  color: #e65c00;
+  font-weight: bolder;
+  font-size: 50px;
+}
+.glyphicon.glyphicon-chevron-right {
+  color: #e65c00;
+  font-weight: bolder;
+  font-size: 50px;
 }
 
 .item {
