@@ -1,48 +1,44 @@
 <%= render '/shared/navbar' %>
+<div class="client-info">
+  <p><%= @client.name %></p>
+  <p><%= @client.email %></p>
+  <p><%= @client.location %></p>
+  <p><%= image_tag @client.client_avatar.url(:medium), class: 'img-circle' if @client.client_avatar %></p>
+</div>
 
-<div><%= @client.name %></div>
-<div><%= @client.email %></div>
-<!-- location won't be rendered eventually -->
-<div><%= @client.location %></div>
-<div><%= image_tag @client.client_avatar.url(:medium) if @client.client_avatar %></div>
-
-
-
-<h2>You subscribed to the following chef:</h2>
-<% if @serving_chefs.any? %>
-  <ul>
-    <% current_client.chefs.each do |chef| %>
-      <li><%= image_tag chef.chef_avatar.url(:small) if chef.chef_avatar %></li>
-      <li><%= chef.name %></li>
-      <li><%= chef.experience %></li>
-      <li><%= chef.specialty %></li>
-
-    <% end %>
-  </ul>
-<% end %>
-
-
-<% if current_client %>
-      <% if @serving_chefs.any? %>
-      <h2>Other chefs you can try:</h2>
-        <ul>
-          <% @serving_chefs.each do |chef| %>
-              <li><%= image_tag chef.chef_avatar.url(:small) if chef.chef_avatar %></li>
-              <li><p><%= link_to chef.name, chef_path(chef) %></li>
-              <li><%= chef.experience %></li>
-              <li><%= chef.specialty %></li>
-          <% end %>
-        </ul>
+<div>
+  <h2 class="sub-header">You subscribed to the following chef:</h2>
+  <% if @serving_chefs.any? %>
+    <!-- <ul class="sub-list-style"> -->
+      <% current_client.chefs.each do |chef| %>
+        <p><%= image_tag chef.chef_avatar.url(:small), class: 'img-circle' if chef.chef_avatar %></p>
+        <h3 class="sub-name"><%= chef.name %></h3>
+        <p class="sub-exp"><%= chef.experience %></p>
+        <p><%= chef.specialty %></p>
       <% end %>
+    <!-- </ul> -->
   <% end %>
+</div>
+
+<div class="local-chef">
+  <% if current_client %>
+        <% if @serving_chefs.any? %>
+        <h2 class="sub-header">Other chefs you can try:</h2>
+            <% @serving_chefs.each do |chef| %>
+              <div class="sub-list-style">
+                <p><%= image_tag chef.chef_avatar.url(:small), class: 'img-circle' if chef.chef_avatar %></p>
+              </div>
+                <p class="available-chef"><%= link_to chef.name, chef_path(chef) %></p>
+            <% end %>
+        <% end %>
+    <% end %>
+</div>
 
 
-
-<div id="map-canvas" style="height:500px;width:700px;" data-latitude="<%= @client.latitude.to_f %>" data-longitude="<%= @client.longitude.to_f %>"></div>
+<div id="map-canvas" style="height:250px;width:60%;" class="map-style" data-latitude="<%= @client.latitude.to_f %>" data-longitude="<%= @client.longitude.to_f %>"></div>
 
 <%=  javascript_tag do %>
-  window.nearbys = <%= raw @serving_chefs.map {|chef| {latitude: chef.latitude, longitude: chef.longitude} }.to_json
-  %>
+  window.nearbys = <%= raw @serving_chefs.map {|chef| {latitude: chef.latitude, longitude: chef.longitude} }.to_json %>
 <% end %>
 
 <!-- <h1> TESTING FOR CHEF SHOW, PLEASE DISREGARD do not delete </h1>
