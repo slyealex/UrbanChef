@@ -19,13 +19,9 @@
 
 
 
-    <% if current_client %>
-      <p>Signed in as Client: <%= current_client.email %> </p>
-      <p><%= link_to 'Client Log Out', destroy_client_session_path, method: :delete %></p>
-    <% elsif current_chef %>
-      <p>Signed in as Chef: <%= current_chef.email %></p>
-      <p><%= link_to 'Chef Log Out', destroy_chef_session_path, method: :delete %></p>
-    <% end %>
+
+  <%= render '/shared/footer' %>
+  
 
   </body>
 </html>
