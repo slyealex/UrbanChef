@@ -1,10 +1,32 @@
+
+#wrapper {
+  width: 650px;
+  margin: 0 auto;
+  background-color: rgba(#4775d1, 0.69);
+  border-left: 4px solid #e65c00;
+  border-right: 4px solid #e65c00;
+}
+
+.client-header {
+  margin-top: 50px;
+  text-align: center;
+  padding: 20px;
+  color: #f2f2f2;
+}
+
 .client-info {
-  margin: 60px 0 0 15px;
-  padding: 15px 15px 15px 15px;
+  // margin: 60px 0 0 15px;
+  // padding: 15px 15px 15px 15px;
+  // background-color: #f2f2f2;
+  // display: inline-block;
+  // border: 2px solid #4775d1;
+  // box-shadow: 2px 2px 5px black;
+  padding: 15px;
+  margin: 20px 20% 0 20%;
+  width: 60%;
+  text-align: center;
   background-color: #f2f2f2;
-  display: inline-block;
-  border: 2px solid #4775d1;
-  box-shadow: 2px 2px 5px black;
+  border-left: 4px solid #e65c00;
 }
 
 .sub-header {
@@ -12,9 +34,10 @@
 }
 
 .map-style {
-  margin: 80px 20% 30px 20%;
-  border: 2px solid #4775d1;
-  box-shadow: 2px 2px 5px black;
+  // margin: 80px 20% 30px 20%;
+  // border: 2px solid #4775d1;
+  // box-shadow: 2px 2px 5px black;
+  border-top: 2px dashed #4775d1;
 }
 
 .sub-list-style {
