@@ -1,37 +1,35 @@
 <%= render '/shared/navbar' %>
+<div id="wrapper">
+  <h1 class="chef-name-main"><%= @chef.name %>'s Dashboard</h1>
 
-<h1 class="chef-name-main"><%= @chef.name %>'s Dashboard</h1>
+  <div class="chef-order">
+    <h3 class="sub-header">Order Up!</h3>
+    <%= render '/shared/order_table' %>
+  </div>
 
-<div class="chef-order">
-  <h3 class="sub-header">Order Up!</h3>
-  <p>Here is what you need to cook this week:</p>
-  <% @chef.product_totals.each do |k, v| %>
-    <p><%= k %> : <%= v %></p>
+
+  <div class="chef-client-list">
+    <h3>Your Clients</h3>
+
+    <p>Current Subscriber Count: <%= @chef.orders.count %></p>
+
+    <% @chef.orders.each do |order| %>
+      <div class="client-sub">
+        <p>Name: <%= order.client.name %></p>
+        <p>Location: <%= order.client.location %></p>
+      </div>
+    <% end %>
+  </div>
+
+
+  <p class="map-header">Client Map</p>
+
+
+  <!-- Map -->
+
+  <div id="map-canvas" style="height:400px;width:100%;" class="chef-map-style" data-latitude="<%= current_chef.latitude.to_f %>" data-longitude="<%= current_chef.longitude.to_f %>"></div>
+
+  <%=  javascript_tag do %>
+    window.nearbys = <%= raw @chefs_clients.map {|client| {latitude: client.latitude, longitude: client.longitude} }.to_json %>
   <% end %>
 </div>
-
-
-<div class="chef-client-list">
-  <h3>Your Clients</h3>
-
-  <p>Current Subscriber Count: <%= @chef.orders.count %></p>
-
-  <% @chef.orders.each do |order| %>
-    <div class="client-sub">
-      <p>Name: <%= order.client.name %></p>
-      <p>Location: <%= order.client.location %></p>
-    </div>
-  <% end %>
-</div>
-
-
-<p class="map-header">Client Map</p>
-
-
-<!-- Map -->
-
-<div id="map-canvas" style="height:250px;width:60%;" class="chef-map-style" data-latitude="<%= current_chef.latitude.to_f %>" data-longitude="<%= current_chef.longitude.to_f %>"></div>
-
-<%=  javascript_tag do %>
-  window.nearbys = <%= raw @chefs_clients.map {|client| {latitude: client.latitude, longitude: client.longitude} }.to_json %>
-<% end %>
