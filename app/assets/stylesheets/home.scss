@@ -44,20 +44,17 @@
   // Styling for General Buttons
 .button {
   display: inline-block;
-  position: relative;
-  border-radius: 5px;
-  background-color: #e65c00;
-  border: 2px solid #black;
-  color: white;
   padding: 15px 32px;
+  font-size: 16px;
+  cursor: pointer;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
-  -webkit-transition-duration: 1.0s; /* Safari */
-   border-radius: 4px;
-     -webkit-transition: all 0.1s;
-       -moz-transition: all 0.1s;
-       transition: all 3s;
+  outline: none;
+  color: white;
+  background-color: #e65c00;
+  border: 2px solid #black;
+  border-radius: 5px;
+  box-shadow: 0 5px #9a3d00;
 }
 
   //Hover Animations
@@ -69,11 +66,9 @@
 }
 
 .button:active{
-    -webkit-box-shadow: 0px 2px 0px #d35400;
-    -moz-box-shadow: 0px 2px 0px #d35400;
-    box-shadow: 0px 2px 0px #d35400;
-    position:relative;
-    top:4px;
+  background-color: #4d79ff;
+  box-shadow: 0 5px #9a3d00;
+  transform: translateY(4px);
 }
 
   //Styling for main image login buttons
@@ -81,23 +76,24 @@
   list-style: none;
 }
 .button_login {
-  background-color: #e65c00;
-  border: 2px solid #black;
-  color: white;
+  display: inline-block;
   padding: 5px 32px;
+  font-size: 14px;
+  cursor: pointer;
   text-align: center;
   text-decoration: none;
-  font-size: 14px;
+  outline: none;
+  color: white;
+  background-color: #e65c00;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 5px #9a3d00;
   margin-left: 5px;
-  -webkit-transition-duration: .5s; /* Safari */
-   transition-duration: .5s;
-      border-radius: 4px;
 }
 
 //Hover animation for login buttons
 .button_login:hover {
     background-color: #4d79ff;
-    text-decoration: none;
     color: white;
 }
 
@@ -122,6 +118,12 @@
 //     text-decoration: none;
 //     color: white;
 // }
+.button_login:active {
+  background-color: #4d79ff;
+  box-shadow: 0 5px #9a3d00;
+  transform: translateY(4px);
+}
+
 
 //text_info styling beneath main page nav row
 .text_info {
@@ -139,16 +141,17 @@
 .index_button {
   margin-top: 5%;
   text-decoration: none;
+  list-style-type: none;
 }
 
 .index_p {
   margin-top: 5%;
 }
 
-.index_p2 {
-  margin: 1%;
-  margin-bottom: 10%
-}
+// .index_p2 {
+//   margin: 1%;
+//   margin-bottom: 10%
+// }
 
 .profile_image {
   width: 250px;
