@@ -33,20 +33,6 @@
 <p><%= "Your total order is $#{current_client.products.sum :price}." %></p>
 
 
-<!-- <ul>
-<% @current_client.orders.each do |order| %>
-<% order.products.each do |product| %>
-<li><%= image_tag product.product_picture.url(:small) if product.product_picture %></li>
-<li><%=  product.name %></li>
-<li><%= product.description %></li>
-<li><%= "$#{product.price}" %></li>
-
-
-<% end %>
-<% end %>
-</ul> -->
-
-
 
 <% if current_client %>
       <% if @serving_chefs.any? %>
