@@ -1,9 +1,16 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1.">
 <%= render '/shared/navbar' %>
+<div class="jumbotron">
+  <div class="container">
+
+  </div>
+</div>
 <div class="client-info">
   <p><%= @client.name %></p>
   <p><%= @client.email %></p>
   <p><%= @client.location %></p>
-  <p><%= image_tag @client.client_avatar.url(:medium), class: 'img-circle' if @client.client_avatar %></p>
+  <p><%= image_tag @client.client_avatar.url(:medium), class: 'img-circle client_avatar' if @client.client_avatar %></p>
 </div>
 
 <div>
@@ -35,12 +42,10 @@
 </div>
 
 
-<div id="map-canvas" style="height:250px;width:60%;" class="map-style" data-latitude="<%= @client.latitude.to_f %>" data-longitude="<%= @client.longitude.to_f %>"></div>
 
 <%=  javascript_tag do %>
   window.nearbys = <%= raw @serving_chefs.map {|chef| {latitude: chef.latitude, longitude: chef.longitude} }.to_json %>
 <% end %>
-
 <!-- <h1> TESTING FOR CHEF SHOW, PLEASE DISREGARD do not delete </h1>
 
 <img src="http://www.mobafire.com/images/champion/skins/landscape/ahri-classic.jpg" class="img-circle profile_image" alt="wat">
