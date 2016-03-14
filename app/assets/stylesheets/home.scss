@@ -41,7 +41,6 @@
   // background-color: #4775d1;
 }
 
-
   // Styling for General Buttons
 .button {
   display: inline-block;
@@ -67,7 +66,6 @@
     color: white;
     text-decoration: none;
     transition-duration: 1.0s;
-
 }
 
 .button:active{
@@ -104,26 +102,26 @@
 }
 
 //Button2 Styling
-.button2 {
-  background-color: #e65c00;
-  border: 2px solid #black;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  margin-top: 50%;
-  font-size: 16px;
-  -webkit-transition-duration: 1.0s; /* Safari */
-   transition-duration: 1.0s;
-   border-radius: 4px;
-}
+// .button2 {
+//   background-color: #e65c00;
+//   border: 2px solid #black;
+//   color: white;
+//   padding: 15px 32px;
+//   text-align: center;
+//   text-decoration: none;
+//   margin-top: 50%;
+//   font-size: 16px;
+//   -webkit-transition-duration: 1.0s; /* Safari */
+//    transition-duration: 1.0s;
+//    border-radius: 4px;
+// }
 
 //button2 hover animation
-.button2:hover {
-    background-color: #4d79ff;
-    text-decoration: none;
-    color: white;
-}
+// .button2:hover {
+//     background-color: #4d79ff;
+//     text-decoration: none;
+//     color: white;
+// }
 
 //text_info styling beneath main page nav row
 .text_info {
@@ -223,3 +221,8 @@ list-style-type: none;
 .logo {
   float: left;
 }
+
+.btn {font-size: 18px; white-space:nowrap; width:100%; padding:.8em 1.5em; font-family: Open Sans, Helvetica,Arial,sans-serif; line-height:18px; display: inline-block;zoom: 1; color: #fff; text-align: center; position:relative; -webkit-transition: border .25s linear, color .25s linear, background-color .25s linear; transition: border .25s linear, color .25s linear, background-color .25s linear;}
+.btn.btn-sunflower{background-color: #f2c500; border-color: #f2c500; -webkit-box-shadow: 0 3px 0 #b19001; box-shadow: 0 3px 0 #b19001;}
+.btn.btn-sunflower:hover{background-color:#e3ba02;}
+.btn.btn-sunflower:active{top: 3px; outline: none; -webkit-box-shadow: none; box-shadow: none;}
