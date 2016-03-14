@@ -40,11 +40,7 @@
 }
 
 .chef-map-style {
-  // margin: 10px 20% 30px 20%;
-  // border: 2px solid #4775d1;
-  // box-shadow: 2px 2px 5px black;
-  // border-left: 2px dashed #4775d1;
-  border-right: 2px dashed #4775d1;
+  border-top: 2px dashed #4775d1;
 }
 
 .map-header {
@@ -99,4 +95,5 @@ td {
   margin: 0 auto;
   background-color: rgba(#4775d1, 0.69);
   border-left: 4px solid #e65c00;
+  border-right: 4px solid #e65c00;
 }
