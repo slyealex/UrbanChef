@@ -10,19 +10,19 @@
 }
 
   //Styling for main image on homepage
-.jumbotron {
+.jumbotron_main {
   background-image: url(http://i.imgur.com/RWk5OXM.png);
   height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.jumbotron .container {
+.jumbotron_main .container {
   position: relative;
   top:100px;
 }
 
   //Styling for title over main image
-.jumbotron h1 {
+.jumbotron_main h1 {
   color: #fff;
   font-size: 48px;
   font-family: 'Shift', sans-serif;
@@ -31,7 +31,7 @@
 }
 
   //Styling for subtitle in main image
-.jumbotron h4 {
+.jumbotron_main h4 {
   font-size: 20px;
   color: white;
   margin-left: 4px;
