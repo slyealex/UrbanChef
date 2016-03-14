@@ -41,7 +41,6 @@
   // background-color: #4775d1;
 }
 
-
   // Styling for General Buttons
 .button {
   display: inline-block;
@@ -52,6 +51,7 @@
   color: white;
   padding: 15px 32px;
   text-align: center;
+  list-style-type: none;
   text-decoration: none;
   font-size: 16px;
   -webkit-transition-duration: 1.0s; /* Safari */
@@ -67,7 +67,6 @@
     color: white;
     text-decoration: none;
     transition-duration: 1.0s;
-
 }
 
 .button:active{
@@ -103,28 +102,6 @@
     color: white;
 }
 
-//Button2 Styling
-.button2 {
-  background-color: #e65c00;
-  border: 2px solid #black;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  margin-top: 50%;
-  font-size: 16px;
-  -webkit-transition-duration: 1.0s; /* Safari */
-   transition-duration: 1.0s;
-   border-radius: 4px;
-}
-
-//button2 hover animation
-.button2:hover {
-    background-color: #4d79ff;
-    text-decoration: none;
-    color: white;
-}
-
 //text_info styling beneath main page nav row
 .text_info {
   text-align: center;
@@ -141,16 +118,17 @@
 .index_button {
   margin-top: 5%;
   text-decoration: none;
+  list-style-type: none;
 }
 
 .index_p {
   margin-top: 5%;
 }
 
-.index_p2 {
-  margin: 1%;
-  margin-bottom: 10%
-}
+// .index_p2 {
+//   margin: 1%;
+//   margin-bottom: 10%
+// }
 
 .profile_image {
   width: 250px;
