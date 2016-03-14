@@ -1,0 +1,18 @@
+
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Dish</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @chef.product_totals.each do |k, v| %>
+      <tr>
+        <td><%= k %></td>
+        <td><%= v %></td
+      </tr>
+      <% end %>
+    </tbody>
+  </table>

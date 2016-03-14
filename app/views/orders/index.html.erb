@@ -4,10 +4,7 @@
 
 <div class="chef-order">
   <h3 class="sub-header">Order Up!</h3>
-  <p>Here is what you need to cook this week:</p>
-  <% @chef.product_totals.each do |k, v| %>
-    <p><%= k %> : <%= v %></p>
-  <% end %>
+  <%= render '/shared/order_table' %>
 </div>
 
 
