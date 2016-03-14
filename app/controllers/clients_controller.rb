@@ -14,8 +14,8 @@ class ClientsController < ApplicationController
   def show
     @client = Client.find(params[:id])
     @serving_chefs = Chef.select{ |x| x.service_radius.to_f > x.distance_to(current_client, :km) }
-
   end
+  
   def edit
     @client = Client.find(params[:id])
   end

@@ -20,6 +20,32 @@
   <% end %>
 </ul>
 
+<h3>Here are the details of your order: </h3>
+<ul>
+  <% current_client.products.each do |product| %>
+  <li><%= image_tag product.product_picture.url(:small) if product.product_picture %></li>
+  <li><%=  product.name %></li>
+  <li><%= product.description %></li>
+  <li><%= "$#{product.price}" %></li>
+  <% end %>
+</ul>
+
+<p><%= "Your total order is $#{current_client.products.sum :price}." %></p>
+
+
+<!-- <ul>
+<% @current_client.orders.each do |order| %>
+<% order.products.each do |product| %>
+<li><%= image_tag product.product_picture.url(:small) if product.product_picture %></li>
+<li><%=  product.name %></li>
+<li><%= product.description %></li>
+<li><%= "$#{product.price}" %></li>
+
+
+<% end %>
+<% end %>
+</ul> -->
+
 
 
 <% if current_client %>
