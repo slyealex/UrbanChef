@@ -114,6 +114,15 @@
     box-sizing: border-box;
     z-index: 1;
   }
+  .sub-header-mobile  {
+    text-align: center;
+  }
+  .sub-header2-mobile {
+    text-align: center;
+  }
+  .sub-header3-mobile {
+    text-align: center;
+  }
  }
 
  @media screen and (min-width: 0px) and (max-width: 400px) {
@@ -124,4 +133,6 @@
  @media screen and (min-width: 401px) and (max-width: 3000px) {
    #wrapper { display: block; }   /* hide it elsewhere */
    .client-info_1 {display:none;}
+   .sub-header-mobile {display:none;}
+   .sub-header2-mobile {display:none;}
  }
