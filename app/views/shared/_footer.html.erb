@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <ul class="footer-info">
+    <% if current_client %>
+      <li>Signed in as Client: <%= current_client.email %> </li>
+      <li><%= link_to 'Client Log Out', destroy_client_session_path, method: :delete %></li>
+    <% elsif current_chef %>
+      <li>Signed in as Chef: <%= current_chef.email %></li>
+      <li><%= link_to 'Chef Log Out', destroy_chef_session_path, method: :delete %></li>
+    <% end %>
+  </ul>
+</footer>
