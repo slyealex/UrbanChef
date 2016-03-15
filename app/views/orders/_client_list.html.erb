@@ -1,16 +1,22 @@
 
 
 <!-- Small modal -->
-<% @chef.orders.each do |order| %>
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">
-    <%= order.client.name %>
+    Click to view Clients
   </button>
 
   <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
-        Location: <%= order.client.location %>
+        <% @chef.orders.each do |order| %>
+          <div>
+            <ul>
+              <li>Name: <%= order.client.name %></li>
+              <li>Location: <%= order.client.location %></li>
+            </ul>
+          </div>
+        <% end %>
       </div>
     </div>
+
   </div>
-<% end %>
