@@ -1,65 +1,84 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1.">
 <%= render '/shared/navbar' %>
 
-<div><%= @client.name %></div>
-<div><%= @client.email %></div>
-<!-- location won't be rendered eventually -->
-<div><%= @client.location %></div>
-<div><%= image_tag @client.client_avatar.url(:medium) if @client.client_avatar %></div>
+
+
+<!-- Levy's work: -->
+
+<div class="jumbotron">
+  <div class="container">
+  </div>
+</div>
+
+<div class="client-info">
+  <p><%= @client.name %></p>
+  <p><%= @client.email %></p>
+  <p><%= @client.location %></p>
+  <p><%= image_tag @client.client_avatar.url(:medium), class: 'img-circle client_avatar' if @client.client_avatar %></p>
+</div>
+
+
+<div id="wrapper">
+
+  <h1 class="client-header"><%= current_client.name %>'s Dashboard</h1>
+  <div class="client-info">
+    <p><%= image_tag @client.client_avatar.url(:medium), class: 'img-circle' if @client.client_avatar %></p>
+    <p><%= @client.name %></p>
+    <p><%= @client.email %></p>
+    <p><%= @client.location %></p>
+  </div>
+
+  <div>
+    <h2 class="sub-header">You subscribed to the following chef:</h2>
+
+      <!-- <ul class="sub-list-style"> -->
+        <% current_client.chefs.each do |chef| %>
+          <p><%= image_tag chef.chef_avatar.url(:small), class: 'img-circle' if chef.chef_avatar %></p>
+          <h3 class="sub-name"><%= chef.name %></h3>
+          <p class="sub-exp"><%= chef.experience %></p>
+          <p><%= chef.specialty %></p>
+        <% end %>
+      <!-- </ul> -->
+  </div>
+
+<!-- Levy, I added this new section listing the meals ordered -->
+  <h3>Here are the details of your order: </h3>
+      <ul>
+        <% @client.products.each do |product| %>
+        <li><%= image_tag product.product_picture.url(:small) if product.product_picture %></li>
+        <li><%=  product.name %></li>
+        <li><%= product.description %></li>
+        <li><%= "$#{product.price}" %></li>
+        <% end %>
+      </ul>
+
+
+  <h3><%= "Your total order is $#{@client.products.sum :price}." %></h3>
 
 
 
-<h2>You subscribed to the following chef:</h2>
 
-<ul>
-  <% @client.chefs.each do |chef| %>
-    <li><%= image_tag chef.chef_avatar.url(:small) if chef.chef_avatar %></li>
-    <li><%= chef.name %></li>
-    <li><%= chef.experience %></li>
-    <li><%= chef.specialty %></li>
-
-  <% end %>
-</ul>
-
-<h3>Here are the details of your order: </h3>
-<ul>
-  <% @client.products.each do |product| %>
-  <li><%= image_tag product.product_picture.url(:small) if product.product_picture %></li>
-  <li><%=  product.name %></li>
-  <li><%= product.description %></li>
-  <li><%= "$#{product.price}" %></li>
-  <% end %>
-</ul>
-
-<p><%= "Your total order is $#{@client.products.sum :price}." %></p>
-
-
-
-
-<% if @client %>
-      <% if @serving_chefs.any? %>
-      <h2>Other chefs you can try:</h2>
-        <ul>
-          <% @serving_chefs.each do |chef| %>
-              <li><%= image_tag chef.chef_avatar.url(:small) if chef.chef_avatar %></li>
-              <li><p><%= link_to chef.name, chef_path(chef) %></li>
-              <li><%= chef.experience %></li>
-              <li><%= chef.specialty %></li>
+  <div class="local-chef">
+    <% if @client %>
+          <% if @serving_chefs.any? %>
+          <h2 class="sub-header">Other chefs you can try:</h2>
+              <% @serving_chefs.each do |chef| %>
+                <div class="sub-list-style">
+                  <p><%= image_tag chef.chef_avatar.url(:small), class: 'img-circle' if chef.chef_avatar %></p>
+                </div>
+                  <p class="available-chef"><%= link_to chef.name, chef_path(chef) %></p>
+              <% end %>
           <% end %>
-        </ul>
       <% end %>
+  </div>
+
+
+
+
+  <div id="map-canvas" style="height:500px;width:700px;" data-latitude="<%= @client.latitude.to_f %>" data-longitude="<%= @client.longitude.to_f %>"></div>
+
+  <%=  javascript_tag do %>
+    window.nearbys = <%= raw @serving_chefs.map {|chef| {latitude: chef.latitude, longitude: chef.longitude} }.to_json
+    %>
   <% end %>
-
-
-
-<div id="map-canvas" style="height:500px;width:700px;" data-latitude="<%= @client.latitude.to_f %>" data-longitude="<%= @client.longitude.to_f %>"></div>
-
-<%=  javascript_tag do %>
-  window.nearbys = <%= raw @serving_chefs.map {|chef| {latitude: chef.latitude, longitude: chef.longitude} }.to_json
-  %>
-<% end %>
-
-<!-- <h1> TESTING FOR CHEF SHOW, PLEASE DISREGARD do not delete </h1>
-
-<img src="http://www.mobafire.com/images/champion/skins/landscape/ahri-classic.jpg" class="img-circle profile_image" alt="wat">
-<p class="chef_info"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-<button type="button" class="button" name="button">Place an order</button> -->
