@@ -17,7 +17,7 @@
 
 <div id="wrapper">
 
-  <h1 class="client-header"><%= current_client.name %>'s Dashboard</h1>
+  <h1 class="client-header"><%= @client.name %>'s Dashboard</h1>
   <div class="client-info">
     <p><%= image_tag @client.client_avatar.url(:medium), class: 'img-circle' if @client.client_avatar %></p>
     <p><%= @client.name %></p>

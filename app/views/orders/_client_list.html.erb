@@ -1,20 +1,16 @@
-<!-- ACCORDIAN MENU FOR DYNAMIC CLIENT INFORMATION -->
 
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <% @chef.orders.each do |order| %>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          <!-- DYNAMIC NAME CONTENT -->Name: <%= order.client.name %>
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-        <!-- DYNAMIC CONTENT HERE -->Location: <%= order.client.location %>
+
+<!-- Small modal -->
+<% @chef.orders.each do |order| %>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">
+    <%= order.client.name %>
+  </button>
+
+  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        Location: <%= order.client.location %>
       </div>
     </div>
   </div>
-  <% end %>
-</div>
+<% end %>
