@@ -14,7 +14,7 @@
   color: #f2f2f2;
 }
 
-.client-info {
+.client-info .client-info_1 {
   // margin: 60px 0 0 15px;
   // padding: 15px 15px 15px 15px;
   // background-color: #f2f2f2;
@@ -75,27 +75,65 @@
   }
   .client_avatar {
     visibility: visible;
-    z-index: 3;
+    display: inline;
+    z-index: 5;
     border-color: #f2f2f2;
     border-width: 8px;
     margin-top: 21%;
     background-color: #f2f2f2;
     box-shadow: none;
-      margin-left: 16%;
+      margin-left: 31%;
   }
   .jumbotron {
     height: 200px;
     margin-bottom: -65%;
     background-image: url(http://i.imgur.com/t186NG1.png);
   }
+  .mobile_profile_info {
+    list-style-type:none;
+    display: inline;
+    position:relative;
+    z-index: 1;
+  }
+  .name_client {
+    position: relative;
+    right: 263px;
+    top: 156px;
+    display: inline;
+    background-color: #e65c00;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 3px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .location_client {
+    position: relative;
+    right: -109px;
+    top: -72px;
+    display: inline;
+    background-color: #e65c00;
+    color: white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 30px;
+    padding-right:35px;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+  .email_client {
+    position: relative;
+    display:inline;
+  }
  }
 
  @media screen and (min-width: 0px) and (max-width: 400px) {
    #wrapper { display: none; }  /* show it on small screens */
-
+   .mobile_profile_info {display:visible;}
  }
 
- @media screen and (min-width: 401px) and (max-width: 1024px) {
+ @media screen and (min-width: 401px) and (max-width: 3000px) {
    #wrapper { display: block; }   /* hide it elsewhere */
-
+   .client-info_1 {display:none;}
  }
