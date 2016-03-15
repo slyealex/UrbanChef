@@ -1,59 +1,59 @@
 <%= render '/shared/navbar' %>
 
+<div class="chef_wrapper">
+  <%= form_for @chef, :html => {:class => "chef-form-signup"} do |f| %>
 
-  <%= form_for @chef do |f| %>
+    <h1 class="chef-form-signup-heading">Chef Sign-Up</h1>
 
-    <h1 class="form-signup-heading">Chef Sign-Up</h1>
-
-    <div class="form-signup-control">
+    <div class="chef-form-signup-control">
       <%= f.label :name %>
       <%= f.text_field :name %>
     </div>
 
-    <div class="form-signup-control">
+    <div class="chef-form-signup-control">
       <%= f.label :email %>
       <%= f.email_field :email %>
     </div>
 
-    <div class="form-signup-control">
+    <div class="chef-form-signup-control">
       <%= f.label :location %>
       <%= f.text_field :location %>
     </div>
 
-    <div class="form-signup-control">
+    <div class="chef-form-signup-control">
       <%= f.label :experience %>
       <%= f.text_area :experience %>
     </div>
 
-    <div class="form-signup-control">
+    <div class="chef-form-signup-control">
       <%= f.label :specialty %>
       <%= f.text_area :specialty %>
     </div>
 
-    <div class="form-signup-control">
+    <div class="chef-form-signup-control">
       <%= f.label :service_radius %>
       <%= f.number_field :service_radius %>
     </div>
 
-    <div class="form-signup-control">
+    <div class="chef-form-signup-control">
       <%= f.label :password %>
       <%= f.password_field :password %>
     </div>
 
-    <div class="form-signup-control">
+    <div class="chef-form-signup-control">
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation %>
     </div>
 
-    <div class="form-signup-control">
+    <div class="chef-form-signup-control">
       <%= f.label :chef_avatar %>
       <%= f.file_field :chef_avatar %>
       <%= f.hidden_field :chef_avatar_cache %>
     </div>
-  </div>
+</div>
 
-
-  <h1 class="form-signup-heading">Dish's</h1>
+<div class="wrapper-dish"
+  <h1 class="chef-form-signup-heading">Dish's</h1>
 
   <div id="products">
     <%= f.fields_for :products do |product_fields| %>
@@ -66,7 +66,8 @@
     </div>
   </div>
 
-  <div class="action">
-    <%= f.submit %>
+  <div class="btn btn-lg btn-custom btn-block">
+    <%= f.submit "SUBMIT", class: 'sbutton'%>
   </div>
   <% end %>
+</div>
