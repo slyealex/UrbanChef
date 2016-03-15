@@ -2,11 +2,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.">
 <%= render '/shared/navbar' %>
 
+
+
+<!-- Levy's work: -->
+
 <div class="jumbotron">
   <div class="container">
-
   </div>
 </div>
+
 
 <div class="client-info_1">
   <p><%= @client.name %></p>
@@ -17,7 +21,7 @@
 
 <div id="wrapper">
 
-  <h1 class="client-header"><%= current_client.name %>'s Dashboard</h1>
+  <h1 class="client-header"><%= @client.name %>'s Dashboard</h1>
   <div class="client-info">
     <p><%= image_tag @client.client_avatar.url(:medium), class: 'img-circle' if @client.client_avatar %></p>
     <p><%= @client.name %></p>
@@ -27,20 +31,36 @@
 
   <div>
     <h2 class="sub-header">You subscribed to the following chef:</h2>
-    <% if @serving_chefs.any? %>
+
       <!-- <ul class="sub-list-style"> -->
-        <% current_client.chefs.each do |chef| %>
+        <% @client.chefs.each do |chef| %>
           <p><%= image_tag chef.chef_avatar.url(:small), class: 'img-circle' if chef.chef_avatar %></p>
           <h3 class="sub-name"><%= chef.name %></h3>
           <p class="sub-exp"><%= chef.experience %></p>
           <p><%= chef.specialty %></p>
         <% end %>
       <!-- </ul> -->
-    <% end %>
   </div>
 
+<!-- Levy, I added this new section listing the meals ordered -->
+  <h3>Here are the details of your order: </h3>
+      <ul>
+        <% @client.products.each do |product| %>
+        <li><%= image_tag product.product_picture.url(:small) if product.product_picture %></li>
+        <li><%=  product.name %></li>
+        <li><%= product.description %></li>
+        <li><%= "$#{product.price}" %></li>
+        <% end %>
+      </ul>
+
+
+  <h3><%= "Your total order is $#{@client.products.sum :price}." %></h3>
+
+
+
+
   <div class="local-chef">
-    <% if current_client %>
+    <% if @client %>
           <% if @serving_chefs.any? %>
           <h2 class="sub-header">Other chefs you can try:</h2>
               <% @serving_chefs.each do |chef| %>
@@ -52,6 +72,7 @@
           <% end %>
       <% end %>
   </div>
+
 </div>
 <div class="mobile_profile_info">
     <p class="name_client"><%= @client.name %></p>
@@ -61,3 +82,14 @@
 <%=  javascript_tag do %>
   window.nearbys = <%= raw @serving_chefs.map {|chef| {latitude: chef.latitude, longitude: chef.longitude} }.to_json %>
 <% end %>
+
+
+
+
+
+  <div id="map-canvas" style="height:500px;width:700px;" data-latitude="<%= @client.latitude.to_f %>" data-longitude="<%= @client.longitude.to_f %>"></div>
+
+  <%=  javascript_tag do %>
+    window.nearbys = <%= raw @serving_chefs.map {|chef| {latitude: chef.latitude, longitude: chef.longitude} }.to_json
+    %>
+  <% end %>

@@ -4,6 +4,8 @@ class Client < ActiveRecord::Base
 
   has_many :orders
   has_many :chefs, through: :orders
+  has_many :products, through: :orders
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -13,5 +15,7 @@ class Client < ActiveRecord::Base
 
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
+
+
 
 end

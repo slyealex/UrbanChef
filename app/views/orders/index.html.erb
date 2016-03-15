@@ -12,13 +12,7 @@
     <h3>Your Clients</h3>
 
     <p>Current Subscriber Count: <%= @chef.orders.count %></p>
-
-    <% @chef.orders.each do |order| %>
-      <div class="client-sub">
-        <p>Name: <%= order.client.name %></p>
-        <p>Location: <%= order.client.location %></p>
-      </div>
-    <% end %>
+    <%= render '/orders/client_list' %>
   </div>
 
 
