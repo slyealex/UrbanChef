@@ -83,6 +83,9 @@
     height: 200px;
     margin-bottom: -65%;
     background-image: url(http://i.imgur.com/t186NG1.png);
+    border-bottom: 5px;
+    border-style: solid;
+    border-bottom-color: #e65c00;
   }
   .mobile_profile_info {
     list-style-type:none;
@@ -90,20 +93,14 @@
     position:relative;
     z-index: 1;
   }
-  .name_client {
-    position: relative;
-    right: 263px;
-    top: 156px;
-    display: inline;
-    background-color: #e65c00;
-    color: white;
-    padding-top: 4px;
-    padding-bottom: 3px;
-    box-sizing: border-box;
-    white-space: nowrap;
-    overflow: hidden;
-  }
   .location_client {
+
+  }
+  .email_client {
+    position: relative;
+    display:inline;
+  }
+  .Client_purchase_mobile {
     position: relative;
     right: -109px;
     top: -72px;
@@ -116,10 +113,6 @@
     padding-right:35px;
     box-sizing: border-box;
     z-index: 1;
-  }
-  .email_client {
-    position: relative;
-    display:inline;
   }
  }
 

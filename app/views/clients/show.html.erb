@@ -19,6 +19,8 @@
   <p><%= image_tag @client.client_avatar.url(:medium), class: 'img-circle client_avatar' if @client.client_avatar %></p>
 </div>
 
+
+
 <div id="wrapper">
 
   <h1 class="client-header"><%= @client.name %>'s Dashboard</h1>
@@ -74,22 +76,9 @@
   </div>
 
 </div>
-<div class="mobile_profile_info">
-    <p class="name_client"><%= @client.name %></p>
+
     <p class="email_client"><%= @client.email %></p>
-    <p class="location_client"><%= @client.location %></p>
-</div>
+
 <%=  javascript_tag do %>
   window.nearbys = <%= raw @serving_chefs.map {|chef| {latitude: chef.latitude, longitude: chef.longitude} }.to_json %>
 <% end %>
-
-
-
-
-
-  <div id="map-canvas" style="height:500px;width:700px;" data-latitude="<%= @client.latitude.to_f %>" data-longitude="<%= @client.longitude.to_f %>"></div>
-
-  <%=  javascript_tag do %>
-    window.nearbys = <%= raw @serving_chefs.map {|chef| {latitude: chef.latitude, longitude: chef.longitude} }.to_json
-    %>
-  <% end %>
