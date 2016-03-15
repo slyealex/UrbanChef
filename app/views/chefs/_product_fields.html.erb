@@ -1,21 +1,21 @@
 <div class="nested-fields">
- <div class="field">
-   <%= f.label :name %>
+ <div class="chef-form-signup-control">
+   <%= f.label :name %><br>
    <%= f.text_field :name %>
  </div>
 
- <div class="field">
-   <%= f.label :description %>
+ <div class="chef-form-signup-control">
+   <%= f.label :description %><br>
    <%= f.text_area :description %>
  </div>
 
- <div class="field">
-   <%= f.label :url %>
+ <div class="chef-form-signup-control">
+   <%= f.label :url %><br>
    <%= f.url_field :url %>
  </div>
 
- <div class="field">
-   <%= f.label :price %>
+ <div class="chef-form-signup-control">
+   <%= f.label :price %><br>
    <%= f.number_field :price, step: "any" %>
  </div>
 
@@ -24,8 +24,6 @@
    <%= f.file_field :product_picture %>
    <%= f.hidden_field :product_picture_cache %>
  </div>
-
-
 
 
  <%= link_to_remove_association "Remove dish", f %>
