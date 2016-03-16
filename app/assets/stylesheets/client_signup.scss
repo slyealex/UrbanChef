@@ -9,24 +9,9 @@ body {
 }
 .form-signup-control label {
   width: 100px;
-  float: left;
   font-size: 16px;
   line-height: 24px;
   font-weight: bold;
-}
-#chef_avatar {
-  width: 100px;
-  color: green;
-  float: left;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: bold;
-}
-#service_radius {
-  line-height: 40px;
-}
-#password_confirmation {
-  line-height: 30px;
 }
 
 .form-signup {
@@ -86,11 +71,4 @@ body {
 .avatar_label {
   margin-left: 19px;
   margin-right: -21;
-}
-#client_client_avatar {
-  margin-top: 12px;
-  margin-left: 55px;
-}
-.avatar_input {
-
 }
