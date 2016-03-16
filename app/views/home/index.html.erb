@@ -96,11 +96,23 @@
           });
         </script>
 
-        <script>
+        <!-- <script>
         $('.carousel').carousel({
           wrap: false
           });
               $('#myCarousel').carousel(3);
-        </script>
+        </script> -->
+
+
+<script>
+  $(".left").click(function(){
+    $("#myCarousel").carousel("prev");
+  });
+
+  $(".right").click(function(){
+    $("#myCarousel").carousel("next");
+  });
+</script>
+
 
 </div>
