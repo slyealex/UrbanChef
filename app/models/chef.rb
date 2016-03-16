@@ -6,6 +6,9 @@ class Chef < ActiveRecord::Base
   has_many :orders
   has_many :clients, through: :orders
   has_many :line_items, through: :orders
+
+  has_many :ratings
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

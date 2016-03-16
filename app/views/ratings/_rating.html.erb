@@ -1,0 +1,8 @@
+<li>
+  <%= rating.review %>
+  <br>
+  <% if rating.client != nil %>
+    <em> by <%= rating.client.name %></em>
+    Added on: <%= rating.created_at %>
+  <% end %>
+</li>

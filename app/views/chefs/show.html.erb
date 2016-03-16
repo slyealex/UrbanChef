@@ -45,3 +45,30 @@
 <% else %>
   <p>Please log in to select and view dish's!</p>
 <% end %>
+
+
+<!-- Review -->
+
+<h3>Reviews</h3>
+
+    <p>Reviews for <%= @chef.name %></p>
+
+<ul class="ratings-list">
+    <%= render @chef.ratings %>
+</ul>
+
+    <% if current_client %>
+  <h4>New Review</h4>
+
+  <%= form_for([@chef, @rating], remote: true) do |f| %>
+
+
+    <div class="field">
+      <%= f.label :review %><br />
+      <%= f.text_area :review %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div
+    <% end %>
+  <% end %>

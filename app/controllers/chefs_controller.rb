@@ -30,6 +30,12 @@ class ChefsController < ApplicationController
     @order = Order.new
     @nearby_chefs = @chef.nearbys(1, units: :km)
     @clients_near_chef = Client.near(current_chef, 1.5, units: :km)
+
+    if current_client
+    
+      @rating = Rating.new
+    end
+
   end
 
   def create
