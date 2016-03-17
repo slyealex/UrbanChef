@@ -11,7 +11,7 @@
 }
 
 .sub-header {
-  padding: 0 0 15px 15px;
+  padding: 20px 0 15px 15px;
 }
 
 .chef-name-main {
@@ -52,7 +52,7 @@
   padding: 0 10px 10px 15px;
 }
 
-img {
+.img-styles {
   // border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -70,13 +70,11 @@ img {
 }
 
 .sub-name {
-  border-bottom: 2px solid #4775d1;
+  border-bottom: 4px solid #4775d1;
   display: inline-block;
 }
 
-.sub-exp {
-  margin-left: 14%;
-}
+
 
 .available-chef {
   display: inline-block;
