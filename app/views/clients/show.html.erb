@@ -6,10 +6,10 @@
 
 <!-- Levy's work: -->
 
-<div class="jumbotron">
+<!-- <div class="jumbotron">
   <div class="container">
   </div>
-</div>
+</div> -->
 
 
 <div class="client-info_1">
@@ -25,23 +25,29 @@
 
   <h1 class="client-header"><%= @client.name %>'s Dashboard</h1>
   <div class="client-info">
-    <p><%= image_tag @client.client_avatar.url(:medium), class: 'img-circle' if @client.client_avatar %></p>
-    <p><%= @client.name %></p>
-    <p><%= @client.email %></p>
-    <p><%= @client.location %></p>
+
+    <div class="row">
+      <p class="col-md-4"><%= image_tag @client.client_avatar.url(:small), class: 'img-circle' if @client.client_avatar %></p><br>
+      <p><%= @client.name %></p>
+      <p><%= @client.email %></p>
+      <p><%= @client.location %></p>
+    </div>
+
   </div>
 
-  <div>
-    <h2 class="sub-header">You subscribed to the following chef:</h2>
+  <div class="sub-box">
+    <h2 class="sub-header">Your Subscription:</h2>
 
-      <!-- <ul class="sub-list-style"> -->
         <% @client.chefs.each do |chef| %>
-          <p><%= image_tag chef.chef_avatar.url(:small), class: 'img-circle' if chef.chef_avatar %></p>
-          <h3 class="sub-name"><%= chef.name %></h3>
-          <p class="sub-exp"><%= chef.experience %></p>
-          <p><%= chef.specialty %></p>
+          <div class="row">
+            <p class="col-md-4"><%= image_tag chef.chef_avatar.url(:small), class: 'img-rounded' if chef.chef_avatar %></p>
+            <h3 class="sub-name col-md-4"><%= chef.name %></h3>
+          </div>
+          <div class="row">
+            <p class="col-md-12 sub-exp"><%= chef.experience %></p>
+          </div>
         <% end %>
-      <!-- </ul> -->
+
   </div>
 
 <!-- Levy, I added this new section listing the meals ordered -->

@@ -23,14 +23,20 @@
   background-color: #f2f2f2;
   border-left: 4px solid #e65c00;
   display: inline-block;
-  border: 2px solid #4775d1;
-  box-shadow: 2px 2px 5px black;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+
 }
- .sub-header {
+.sub-header {
    padding: 0 0 15px 15px;
+   color: #e65c00;
+   text-align: center;
  }
 
-
+.sub-box {
+  width: 100%;
+  background: #f2f2f2;
+}
 
  .sub-list-style {
    list-style: none;
@@ -48,17 +54,16 @@
    border: 2px solid white;
  }
 
- .chef_info {
- }
 
  .sub-name {
    border-bottom: 2px solid #000000;
    display: inline-block;
  }
 
- .sub-exp {
-   margin-left: 14%;
- }
+.sub-exp {
+  padding: 10px 20px 10px 20px;
+}
+
 
  .available-chef {
    display: inline-block;
