@@ -36,6 +36,17 @@
   color: white;
   margin-left: 4px;
 }
+.warpin-start {
+  transform: skew(60deg);
+  margin-left:-150%;
+  transition:transform .75s, margin .75s;
+  transition-timing-function: cubic-bezier(0.395, -0.340, 0.570, 1.445); /* custom */
+}
+.warpin {
+  transform: skew(0deg);
+  margin-left:0;
+}
+
 
 .carousel_container {
   // background-color: #4775d1;
