@@ -1,3 +1,41 @@
+/**************************************************************************************************
+        GENERAL TAG STYLES
+**************************************************************************************************/
+
+#wrapper {
+  width: 650px;
+  margin: 0 auto;
+  background-color: rgba(#4775d1, 0.69);
+  border-left: 4px solid #e65c00;
+  border-right: 4px solid #e65c00;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  text-align: left;
+}
+
+/**************************************************************************************************
+        CHEF INFO AREA
+**************************************************************************************************/
+
+.chef-name-main {
+  margin-top: 50px;
+  padding: 15px;
+  text-align: center;
+  color: #f2f2f2;
+  border-bottom: 2px checked;
+  font-family: 'Shift', sans-serif;
+  font-weight: bolder;
+}
+
+/**************************************************************************************************
+        ORDERS TABLE AREA
+**************************************************************************************************/
+
 .chef-order {
   margin: 15px 20% 0 20%;
   padding: 15px 15px 15px 15px;
@@ -14,19 +52,9 @@
   padding: 20px 0 15px 15px;
 }
 
-.chef-name-main {
-  margin-top: 50px;
-  padding: 15px;
-  text-align: center;
-  color: #f2f2f2;
-  border-bottom: 2px checked
-}
-
-.client-sub {
-  border-bottom: 2px solid #4775d1;
-  // box-shadow: 2px 2px 5px black;
-  padding: 10px;
-}
+/**************************************************************************************************
+        CLIENT LIST AREA
+**************************************************************************************************/
 
 .chef-client-list {
   padding: 15px;
@@ -39,17 +67,20 @@
   border-bottom-right-radius: 50px;
 }
 
+/**************************************************************************************************
+        MAP AREA
+**************************************************************************************************/
+
 .chef-map-style {
   border-top: 2px dashed #4775d1;
 }
 
 .map-header {
   text-align: center;
-}
-
-.sub-list-style {
-  list-style: none;
-  padding: 0 10px 10px 15px;
+  font-family: 'Shift', sans-serif;
+  font-weight: bolder;
+  color: #f2f2f2;
+  margin-top: 50px;
 }
 
 .img-styles {
@@ -62,36 +93,4 @@
   border-width: thin;
   border: 2px solid #4775d1;
   box-shadow: 2px 2px 5px black;
-}
-
-.chef_info {
-  margin-top: 7%;
-  margin-left: 25%;
-}
-
-.sub-name {
-  border-bottom: 4px solid #4775d1;
-  display: inline-block;
-}
-
-
-
-.available-chef {
-  display: inline-block;
-}
-
-th {
-  text-align: left;
-}
-
-td {
-  text-align: left;
-}
-
-#wrapper {
-  width: 650px;
-  margin: 0 auto;
-  background-color: rgba(#4775d1, 0.69);
-  border-left: 4px solid #e65c00;
-  border-right: 4px solid #e65c00;
 }

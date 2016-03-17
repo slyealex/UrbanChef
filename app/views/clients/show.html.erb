@@ -20,7 +20,7 @@
   <% @client.chefs.each do |chef| %>
     <p><%= image_tag chef.chef_avatar.url(:small), class: 'img-circle', id: 'subsc_mobile' if chef.chef_avatar %></p>
     <h4 class="sub-name-1"><%= chef.name %></h4>
-      <% end %>
+  <% end %>
 
 <h3 class="sub-header2-mobile">details of your order </h3>
 <ul class="order-details-mobile">
@@ -36,8 +36,11 @@
 
 <!-- END OF MOBILE SHIT -->
 
+
 <div id="wrapper">
-  <h1 class="client-header"><%= @client.name %>'s Dashboard</h1>
+
+  <h1 class="client-header"><%= @client.name.capitalize %>'s Dashboard</h1>
+
   <div class="client-info">
 
     <div class="row">
@@ -50,12 +53,12 @@
   </div>
 
   <div class="sub-box">
-    <h2 class="sub-header">Your Subscription:</h2>
+    <h2 class="sub-header">Your Subscription</h2>
 
         <% @client.chefs.each do |chef| %>
           <div class="row">
             <p class="col-md-4"><%= image_tag chef.chef_avatar.url(:small), class: 'img-rounded' if chef.chef_avatar %></p>
-            <h3 class="sub-name col-md-4"><%= chef.name %></h3>
+            <h3 class="sub-name col-md-4"><%= chef.name.capitalize %></h3>
           </div>
           <div class="row">
             <p class="col-md-12 sub-exp"><%= chef.experience %></p>
@@ -65,15 +68,15 @@
   </div>
 
 <!-- Levy, I added this new section listing the meals ordered -->
-  <h3 class="order-header">Here are the details of your order: </h3>
+  <h2 class="order-header">Order Details</h2>
 
         <% @client.products.each do |product| %>
           <div class="row">
             <p class="col-md-4"><%= image_tag product.product_picture.url(:small), class: 'img-thumbnail' if product.product_picture %></p>
-            <h3 class="col-md-4 order-name"><%=  product.name %></h3>
+            <h3 class="col-md-4 order-name"><%=  product.name.capitalize %></h3>
           </div>
           <div class="row">
-            <p class="col-md-10"><%= product.description %></p>
+            <p class="col-md-10 order-info"><%= product.description %></p>
             <p class="col-md-2"><%= "$#{product.price}" %></p>
           </div>
         <% end %>
