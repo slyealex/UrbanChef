@@ -79,6 +79,13 @@
 
         </div>
 
+        <script>
+        $(function() {
+          setTimeout(function() {
+            $(".warpin-start").addClass("warpin");
+          }, 100);
+        });
+        </script>
 
         <script>
           $(function() {
@@ -97,24 +104,12 @@
           });
         </script>
 
-        <!-- <script>
+        <script>
         $('.carousel').carousel({
           wrap: false
           });
               $('#myCarousel').carousel(3);
-        </script> -->
-
-
-<script>
-  $(".left").click(function(){
-    $("#myCarousel").carousel("prev");
-  });
-
-  $(".right").click(function(){
-    $("#myCarousel").carousel("next");
-  });
-</script>
-
+        </script>
 
         <script>
           $(".left").click(function(){
@@ -128,10 +123,5 @@
         });
         </script>
 
-        <script>
-          $(".item").click(function(){
-            $("#myCarousel").carousel(1);
-          });
-        </script>
 
 </div>
