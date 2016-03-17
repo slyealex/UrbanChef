@@ -12,6 +12,8 @@
   text-align: center;
   padding: 20px;
   color: #f2f2f2;
+  font-family: 'Shift', sans-serif;
+  font-weight: bolder;
 }
 
 
@@ -31,12 +33,16 @@
    padding: 0 0 15px 15px;
    color: #e65c00;
    text-align: center;
+   font-family: 'Shift', sans-serif;
+   font-weight: bolder;
  }
 
  .order-header {
    padding: 0 0 15px 15px;
    color: #f2f2f2;
    text-align: center;
+   font-family: 'Shift', sans-serif;
+   font-weight: bolder;
  }
 
 .sub-box {
@@ -64,12 +70,19 @@
   color: #f2f2f2;
   border-bottom: 4px solid #e65c00;
   display: inline-block;
+  font-family: 'Shift', sans-serif;
+  font-weight: bolder;
 }
 
 .sub-exp {
   padding: 10px 20px 10px 20px;
+  text-align: left;
 }
 
+.order-info {
+  padding: 10px 20px 10px 20px;
+  text-align: left;
+}
 
 .available-chef {
    display: inline-block;
@@ -88,7 +101,7 @@
     margin-top: 21%;
     background-color: #f2f2f2;
     box-shadow: none;
-      margin-left: 31%;
+    margin-left: 31%;
   }
   .jumbotron {
     height: 200px;
@@ -104,9 +117,7 @@
     position:relative;
     z-index: 1;
   }
-  .location_client {
 
-  }
   .email_client {
     position: relative;
     display:inline;
@@ -125,7 +136,7 @@
     box-sizing: border-box;
     z-index: 1;
   }
- }
+}
 
  @media screen and (min-width: 0px) and (max-width: 400px) {
    #wrapper { display: none; }  /* show it on small screens */
@@ -142,4 +153,8 @@
   margin-top: 100px;
   display: inline-block;
 
+}
+
+p {
+  font-family: 'ABeeZee';
 }

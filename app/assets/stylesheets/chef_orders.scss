@@ -19,7 +19,9 @@
   padding: 15px;
   text-align: center;
   color: #f2f2f2;
-  border-bottom: 2px checked
+  border-bottom: 2px checked;
+  font-family: 'Shift', sans-serif;
+  font-weight: bolder;
 }
 
 .client-sub {
@@ -45,6 +47,10 @@
 
 .map-header {
   text-align: center;
+  font-family: 'Shift', sans-serif;
+  font-weight: bolder;
+  color: #f2f2f2;
+  margin-top: 50px;
 }
 
 .sub-list-style {
@@ -71,7 +77,10 @@
 
 .sub-name {
   border-bottom: 4px solid #4775d1;
+  color: #e65c00;
   display: inline-block;
+  font-family: 'Shift', sans-serif;
+  font-weight: bolder;
 }
 
 
