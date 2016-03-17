@@ -1,4 +1,8 @@
 
+/**************************************************************************************************
+        GENERAL TAG STYLES
+**************************************************************************************************/
+
 #wrapper {
   width: 650px;
   margin: 0 auto;
@@ -6,6 +10,14 @@
   border-left: 4px solid #e65c00;
   border-right: 4px solid #e65c00;
 }
+
+p {
+  font-family: 'ABeeZee';
+}
+
+/**************************************************************************************************
+        CLIENT INFO AREA
+**************************************************************************************************/
 
 .client-header {
   margin-top: 50px;
@@ -15,7 +27,6 @@
   font-family: 'Shift', sans-serif;
   font-weight: bolder;
 }
-
 
 .client-info {
   padding: 15px;
@@ -27,8 +38,12 @@
   display: inline-block;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
-
 }
+
+/**************************************************************************************************
+        CLIENT SUB AREA
+**************************************************************************************************/
+
 .sub-header {
    padding: 0 0 15px 15px;
    color: #e65c00;
@@ -37,33 +52,38 @@
    font-weight: bolder;
  }
 
- .order-header {
-   padding: 0 0 15px 15px;
-   color: #f2f2f2;
-   text-align: center;
+.sub-box {
+   width: 100%;
+   background: #f2f2f2;
+ }
+
+.sub-exp {
+   padding: 10px 20px 10px 20px;
+   text-align: left;
+ }
+
+.sub-name {
+   border-bottom: 4px solid #4775d1;
+   color: #e65c00;
+   display: inline-block;
    font-family: 'Shift', sans-serif;
    font-weight: bolder;
  }
-
-.sub-box {
-  width: 100%;
-  background: #f2f2f2;
-}
 
 .sub-list-style {
    list-style: none;
    padding: 0 10px 10px 15px;
  }
+/**************************************************************************************************
+        CLIENT ORDER AREA
+**************************************************************************************************/
 
-.client_avatar {
-   border-radius: 50%;
-   width: 150px;
-   height: 150px;
-   margin:0 20px -2px 0;
-   float: left;
-   border-style: groove;
-   border-width: thin;
-   border: 2px solid white;
+.order-header {
+   padding: 0 0 15px 15px;
+   color: #f2f2f2;
+   text-align: center;
+   font-family: 'Shift', sans-serif;
+   font-weight: bolder;
  }
 
 .order-name {
@@ -72,11 +92,6 @@
   display: inline-block;
   font-family: 'Shift', sans-serif;
   font-weight: bolder;
-}
-
-.sub-exp {
-  padding: 10px 20px 10px 20px;
-  text-align: left;
 }
 
 .order-info {
@@ -152,9 +167,8 @@
   background-color: yellow;
   margin-top: 100px;
   display: inline-block;
-
 }
 
-p {
-  font-family: 'ABeeZee';
+.available-chef {
+  display: inline-block;
 }
