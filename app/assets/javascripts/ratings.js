@@ -21,6 +21,8 @@
 
 // Star rating
 
+
+
   $(function () {
 
     $("#rateYo").rateYo({
@@ -37,6 +39,8 @@
     });
 
 });
+
+
 
 
 
