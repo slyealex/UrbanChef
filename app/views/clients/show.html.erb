@@ -2,14 +2,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.">
 <%= render '/shared/navbar' %>
 
-
-
-<!-- Levy's work: -->
-
 <!-- <div class="jumbotron">
-  <div class="container">
-  </div>
+
 </div> -->
+
+
 
 
 <div class="client-info_1">
@@ -19,10 +16,27 @@
   <p><%= image_tag @client.client_avatar.url(:medium), class: 'img-circle client_avatar' if @client.client_avatar %></p>
 </div>
 
+<h2 class="sub-header-mobile">subscribed to</h2>
+  <% @client.chefs.each do |chef| %>
+    <p><%= image_tag chef.chef_avatar.url(:small), class: 'img-circle', id: 'subsc_mobile' if chef.chef_avatar %></p>
+    <h4 class="sub-name-1"><%= chef.name %></h4>
+      <% end %>
 
+<h3 class="sub-header2-mobile">details of your order </h3>
+<ul class="order-details-mobile">
+  <% @client.products.each do |product| %>
+    <li><%= image_tag product.product_picture.url(:small), class: 'details-picture-mobile' if product.product_picture%></li>
+    <li><%=  product.name %></li>
+    <li><%= product.description %></li>
+    <li><%= "$#{product.price}" %></li>
+  <% end %>
+</ul>
+
+<h3 class="sub-header3-mobile"><%= "Your total order is $#{@client.products.sum :price}" %></h3>
+
+<!-- END OF MOBILE SHIT -->
 
 <div id="wrapper">
-
   <h1 class="client-header"><%= @client.name %>'s Dashboard</h1>
   <div class="client-info">
 

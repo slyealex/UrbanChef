@@ -66,9 +66,16 @@
   display: inline-block;
 }
 
+<<<<<<< HEAD
 .sub-exp {
   padding: 10px 20px 10px 20px;
 }
+
+ .sub-name {
+   border-bottom: 2px solid #000000;
+   display: inline-block;
+   text-align: center;
+ }
 
 
 .available-chef {
@@ -125,6 +132,30 @@
     box-sizing: border-box;
     z-index: 1;
   }
+  .sub-header-mobile  {
+    text-align: center;
+  }
+  .sub-header2-mobile {
+    text-align: center;
+  }
+  .sub-header3-mobile {
+    text-align: center;
+    margin-top: 50px;
+  }
+  #subsc_mobile {
+    margin-left: 132px;
+    float: none;
+  }
+  .sub-name-1 {
+    text-align: center;
+  }
+  .order-details-mobile {
+    list-style-type: none;
+  }
+  .details-picture-mobile{
+    margin-bottom: 5px;
+    margin-left: 43px;
+  }
  }
 
  @media screen and (min-width: 0px) and (max-width: 400px) {
@@ -135,6 +166,12 @@
  @media screen and (min-width: 401px) and (max-width: 3000px) {
    #wrapper { display: block; }   /* hide it elsewhere */
    .client-info_1 {display:none;}
+   .sub-header-mobile {display:none;}
+   .sub-header2-mobile {display:none;}
+   .sub-header3-mobile {display:none;}
+   .order-details-mobile {display: none;}
+   #subsc_mobile {display: none;}
+   .sub-name-1 {display:none;}
  }
 
 .local-chef {
