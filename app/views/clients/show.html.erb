@@ -20,7 +20,7 @@
   <% @client.chefs.each do |chef| %>
     <p><%= image_tag chef.chef_avatar.url(:small), class: 'img-circle', id: 'subsc_mobile' if chef.chef_avatar %></p>
     <h4 class="sub-name-1"><%= chef.name %></h4>
-      <% end %>
+  <% end %>
 
 <h3 class="sub-header2-mobile">details of your order </h3>
 <ul class="order-details-mobile">
@@ -36,12 +36,11 @@
 
 <!-- END OF MOBILE SHIT -->
 
-<<<<<<< HEAD
+
 <div id="wrapper">
-  <h1 class="client-header"><%= @client.name %>'s Dashboard</h1>
-=======
+
   <h1 class="client-header"><%= @client.name.capitalize %>'s Dashboard</h1>
->>>>>>> slye
+
   <div class="client-info">
 
     <div class="row">
