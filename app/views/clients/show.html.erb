@@ -51,18 +51,22 @@
   </div>
 
 <!-- Levy, I added this new section listing the meals ordered -->
-  <h3>Here are the details of your order: </h3>
-      <ul>
+  <h3 class="order-header">Here are the details of your order: </h3>
+
         <% @client.products.each do |product| %>
-        <li><%= image_tag product.product_picture.url(:small) if product.product_picture %></li>
-        <li><%=  product.name %></li>
-        <li><%= product.description %></li>
-        <li><%= "$#{product.price}" %></li>
+          <div class="row">
+            <p class="col-md-4"><%= image_tag product.product_picture.url(:small), class: 'img-thumbnail' if product.product_picture %></p>
+            <h3 class="col-md-4 order-name"><%=  product.name %></h3>
+          </div>
+          <div class="row">
+            <p class="col-md-10"><%= product.description %></p>
+            <p class="col-md-2"><%= "$#{product.price}" %></p>
+          </div>
         <% end %>
-      </ul>
 
 
-  <h3><%= "Your total order is $#{@client.products.sum :price}." %></h3>
+
+  <h3 class="order-header"><%= "Your total order is $#{@client.products.sum :price}." %></h3>
 
 
 
@@ -83,7 +87,7 @@
 
 </div>
 
-    <p class="email_client"><%= @client.email %></p>
+
 
 <%=  javascript_tag do %>
   window.nearbys = <%= raw @serving_chefs.map {|chef| {latitude: chef.latitude, longitude: chef.longitude} }.to_json %>
