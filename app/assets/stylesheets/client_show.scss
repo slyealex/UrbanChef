@@ -1,4 +1,8 @@
 
+/**************************************************************************************************
+        GENERAL TAG STYLES
+**************************************************************************************************/
+
 #wrapper {
   width: 650px;
   margin: 0 auto;
@@ -7,13 +11,22 @@
   border-right: 4px solid #e65c00;
 }
 
+p {
+  font-family: 'ABeeZee';
+}
+
+/**************************************************************************************************
+        CLIENT INFO AREA
+**************************************************************************************************/
+
 .client-header {
   margin-top: 50px;
   text-align: center;
   padding: 20px;
   color: #f2f2f2;
+  font-family: 'Shift', sans-serif;
+  font-weight: bolder;
 }
-
 
 .client-info {
   padding: 15px;
@@ -23,46 +36,81 @@
   background-color: #f2f2f2;
   border-left: 4px solid #e65c00;
   display: inline-block;
-  border: 2px solid #4775d1;
-  box-shadow: 2px 2px 5px black;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
- .sub-header {
+
+/**************************************************************************************************
+        CLIENT SUB AREA
+**************************************************************************************************/
+
+.sub-header {
    padding: 0 0 15px 15px;
+   color: #e65c00;
+   text-align: center;
+   font-family: 'Shift', sans-serif;
+   font-weight: bolder;
  }
 
+.sub-box {
+   width: 100%;
+   background: #f2f2f2;
+ }
 
+.sub-exp {
+   padding: 10px 20px 10px 20px;
+   text-align: left;
+ }
 
- .sub-list-style {
+.sub-name {
+   border-bottom: 4px solid #4775d1;
+   color: #e65c00;
+   display: inline-block;
+   font-family: 'Shift', sans-serif;
+   font-weight: bolder;
+ }
+
+.sub-list-style {
    list-style: none;
    padding: 0 10px 10px 15px;
  }
+/**************************************************************************************************
+        CLIENT ORDER AREA
+**************************************************************************************************/
 
- .client_avatar {
-   border-radius: 50%;
-   width: 150px;
-   height: 150px;
-   margin:0 20px -2px 0;
-   float: left;
-   border-style: groove;
-   border-width: thin;
-   border: 2px solid white;
+.order-header {
+   padding: 0 0 15px 15px;
+   color: #f2f2f2;
+   text-align: center;
+   font-family: 'Shift', sans-serif;
+   font-weight: bolder;
  }
 
- .chef_info {
- }
+.order-name {
+  color: #f2f2f2;
+  border-bottom: 4px solid #e65c00;
+  display: inline-block;
+  font-family: 'Shift', sans-serif;
+  font-weight: bolder;
+}
 
- .sub-name {
-   border-bottom: 2px solid #000000;
-   display: inline-block;
- }
+.order-info {
+  padding: 10px 20px 10px 20px;
+  text-align: left;
+}
 
- .sub-exp {
-   margin-left: 14%;
- }
+/**************************************************************************************************
+        LOCAL CHEF AREA
+**************************************************************************************************/
 
- .available-chef {
-   display: inline-block;
- }
+.local-chef {
+  background-color: #f2f2f2;
+}
+
+// .chef-link {
+//   padding-bottom: 20px;
+// }
+
 
  @media screen and (max-width: 660px) {
   .client-info {
@@ -77,7 +125,7 @@
     margin-top: 21%;
     background-color: #f2f2f2;
     box-shadow: none;
-      margin-left: 31%;
+    margin-left: 31%;
   }
   .jumbotron {
     height: 200px;
@@ -93,9 +141,7 @@
     position:relative;
     z-index: 1;
   }
-  .location_client {
 
-  }
   .email_client {
     position: relative;
     display:inline;
@@ -114,21 +160,4 @@
     box-sizing: border-box;
     z-index: 1;
   }
- }
-
- @media screen and (min-width: 0px) and (max-width: 400px) {
-   #wrapper { display: none; }  /* show it on small screens */
-   .mobile_profile_info {display:visible;}
- }
-
- @media screen and (min-width: 401px) and (max-width: 3000px) {
-   #wrapper { display: block; }   /* hide it elsewhere */
-   .client-info_1 {display:none;}
- }
-
-.local-chef {
-  background-color: yellow;
-  margin-top: 100px;
-  display: inline-block;
-
 }

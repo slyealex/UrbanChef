@@ -1,15 +1,12 @@
 
-<meta name="viewport" content="width=device-width, initial-scale=1.">
+
 <%= render '/shared/navbar' %>
 
-
-
-<!-- Levy's work: -->
-
 <div class="jumbotron">
-  <div class="container">
-  </div>
+
 </div>
+
+
 
 
 <div class="client-info_1">
@@ -19,58 +16,91 @@
   <p><%= image_tag @client.client_avatar.url(:medium), class: 'img-circle client_avatar' if @client.client_avatar %></p>
 </div>
 
+<h2 class="sub-header-mobile">subscribed to</h2>
+  <% @client.chefs.each do |chef| %>
+    <p><%= image_tag chef.chef_avatar.url(:small), class: 'img-circle', id: 'subsc_mobile' if chef.chef_avatar %></p>
+    <h4 class="sub-name-1"><%= chef.name %></h4>
+  <% end %>
+
+<h3 class="sub-header2-mobile">details of your order </h3>
+<ul class="order-details-mobile">
+  <% @client.products.each do |product| %>
+    <li><%= image_tag product.product_picture.url(:small), class: 'details-picture-mobile' if product.product_picture%></li>
+    <li><%=  product.name %></li>
+    <li><%= product.description %></li>
+    <li><%= "$#{product.price}" %></li>
+  <% end %>
+</ul>
+
+<h3 class="sub-header3-mobile"><%= "Your total order is $#{@client.products.sum :price}" %></h3>
+
+<!-- END OF MOBILE SHIT -->
 
 
 <div id="wrapper">
 
-  <h1 class="client-header"><%= @client.name %>'s Dashboard</h1>
+  <h1 class="client-header"><%= @client.name.capitalize %>'s Dashboard</h1>
+
   <div class="client-info">
-    <p><%= image_tag @client.client_avatar.url(:medium), class: 'img-circle' if @client.client_avatar %></p>
-    <p><%= @client.name %></p>
-    <p><%= @client.email %></p>
-    <p><%= @client.location %></p>
+
+    <div class="row">
+      <p class="col-md-4"><%= image_tag @client.client_avatar.url(:small), class: 'img-circle' if @client.client_avatar %></p><br>
+      <p><%= @client.name %></p>
+      <p><%= @client.email %></p>
+      <p><%= @client.location %></p>
+    </div>
+
   </div>
 
-  <div>
-    <h2 class="sub-header">You subscribed to the following chef:</h2>
+  <div class="sub-box">
+    <h2 class="sub-header">Your Subscription</h2>
 
-      <!-- <ul class="sub-list-style"> -->
         <% @client.chefs.each do |chef| %>
-          <p><%= image_tag chef.chef_avatar.url(:small), class: 'img-circle' if chef.chef_avatar %></p>
-          <h3 class="sub-name"><%= chef.name %></h3>
-          <p class="sub-exp"><%= chef.experience %></p>
-          <p><%= chef.specialty %></p>
+          <div class="row">
+            <p class="col-md-4"><%= image_tag chef.chef_avatar.url(:small), class: 'img-rounded' if chef.chef_avatar %></p>
+            <h3 class="sub-name col-md-4"><%= chef.name.capitalize %></h3>
+          </div>
+          <div class="row">
+            <p class="col-md-12 sub-exp"><%= chef.experience %></p>
+          </div>
         <% end %>
-      <!-- </ul> -->
+
   </div>
 
 <!-- Levy, I added this new section listing the meals ordered -->
-  <h3>Here are the details of your order: </h3>
-      <ul>
+  <h2 class="order-header">Order Details</h2>
+
         <% @client.products.each do |product| %>
-        <li><%= image_tag product.product_picture.url(:small) if product.product_picture %></li>
-        <li><%=  product.name %></li>
-        <li><%= product.description %></li>
-        <li><%= "$#{product.price}" %></li>
+          <div class="row">
+            <p class="col-md-4"><%= image_tag product.product_picture.url(:small), class: 'img-thumbnail' if product.product_picture %></p>
+            <h3 class="col-md-4 order-name"><%=  product.name.capitalize %></h3>
+          </div>
+          <div class="row">
+            <p class="col-md-10 order-info"><%= product.description %></p>
+            <p class="col-md-2"><%= "$#{product.price}" %></p>
+          </div>
         <% end %>
-      </ul>
-
-
-  <h3><%= "Your total order is $#{@client.products.sum :price}." %></h3>
 
 
 
+  <h3 class="order-header"><%= "Your total order is $#{@client.products.sum :price}." %></h3>
 
+
+
+  <!-- LIST OF LOCAL CHEFS -->
   <div class="local-chef">
     <% if @client %>
           <% if @serving_chefs.any? %>
-          <h2 class="sub-header">Other chefs you can try:</h2>
+          <h2 class="sub-header">Your Local Chefs</h2>
               <% @serving_chefs.each do |chef| %>
-                <div class="sub-list-style">
-                  <p><%= image_tag chef.chef_avatar.url(:small), class: 'img-circle' if chef.chef_avatar %></p>
+                <div class="row">
+                  <p class="col-md-4"><%= image_tag chef.chef_avatar.url(:small), class: 'img-rounded' if chef.chef_avatar %></p>
+                  <h3 class="col-md-4 chef-link"><%= link_to chef.name, chef_path(chef) %></h3>
                 </div>
+
                   <p class="available-chef"><%= link_to chef.name, chef_path(chef) %></p>
                   <p><%= "Star Rating: #{chef.serving_chefs_average_rating}" %></p>
+
               <% end %>
           <% end %>
       <% end %>
@@ -78,7 +108,7 @@
 
 </div>
 
-    <p class="email_client"><%= @client.email %></p>
+
 
 <%=  javascript_tag do %>
   window.nearbys = <%= raw @serving_chefs.map {|chef| {latitude: chef.latitude, longitude: chef.longitude} }.to_json %>

@@ -1,6 +1,6 @@
 <%= render '/shared/navbar' %>
 <div id="wrapper">
-  <h1 class="chef-name-main"><%= @chef.name %>'s Dashboard</h1>
+  <h1 class="chef-name-main"><%= @chef.name.capitalize %>'s Dashboard</h1>
 
   <div class="chef-order">
     <h3 class="sub-header">Order Up!</h3>
@@ -9,14 +9,14 @@
 
 
   <div class="chef-client-list">
-    <h3>Your Clients</h3>
+    <h3 class="sub-header">Your Clients</h3>
 
     <p>Current Subscriber Count: <%= @chef.orders.count %></p>
     <%= render '/orders/client_list' %>
   </div>
 
 
-  <p class="map-header">Client Map</p>
+  <h2 class="map-header">Client Map</h2>
 
 
   <!-- Map -->

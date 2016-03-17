@@ -2,7 +2,7 @@
 
 <div id="page-top">
     <div class="jumbotron_main">
-      <div class="container">
+      <div class="container warpin-start">
         <h1>UrbanChef</h1>
         <h4>Find or become a personal Chef</h4>
           <div>
@@ -15,7 +15,8 @@
               <%= link_to 'Chef Log In', new_chef_session_path, class: 'button_login' %>
             <% end %>
           </div>
-          </div>
+          <span class="chef_img"></span>
+      </div>
     </div>
 
     <div class="container">
@@ -38,7 +39,9 @@
           <p class="index_p">Learn more about our services and how things work on the site, take a tour through the services offered to both chef's and connoisseurs</p>
         </div>
       </div>
+      </div>
     </div>
+
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
           <ol class="carousel_list">
@@ -49,7 +52,14 @@
 
           <div class="carousel-inner" role="listbox">
             <div class="item">
-                <p>One</p>
+                <h2 class="carousel_title">Chef Info</h2>
+                <p class="content_text">
+                  <ol class="carousel_list">
+                    <li>Sign up / Log in</li>
+                    <li>Keep profile updated with latest menu</li>
+                    <li>Wait for order subscriptions</li>
+                  </ol>
+                </p>
             </div>
             <div class="item active">
                 <h2 class="carousel_title">About Urban Chef</h2>
@@ -58,10 +68,17 @@
                   are delivered weekly to Urban Chef clients. All you have to do is choose a Chef from one listed
                   in your area and choose your delicious meals for the week. Pricing is competitive with local
                   takeout options but without the need to leave your home to enjoy your meal. Want more details? Click
-                  on the </p>
+                  on the links to the left and right. </p>
             </div>
             <div class="item">
-                <p>Two</p>
+              <h2 class="carousel_title">Client Info</h2>
+                <p class="content_text">
+                  <ol class="carousel_list">
+                    <li>Sign up / Log in</li>
+                    <li>View chef profiles</li>
+                    <li>Choose a chef and place order</li>
+                  </ol>
+                </p>
             </div>
           </div>
 
@@ -76,8 +93,15 @@
               <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
           </a>
-
         </div>
+
+        <script>
+        $(function() {
+          setTimeout(function() {
+            $(".warpin-start").addClass("warpin");
+          }, 100);
+        });
+        </script>
 
         <script>
           $(function() {
@@ -96,23 +120,24 @@
           });
         </script>
 
-        <!-- <script>
+        <script>
         $('.carousel').carousel({
           wrap: false
           });
               $('#myCarousel').carousel(3);
-        </script> -->
+        </script>
 
+        <script>
+          $(".left").click(function(){
+          $("#myCarousel").carousel("prev");
+          });
+        </script>
 
-<script>
-  $(".left").click(function(){
-    $("#myCarousel").carousel("prev");
-  });
-
-  $(".right").click(function(){
-    $("#myCarousel").carousel("next");
-  });
-</script>
+        <script>
+        $(".right").click(function(){
+        $("#myCarousel").carousel("next");
+        });
+        </script>
 
 
 </div>
