@@ -99,11 +99,18 @@ p {
   text-align: left;
 }
 
+/**************************************************************************************************
+        LOCAL CHEF AREA
+**************************************************************************************************/
 
-.available-chef {
-   display: inline-block;
-   text-align: center;
- }
+.local-chef {
+  background-color: #f2f2f2;
+}
+
+// .chef-link {
+//   padding-bottom: 20px;
+// }
+
 
  @media screen and (max-width: 660px) {
   .client-info {
@@ -153,14 +160,4 @@ p {
     box-sizing: border-box;
     z-index: 1;
   }
-}
-
-.available-chef {
-   display: inline-block;
- }
-
-
-.local-chef {
-  margin-top: 100px;
-  display: inline-block;
 }
