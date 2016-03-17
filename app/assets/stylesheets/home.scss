@@ -21,6 +21,7 @@
   top:100px;
 }
 
+
   //Styling for title over main image
 .jumbotron_main h1 {
   color: #fff;
@@ -46,7 +47,8 @@
   transform: skew(0deg);
   margin-left:0;
 }
-
+.chef_img {
+}
 
 .carousel_container {
   // background-color: #4775d1;
@@ -154,17 +156,23 @@
 
 #myCarousel {
   height: 400px;
-  width: auto;
 }
 .content_text {
   font-size: 16px;
   display: block;
+  text-align: center;
   color: white;
   margin-left: 25%;
   margin-right: 25%;
 }
+.carousel_list {
+  text-align: center;
+  text-decoration: none;
+  list-style-type: none;
+}
 .carousel_title {
   text-align: center;
+  color: #e65c00;
 }
 .glyph_title {
   padding-top: 125px;
