@@ -87,16 +87,16 @@
 
 
 
-
+  <!-- LIST OF LOCAL CHEFS -->
   <div class="local-chef">
     <% if @client %>
           <% if @serving_chefs.any? %>
-          <h2 class="sub-header">Other chefs you can try:</h2>
+          <h2 class="sub-header">Your Local Chefs</h2>
               <% @serving_chefs.each do |chef| %>
-                <div class="sub-list-style">
-                  <p><%= image_tag chef.chef_avatar.url(:small), class: 'img-circle' if chef.chef_avatar %></p>
+                <div class="row">
+                  <p class="col-md-4"><%= image_tag chef.chef_avatar.url(:small), class: 'img-rounded' if chef.chef_avatar %></p>
+                  <h3 class="col-md-4 chef-link"><%= link_to chef.name, chef_path(chef) %></h3>
                 </div>
-                  <p class="available-chef"><%= link_to chef.name, chef_path(chef) %></p>
               <% end %>
           <% end %>
       <% end %>
