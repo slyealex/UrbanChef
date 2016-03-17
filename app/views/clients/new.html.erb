@@ -7,36 +7,34 @@
     <h1 class="form-signup-heading">Client Sign-Up</h1>
 
     <div class="form-signup-control">
-      <%= f.label :name %>
+      <%= f.label :name %><br>
       <%= f.text_field :name %>
     </div>
 
     <div class="form-signup-control">
-      <%= f.label :email %>
+      <%= f.label :email %><br>
       <%= f.email_field :email %>
     </div>
 
     <div class="form-signup-control">
-      <%= f.label :location %>
+      <%= f.label :location %><br>
       <%= f.text_field :location %>
     </div>
 
     <div class="form-signup-control">
-      <%= f.label :password %>
+      <%= f.label :password %><br>
       <%= f.password_field :password %>
     </div>
 
     <div class="form-signup-control">
-      <%= f.label :password_confirmation %>
+      <%= f.label :password_confirmation %><br>
       <%= f.password_field :password_confirmation %>
     </div>
 
     <div class="form-signup-control avatar_pic">
-      <table>
-      <tr class="avatar_label"><%= f.label :client_avatar %></tr>
-      <tr class="avatar_input"><%= f.file_field :client_avatar %> </tr>
+      <%= f.label :client_avatar %><br>
+      <%= f.file_field :client_avatar %>
       <%= f.hidden_field :client_avatar_cache %>
-    </table>
     </div>
 
     <div class="action btn btn-lg btn-custom btn-block">
