@@ -31,4 +31,9 @@ class Chef < ActiveRecord::Base
     new_hash
   end
 
+  def serving_chefs_average_rating
+    ((self.ratings.sum :rating)/(self.ratings.count :rating)).to_i
+  end
+
+
 end

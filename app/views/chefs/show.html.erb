@@ -1,15 +1,18 @@
 <%= render '/shared/navbar' %>
 
 <h1 class="chef_show_h1"><%= @chef.name %></h1>
-<!-- <div><%= @chef.email %></div> -->
-<div><%= "Address: #{@chef.location}" %></div>
-<div><%= "Experience: #{@chef.experience}" %></div>
-<!-- service_radius wont' be rendered eventually -->
-<div><%= "Specialty: #{@chef.specialty}" %></div>
-<div><%= "#{@chef.service_radius} km away" %></div>
 
-<div><%= image_tag @chef.chef_avatar.url(:medium) if @chef.chef_avatar %></div>
+<!-- <p><div id="rateYo_average"></div></p> -->
 
+  <h4>Average star rating:
+    <div id="avRating"><%= @average_rating %></div>
+  </h4>
+
+  <div><%= "Address: #{@chef.location}" %></div>
+  <div><%= "Experience: #{@chef.experience}" %></div>
+  <div><%= "Specialty: #{@chef.specialty}" %></div>
+  <!-- <div><%= "#{@chef.service_radius} km away" %></div> -->
+  <div><%= image_tag @chef.chef_avatar.url(:medium) if @chef.chef_avatar %></div>
 
 
 <br>
@@ -47,28 +50,38 @@
 <% end %>
 
 
-<!-- Review -->
-
-<h3>Reviews</h3>
-
-    <p>Reviews for <%= @chef.name %></p>
-
-<ul class="ratings-list">
-    <%= render @chef.ratings %>
-</ul>
-
     <% if current_client %>
-  <h4>New Review</h4>
+  <h4>Rate your chef</h4>
 
   <%= form_for([@chef, @rating], remote: true) do |f| %>
 
+<!-- Rating -->
+  <div id="rateYo"></div>
+
+    <div class="field" style="display:none;">
+      <%= f.label :rating %>
+      <%= f.number_field :rating %>
+    </div>
 
     <div class="field">
       <%= f.label :review %><br />
       <%= f.text_area :review %>
     </div>
+
     <div class="actions">
       <%= f.submit %>
-    </div
+    </div>
     <% end %>
   <% end %>
+
+
+  <h2>Reviews</h3>
+
+  <p>Reviews for <%= @chef.name %></p>
+
+  <ul class="ratings-list">
+    <%= render @chef.ratings %>
+  </ul>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.0.1/jquery.rateyo.min.js"></script>

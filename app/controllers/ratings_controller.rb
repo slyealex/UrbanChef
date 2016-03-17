@@ -47,7 +47,7 @@ class RatingsController < ApplicationController
 
   private
   def rating_params
-    params.require(:rating).permit(:review, :chef_id)
+    params.require(:rating).permit(:review, :chef_id, :rating)
   end
 
   def load_chef

@@ -70,6 +70,7 @@
                   <p><%= image_tag chef.chef_avatar.url(:small), class: 'img-circle' if chef.chef_avatar %></p>
                 </div>
                   <p class="available-chef"><%= link_to chef.name, chef_path(chef) %></p>
+                  <p><%= "Star Rating: #{chef.serving_chefs_average_rating}" %></p>
               <% end %>
           <% end %>
       <% end %>

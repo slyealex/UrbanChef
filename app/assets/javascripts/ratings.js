@@ -16,3 +16,53 @@
 //      });
 //   });
 // });
+
+
+
+// Star rating
+
+  $(function () {
+
+    $("#rateYo").rateYo({
+      starWidth: "30px",
+      fullStar: true
+});
+
+
+   $("#rateYo").rateYo()
+      .on("rateyo.set", function(e, data) {
+        var rating = data.rating;
+      $("#rating_rating")[0].value = rating;
+
+    });
+
+});
+
+
+
+    //
+    // $(function () {
+    //   $("#rateYo_average").rateYo({
+    //     starWidth: "35px",
+    //     fullStar: true,
+    //     readOnly: true
+    //   });
+    //
+    //   // var averegeRating = parseInt("<%= j @average-rating %>");
+    //
+    //   $("#rateYo_average").rateYo("rating", parseInt("<%= j @average-rating %>"))
+    // });
+
+
+
+
+
+  // $(function () {
+  //
+  //   $("#rateYo_individual").rateYo({
+  //     starWidth: "20px",
+  //     fullStar: true,
+  //     readOnly: true
+  //   });
+  //
+  // });
