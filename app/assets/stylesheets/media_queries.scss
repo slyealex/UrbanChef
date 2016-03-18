@@ -128,26 +128,13 @@
 }
 @media screen and (min-width: 0px) and (max-width: 400px) {
 /* show it on small screens */
-   .chef_show_h1                 {display: none;}
-   .chef_experience              {display: none;}
-   .chef_speciality              {display: none;}
-   .chef_avatar_mobile           {display: none;}
-   .chef_offers_message          {display: none;}
-   .product_picture_desktop      {display: none;}
-   .field_desktop                {display: none;}
-   .action_desktop               {display: none;}
+
 }
 
 @media screen and (min-width: 401px) and (max-width: 3000px) {
  /* hide it elsewhere */
   .jumbotron                     {display: none;}
-  .chef_avatar                   {display: none;}
-  .chef_name_mobile              {display: none;}
-  .chef_experience_mobile        {display: none;}
-  .chef_speciality_mobile        {display: none;}
-  .chef_subheader_mobile_1       {display: none;}
-  .field_mobile                  {display: none;}
-  .action_mobile                 {display: none;}
+
 }
 
 
