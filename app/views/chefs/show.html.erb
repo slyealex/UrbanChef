@@ -18,7 +18,7 @@
     <h4 class="col-md-4"><%= image_tag @chef.chef_avatar.url(:small), class: 'img-thumbnail' if @chef.chef_avatar %></h4>
     <h4 class="col-md-6 info-content"><%= "Address: #{@chef.location}" %></h4>
     <h4 class="col-md-6 info-content"><%= "Experience: #{@chef.experience}" %></h4>
-    <h4 class="col-md-6 info-content"><%= "Specialty: #{@chef.specialty}" %></h4>
+    <h4 class="col-md-12 specialty-content"><%= "Specialty: #{@chef.specialty}" %></h4>
   </div>
 
 
@@ -60,11 +60,12 @@
   <!-- CHEF RATING -->
   <div class="chef-rating-box">
     <% if current_client %>
-    <h4>Rate your chef</h4>
+    <h3 class="chef-header">Rate your chef</h3>
 
     <%= form_for([@chef, @rating], remote: true) do |f| %>
-
-    <div id="rateYo"></div>
+      <div class="rating-stars">
+        <div id="rateYo"></div>
+      </div>
 
       <div class="field" style="display:none;">
         <%= f.label :rating %>
@@ -73,7 +74,7 @@
 
       <div class="field">
         <%= f.label :review %><br />
-        <%= f.text_area :review %>
+        <%= f.text_area :review, class: 'review-text-box' %>
       </div>
 
       <div class="actions">
@@ -84,7 +85,7 @@
   </div>
 
 
-  <h3>Reviews for <%= @chef.name %></h3>
+  <h3 class="chef-header">Reviews for <%= @chef.name %></h3>
 
   <ul class="ratings-list">
     <%= render @chef.ratings %>

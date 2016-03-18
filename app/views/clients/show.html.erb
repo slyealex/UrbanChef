@@ -77,7 +77,7 @@
           </div>
           <div class="row">
             <p class="col-md-10 order-info"><%= product.description %></p>
-            <p class="col-md-2"><%= "$#{product.price}" %></p>
+            <p class="col-md-2 order-info"><%= "$#{product.price}" %></p>
           </div>
         <% end %>
 
@@ -90,20 +90,20 @@
   <!-- LIST OF LOCAL CHEFS -->
   <div class="local-chef">
     <% if @client %>
-          <% if @serving_chefs.any? %>
-          <h2 class="sub-header">Your Local Chefs</h2>
-              <% @serving_chefs.each do |chef| %>
-                <div class="row">
-                  <p class="col-md-4"><%= image_tag chef.chef_avatar.url(:small), class: 'img-rounded' if chef.chef_avatar %></p>
-                  <h3 class="col-md-4 chef-link"><%= link_to chef.name, chef_path(chef) %></h3>
+      <% if @serving_chefs.any? %>
+        <h2 class="sub-header">Your Local Chefs</h2>
+          <% @serving_chefs.each do |chef| %>
+            <div class="row">
+              <p class="col-md-4"><%= image_tag chef.chef_avatar.url(:small), class: 'img-rounded' if chef.chef_avatar %></p>
+              <h3 class="col-md-4 chef-link"><%= link_to chef.name, chef_path(chef) %></h3>
 
-                  <% if chef.ratings.any? %>
-                    <p><%= "Star Rating: #{chef.serving_chefs_average_rating}" %></p>
-                  <% else %>
-                    <p>No ratings yet</p>
-                  <% end %>
-                </div>
+              <% if chef.ratings.any? %>
+                <p class="col-md-4 local-chef-rating"><%= "Star Rating: #{chef.serving_chefs_average_rating}" %></p>
+              <% else %>
+                <p>No ratings yet</p>
               <% end %>
+            </div>
+          <% end %>
           <% end %>
       <% end %>
   </div>
