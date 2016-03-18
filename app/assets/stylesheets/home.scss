@@ -9,11 +9,12 @@
   background-image: url(http://i.imgur.com/Qjb41gO.jpg);
 }
 .chef_img {
-  display: inline;
+  display: inline-block;;
   float: right;;
   height: 300px;
   width: 300px;
   margin-right: 200px;
+  margin-top: 0;
 }
   //Styling for main image on homepage
 .jumbotron_main {
@@ -68,6 +69,7 @@
 }
 
 .chef_img {
+  float: right;
 }
 
 .carousel_container {
