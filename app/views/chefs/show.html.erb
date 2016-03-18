@@ -5,11 +5,12 @@
 <!-- <p><div id="rateYo_average"></div></p> -->
 
   <h4>Average star rating:
-    <% if @averga_rating %>
+  <% if @chef.ratings.any? %>
     <%= @average_rating %>
-    <% else %>
+  <% else %>
     <p>No ratings yet</p>
-    <% end %>
+  <% end %>
+
   </h4>
 
   <div><%= "Address: #{@chef.location}" %></div>
