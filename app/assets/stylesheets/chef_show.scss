@@ -1,0 +1,94 @@
+/**************************************************************************************************
+        DEFAULT TAG STYLES
+**************************************************************************************************/
+
+// Wrapper styles located in client_show sass file
+
+
+
+
+/**************************************************************************************************
+        CHEF INFO AREA
+**************************************************************************************************/
+
+.chef-rating {
+  color: #f2f2f2;
+}
+
+.chef-header {
+  margin-top: 50px;
+  text-align: center;
+  padding: 20px;
+  color: #f2f2f2;
+  font-family: 'Shift', sans-serif;
+  font-weight: bolder;
+}
+
+.chef-show-info {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px;
+}
+
+.info-content {
+  text-align: left;
+}
+
+.specialty-content {
+  text-align: center;
+}
+
+/**************************************************************************************************
+        CHEF DISH'S AREA
+**************************************************************************************************/
+
+.dish-box {
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+.dish-name {
+  border-bottom: 4px solid #4775d1;
+  color: #e65c00;
+  display: inline-block;
+  font-family: 'Shift', sans-serif;
+  font-weight: bolder;
+}
+
+.dish-price {
+
+}
+
+/**************************************************************************************************
+        CHEF RATING AREA
+**************************************************************************************************/
+
+.chef-rating-box {
+  text-align: center;
+}
+
+.dish-header {
+  color: #e65c00;
+  font-family: 'Shift', sans-serif;
+  font-weight: bolder;
+  text-align: center;
+  padding: 20px;
+}
+
+.review-text-box {
+  height: 150px;
+  width: 400px;
+}
+
+.rating-stars {
+  text-align: center;
+}
+
+
+/**************************************************************************************************
+        CHEF CURRENT REVIEWS AREA
+**************************************************************************************************/
+
+.ratings-list {
+  color: #f2f2f2;
+}

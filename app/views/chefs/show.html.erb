@@ -1,117 +1,110 @@
 <%= render '/shared/navbar' %>
 
 
-<!-- <p><div id="rateYo_average"></div></p> -->
 
-  <h4>Average star rating: </h4>
-  <% if @chef.ratings.any? %>
-    <%= @average_rating %>
-  <% else %>
-    <p>No ratings yet</p>
-  <% end %>
+<div id="wrapper">
+  <h1 class="chef-header"><%= @chef.name.capitalize %></h1>
 
-<!-- Mobile SHiz -->
-<div class="jumbotron">
+  <!-- CHEF RATING -->
+  <div class="chef-rating row">
+    <h4 class="col-md-12">Average star rating</h4>
+      <% if @averga_rating %>
+        <p><%= @average_rating %></p>
+      <% else %>
+        <p>No ratings yet</p>
+      <% end %>
+  </div>
 
-</div>
-<!-- End Mobile Shiz -->
-
-<h1 class="chef_show_h1"><%= @chef.name %></h1>
-<p class="chef_experience"><%= "Experience: #{@chef.experience}" %></p>
-<p class="chef_speciality"><%= "Specialty: #{@chef.specialty}" %></p>
-
-<p><%= image_tag @chef.chef_avatar.url(:medium), class: "chef_avatar" if @chef.chef_avatar %></p>
-
-
-<br>
-<br>
+  <!-- CHEF INFO -->
+  <div class="chef-show-info row">
+    <h4 class="col-md-4"><%= image_tag @chef.chef_avatar.url(:small), class: 'img-thumbnail' if @chef.chef_avatar %></h4>
+    <h4 class="col-md-6 info-content"><%= "Address: #{@chef.location}" %></h4>
+    <h4 class="col-md-6 info-content"><%= "Experience: #{@chef.experience}" %></h4>
+    <h4 class="col-md-12 specialty-content"><%= "Specialty: #{@chef.specialty}" %></h4>
+  </div>
 
 
-
-<% if current_client %>
-
-  <h3><%= @chef.name %> offers these dish's:</h3>
-
-  <%= form_for [@client, @chef, @order] do |f| %>
-
-    <% @chef.products.each do |product| %>
-
-      <div class="field field_desktop field_mobile">
-        <p><%= image_tag product.product_picture.url(:small), class: "product_picture_desktop" if product.product_picture %></p>
-        <p><strong><%= product.name %></strong></p>
-        <p><%= product.description %></p>
-        <p><%= "$#{product.price}" %></p>
-
-        <%= f.fields_for :line_items, @order.line_items.new do |line_item_form| %>
-
-        <p><%= line_item_form.label :product_id, "Select Dish" %></p>
-        <p><%= line_item_form.check_box :product_id, {}, product.id, nil %></p>
-        <% end %>
-
-      </div>
-
-    <% end %>
-    <br>
-    <div class="action action_desktop">
-      <%= f.submit 'Subscribe to this Chef' %>
-    </div>
-
-  <% end %>
-<% else %>
-  <!-- <p>Please log in to select and view dish's!</p> -->
-<% end %>
-
-
-
-
-<!-- When current chef logged in: -->
-<% if current_chef %>
-  <% @chef.products.each do |product| %>
-
-    <div class="field">
-      <p><%= image_tag product.product_picture.url(:small) if product.product_picture %></p>
-      <p><strong><%= product.name %></strong></p>
-      <p><%= product.description %></p>
-      <p><%= "$#{product.price}" %></p>
-  <% end %>
-<% end %>
-
+  <!-- MAIN SUBSCRIPTION FORM -->
+  <div class="dish-box">
+    <h1 class="dish-header"><%= @chef.name.capitalize %> offers these dish's:</h1>
 
 
     <% if current_client %>
-  <h4>Rate your chef</h4>
+      <%= form_for [@client, @chef, @order] do |f| %>
 
-  <%= form_for([@chef, @rating], remote: true) do |f| %>
 
-  <div id="rateYo"></div>
 
-    <div class="field" style="display:none;">
-      <%= f.label :rating %>
-      <%= f.number_field :rating %>
-    </div>
+        <% @chef.products.each do |product| %>
 
-    <div class="field">
-      <%= f.label :review %><br />
-      <%= f.text_area :review %>
-    </div>
+          <div class="field row field_desktop field_mobile">
+            <p class="col-md-4"><%= image_tag product.product_picture.url(:small), class: 'img-rounded' if product.product_picture %></p>
+            <h3 class="col-md-6 dish-name"><strong><%= product.name.capitalize %></strong></h3>
+            <p class="col-md-6"><%= product.description %></p>
+            <p class="dish-price"><%= "$#{product.price}" %></p>
 
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+            <%= f.fields_for :line_items, @order.line_items.new do |line_item_form| %>
+
+              <p><%= line_item_form.label :product_id, "Select Dish" %></p>
+              <p><%= line_item_form.check_box :product_id, {}, product.id, nil %></p>
+            <% end %>
+
+          </div>
+
+        <% end %>
+        <br>
+        <div class="action">
+          <%= f.submit 'Subscribe to this Chef' %>
+        </div>
+
+      <% end %>
+    <% else %>
+      <p>Please log in to select and view dish's!</p>
     <% end %>
-  <% end %>
+  </div>
 
 
 
-  <h3>Reviews for <%= @chef.name %></h3>
+
+
+
+  <!-- CHEF RATING -->
+  <div class="chef-rating-box">
+
+    <% if current_client %>
+    <h3 class="chef-header">Rate your chef</h3>
+
+    <%= form_for([@chef, @rating], remote: true) do |f| %>
+      <div class="rating-stars">
+        <div id="rateYo"></div>
+      </div>
+
+      <div class="field" style="display:none;">
+        <%= f.label :rating %>
+        <%= f.number_field :rating %>
+      </div>
+
+      <div class="field">
+        <%= f.label :review %><br>
+        <%= f.text_area :review, class: 'review-text-box' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+
+
+  <h3 class="chef-header">Reviews for <%= @chef.name.capitalize %></h3>
 
   <% if @chef.ratings.any? %>
-  <ul class="ratings-list">
-    <%= render @chef.ratings %>
-  </ul>
+    <ul class="ratings-list">
+      <%= render @chef.ratings %>
+    </ul>
   <% else %>
     <p>No reviews yet.</p>
   <% end %>
 
-
+</div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.0.1/jquery.rateyo.min.js"></script>
