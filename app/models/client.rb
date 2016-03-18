@@ -6,6 +6,8 @@ class Client < ActiveRecord::Base
   has_many :chefs, through: :orders
   has_many :products, through: :orders
 
+  has_many :ratings
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

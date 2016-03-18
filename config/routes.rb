@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :chefs do
     resources :products
     resources :orders
+    resources :ratings
   end
 
   resources :line_items

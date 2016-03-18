@@ -97,6 +97,14 @@
                   <p class="col-md-4"><%= image_tag chef.chef_avatar.url(:small), class: 'img-rounded' if chef.chef_avatar %></p>
                   <h3 class="col-md-4 chef-link"><%= link_to chef.name, chef_path(chef) %></h3>
                 </div>
+
+                  <p class="available-chef"><%= link_to chef.name, chef_path(chef) %></p>
+                  <% if chef.ratings.any? %>
+                  <p><%= "Star Rating: #{chef.serving_chefs_average_rating}" %></p>
+                  <% else %>
+                  <p>No ratings yet</p>
+                  <% end %>
+
               <% end %>
           <% end %>
       <% end %>
