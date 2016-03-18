@@ -64,9 +64,14 @@
 
 <br>
 <br>
+
 <h3 class="chef_offers_message"><%= @chef.name %> offers these dish's:</h3>
 
+
 <% if current_client %>
+
+  <h3><%= @chef.name %> offers these dish's:</h3>
+
   <%= form_for [@client, @chef, @order] do |f| %>
 
     <% @chef.products.each do |product| %>
@@ -93,8 +98,24 @@
 
   <% end %>
 <% else %>
-  <p>Please log in to select and view dish's!</p>
+  <!-- <p>Please log in to select and view dish's!</p> -->
 <% end %>
+
+
+
+
+<!-- When current chef logged in: -->
+<% if current_chef %>
+  <% @chef.products.each do |product| %>
+
+    <div class="field">
+      <p><%= image_tag product.product_picture.url(:small) if product.product_picture %></p>
+      <p><strong><%= product.name %></strong></p>
+      <p><%= product.description %></p>
+      <p><%= "$#{product.price}" %></p>
+  <% end %>
+<% end %>
+
 
 
     <% if current_client %>
@@ -124,9 +145,13 @@
 
   <h3>Reviews for <%= @chef.name %></h3>
 
+  <% if @chef.ratings.any? %>
   <ul class="ratings-list">
     <%= render @chef.ratings %>
   </ul>
+  <% else %>
+    <p>No reviews yet.</p>
+  <% end %>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.0.1/jquery.rateyo.min.js"></script>
