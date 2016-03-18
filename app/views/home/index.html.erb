@@ -3,9 +3,9 @@
 <div id="page-top">
     <div class="jumbotron_main">
       <div class="container warpin-start">
-        <h1>UrbanChef</h1>
-        <h4>Find or become a personal Chef</h4>
-          <div>
+        <h1 class="main_title">UrbanChef</h1>
+        <h2 class="main_title">Find or become a personal Chef</h2>
+          <div class="main_title">
             <% if current_client %>
               <%= link_to 'View local Chefs', client_path(current_client), class: 'button' %>
             <% elsif current_chef %>
@@ -15,7 +15,10 @@
               <%= link_to 'Chef Log In', new_chef_session_path, class: 'button_login' %>
             <% end %>
           </div>
-          <span class="chef_img"></span>
+      </div>
+
+      <div class="warpin1-start1">
+          <img src="http://i.imgur.com/RRvb6tw.png" class="chef_img" />
       </div>
     </div>
 
@@ -55,6 +58,7 @@
                 <h2 class="carousel_title">Chef Info</h2>
                 <p class="content_text">
                   <ol class="carousel_list">
+                    <li class="slide_title">3 Easy Steps:</li>
                     <li>Sign up / Log in</li>
                     <li>Keep profile updated with latest menu</li>
                     <li>Wait for order subscriptions</li>
@@ -74,6 +78,7 @@
               <h2 class="carousel_title">Client Info</h2>
                 <p class="content_text">
                   <ol class="carousel_list">
+                    <li class="slide_title">3 Easy Steps:</li>
                     <li>Sign up / Log in</li>
                     <li>View chef profiles</li>
                     <li>Choose a chef and place order</li>
@@ -102,6 +107,16 @@
           }, 100);
         });
         </script>
+
+        <script>
+        $(function() {
+          setTimeout(function() {
+            $(".warpin1-start1").addClass("warpin1");
+          }, 100);
+        });
+        </script>
+
+
 
         <script>
           $(function() {
