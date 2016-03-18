@@ -13,6 +13,7 @@ body {
   max-width: 380px;
   padding: 15px 35px 45px;
   margin: 0 auto;
+
 }
 
 .form-signin-heading {
@@ -56,8 +57,37 @@ body {
   border-top-right-radius: 0;
 }
 .sbutton {
-  background-color: #e65c00;
+  display: inline-block;
+  // padding: 15px 32px;
+  font-size: 16px;
+  width: 10em;
+  margin-bottom: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
   color: white;
+  background-color: #e65c00;
+  border: 2px solid #black;
+  border-radius: 5px;
+  box-shadow: 0 2px #9a3d00;
+}
+// sbutton2 is for the _links.html.erb in clients shared folder
+.sbutton2 {
+  display: inline-block;
+  // padding: 15px 32px;
+  font-size: 16px;
+  width: 10em;
+  margin-bottom: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: #e65c00;
+  border: 2px solid #black;
+  border-radius: 5px;
+  box-shadow: 0 2px #9a3d00;
 }
 .btn-custom {
   background-color: #4775d1;
