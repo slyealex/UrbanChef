@@ -33,9 +33,9 @@
 
           <div class="field row">
             <p class="col-md-4"><%= image_tag product.product_picture.url(:small), class: 'img-rounded' if product.product_picture %></p>
-            <h3 class="col-md-6"><strong><%= product.name %></strong></h3>
+            <h3 class="col-md-6 dish-name"><strong><%= product.name.capitalize %></strong></h3>
             <p class="col-md-6"><%= product.description %></p>
-            <p class="col-md-6"><%= "$#{product.price}" %></p>
+            <p class="dish-price"><%= "$#{product.price}" %></p>
 
             <%= f.fields_for :line_items, @order.line_items.new do |line_item_form| %>
 
@@ -73,7 +73,7 @@
       </div>
 
       <div class="field">
-        <%= f.label :review %><br />
+        <%= f.label :review %><br>
         <%= f.text_area :review, class: 'review-text-box' %>
       </div>
 
@@ -85,7 +85,7 @@
   </div>
 
 
-  <h3 class="chef-header">Reviews for <%= @chef.name %></h3>
+  <h3 class="chef-header">Reviews for <%= @chef.name.capitalize %></h3>
 
   <ul class="ratings-list">
     <%= render @chef.ratings %>
