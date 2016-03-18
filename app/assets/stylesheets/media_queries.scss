@@ -100,14 +100,14 @@
 
 @media screen and (min-width: 401px) and (max-width: 3000px) {
   #wrapper { display: block; }   /* hide it elsewhere */
-  .client-info_1 {display:none;}
-  .sub-header-mobile {display:none;}
-  .sub-header2-mobile {display:none;}
-  .sub-header3-mobile {display:none;}
-  .order-details-mobile {display: none;}
-  #subsc_mobile {display: none;}
-  .sub-name-1 {display:none;}
-  .jumbotron {display: none;}
+  .client-info_1         {display: none;}
+  .sub-header-mobile     {display: none;}
+  .sub-header2-mobile    {display: none;}
+  .sub-header3-mobile    {display: none;}
+  .order-details-mobile  {display: none;}
+  #subsc_mobile          {display: none;}
+  .sub-name-1            {display: none;}
+  .jumbotron             {display: none;}
 }
 
 // End client show page queries
@@ -128,8 +128,14 @@
 }
 @media screen and (min-width: 0px) and (max-width: 400px) {
 /* show it on small screens */
-   #wrapper { display: none; }  /* show it on small screens */
-   .chef_show_h1 { display: none;}
+   .chef_show_h1                 {display: none;}
+   .chef_experience              {display: none;}
+   .chef_speciality              {display: none;}
+   .chef_avatar_mobile           {display: none;}
+   .chef_offers_message          {display: none;}
+   .product_picture_desktop      {display: none;}
+   .field_desktop                {display: none;}
+   .action_desktop               {display: none;}
 }
 
 @media screen and (min-width: 401px) and (max-width: 3000px) {
@@ -142,5 +148,4 @@
   .chef_subheader_mobile_1       {display: none;}
   .field_mobile                  {display: none;}
   .action_mobile                 {display: none;}
-
 }

@@ -5,7 +5,7 @@
 <div class="jumbotron">
 
 </div>
-<div><%= image_tag @chef.chef_avatar.url(:medium), class:"img-circle chef_avatar" if @chef.chef_avatar %></div>
+<div><%= image_tag @chef.chef_avatar.url(:medium), class:"img-circle chef_avatar_mobile" if @chef.chef_avatar %></div>
 
 <h1 class="chef_name_mobile"><%= @chef.name %></h1>
 <p class="chef_experience_mobile"><%= "Experience: #{@chef.experience}" %><p>
@@ -45,29 +45,25 @@
 
 
 <!-- End Mobile Shiz -->
+
 <h1 class="chef_show_h1"><%= @chef.name %></h1>
-<!-- <div><%= @chef.email %></div> -->
-<div><%= "Address: #{@chef.location}" %></div>
-<div><%= "Experience: #{@chef.experience}" %></div>
-<!-- service_radius wont' be rendered eventually -->
-<div><%= "Specialty: #{@chef.specialty}" %></div>
-<div><%= "#{@chef.service_radius} km away" %></div>
+<p class="chef_experience"><%= "Experience: #{@chef.experience}" %></p>
+<p class="chef_speciality"><%= "Specialty: #{@chef.specialty}" %></p>
 
-<div><%= image_tag @chef.chef_avatar.url(:medium) if @chef.chef_avatar %></div>
-
+<p><%= image_tag @chef.chef_avatar.url(:medium), class: "chef_avatar" if @chef.chef_avatar %></p>
 
 
 <br>
 <br>
-<h3><%= @chef.name %> offers these dish's:</h3>
+<h3 class="chef_offers_message"><%= @chef.name %> offers these dish's:</h3>
 
 <% if current_client %>
   <%= form_for [@client, @chef, @order] do |f| %>
 
     <% @chef.products.each do |product| %>
 
-      <div class="field">
-        <p><%= image_tag product.product_picture.url(:small) if product.product_picture %></p>
+      <div class="field field_desktop">
+        <p><%= image_tag product.product_picture.url(:small), class: "product_picture_desktop" if product.product_picture %></p>
         <p><strong><%= product.name %></strong></p>
         <p><%= product.description %></p>
         <p><%= "$#{product.price}" %></p>
@@ -82,7 +78,7 @@
 
     <% end %>
     <br>
-    <div class="action">
+    <div class="action action_desktop">
       <%= f.submit 'Subscribe to this Chef' %>
     </div>
 
