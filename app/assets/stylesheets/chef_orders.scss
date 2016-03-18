@@ -2,13 +2,7 @@
         GENERAL TAG STYLES
 **************************************************************************************************/
 
-#wrapper {
-  width: 650px;
-  margin: 0 auto;
-  background-color: rgba(#4775d1, 0.69);
-  border-left: 4px solid #e65c00;
-  border-right: 4px solid #e65c00;
-}
+
 
 th {
   text-align: left;
@@ -73,6 +67,7 @@ td {
 
 .chef-map-style {
   border-top: 2px dashed #4775d1;
+  margin-bottom: 50px;
 }
 
 .map-header {

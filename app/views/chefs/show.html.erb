@@ -4,40 +4,38 @@
   <h1 class="chef-header"><%= @chef.name.capitalize %></h1>
 
   <!-- CHEF RATING -->
-  <div>
-    <h4>Average star rating:
+  <div class="chef-rating row">
+    <h4 class="col-md-12">Average star rating</h4>
       <% if @averga_rating %>
-        <%= @average_rating %>
+        <p><%= @average_rating %></p>
       <% else %>
         <p>No ratings yet</p>
       <% end %>
-    </h4>
   </div>
 
   <!-- CHEF INFO -->
-  <div class="chef-show-info">
-    <p><%= "Address: #{@chef.location}" %></p>
-    <p><%= "Experience: #{@chef.experience}" %></p>
-    <p><%= "Specialty: #{@chef.specialty}" %></p>
-    <!-- <div><%= "#{@chef.service_radius} km away" %></div> -->
-    <p><%= image_tag @chef.chef_avatar.url(:medium) if @chef.chef_avatar %></p>
+  <div class="chef-show-info row">
+    <h4 class="col-md-4"><%= image_tag @chef.chef_avatar.url(:small), class: 'img-thumbnail' if @chef.chef_avatar %></h4>
+    <h4 class="col-md-6 info-content"><%= "Address: #{@chef.location}" %></h4>
+    <h4 class="col-md-6 info-content"><%= "Experience: #{@chef.experience}" %></h4>
+    <h4 class="col-md-6 info-content"><%= "Specialty: #{@chef.specialty}" %></h4>
   </div>
 
 
   <!-- MAIN SUBSCRIPTION FORM -->
   <div class="dish-box">
-    <h3><%= @chef.name.capitalize %> offers these dish's:</h3>
+    <h1 class="dish-header"><%= @chef.name.capitalize %> offers these dish's:</h1>
 
     <% if current_client %>
       <%= form_for [@client, @chef, @order] do |f| %>
 
         <% @chef.products.each do |product| %>
 
-          <div class="field">
-            <p><%= image_tag product.product_picture.url(:small) if product.product_picture %></p>
-            <p><strong><%= product.name %></strong></p>
-            <p><%= product.description %></p>
-            <p><%= "$#{product.price}" %></p>
+          <div class="field row">
+            <p class="col-md-4"><%= image_tag product.product_picture.url(:small), class: 'img-rounded' if product.product_picture %></p>
+            <h3 class="col-md-6"><strong><%= product.name %></strong></h3>
+            <p class="col-md-6"><%= product.description %></p>
+            <p class="col-md-6"><%= "$#{product.price}" %></p>
 
             <%= f.fields_for :line_items, @order.line_items.new do |line_item_form| %>
 
@@ -60,7 +58,7 @@
   </div>
 
   <!-- CHEF RATING -->
-  <div>
+  <div class="chef-rating-box">
     <% if current_client %>
     <h4>Rate your chef</h4>
 
