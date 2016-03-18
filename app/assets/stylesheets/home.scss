@@ -8,7 +8,13 @@
 #page-top {
   background-image: url(http://i.imgur.com/Qjb41gO.jpg);
 }
-
+.chef_img {
+  display: inline;
+  float: right;;
+  height: 300px;
+  width: 300px;
+  margin-right: 200px;
+}
   //Styling for main image on homepage
 .jumbotron_main {
   background-image: url(http://i.imgur.com/RWk5OXM.png);
@@ -20,7 +26,10 @@
   position: relative;
   top:100px;
 }
-
+.main_title {
+  margin-left: 50px;
+  color: white;
+}
 
   //Styling for title over main image
 .jumbotron_main h1 {
@@ -39,14 +48,25 @@
 }
 .warpin-start {
   transform: skew(60deg);
-  margin-left:-150%;
+  margin-left: -150%;
   transition:transform .75s, margin .75s;
   transition-timing-function: cubic-bezier(0.395, -0.340, 0.570, 1.445); /* custom */
 }
 .warpin {
   transform: skew(0deg);
-  margin-left:0;
+  margin-left: 0;
 }
+.warpin1-start1 {
+  transform: skew(60deg);
+  margin-right: -150%;
+  transition:transform .75s, margin .75s;
+  transition-timing-function: cubic-bezier(0.395, -0.340, 0.570, 1.445); /* custom */
+}
+.warpin1 {
+  transform: skew(0deg);
+  margin-right: 0;
+}
+
 .chef_img {
 }
 
@@ -209,6 +229,14 @@ list-style-type: none;
   color: #e65c00;
   font-weight: bolder;
   font-size: 50px;
+}
+.slide_title {
+  font-size: 20px;
+  font-weight: bold;;
+  color: white;
+  font-style: normal;;
+  font-family: monospace;;
+  margin-bottom: 5px;
 }
 
 .item {
