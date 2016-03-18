@@ -1,6 +1,5 @@
 <%= render '/shared/navbar' %>
 
-<h1 class="chef_show_h1"><%= @chef.name %></h1>
 
 <!-- <p><div id="rateYo_average"></div></p> -->
 
@@ -11,17 +10,63 @@
     <p>No ratings yet</p>
   <% end %>
 
-  </h4>
+<!-- Mobile SHiz -->
+<div class="jumbotron">
 
-  <div><%= "Address: #{@chef.location}" %></div>
-  <div><%= "Experience: #{@chef.experience}" %></div>
-  <div><%= "Specialty: #{@chef.specialty}" %></div>
-  <!-- <div><%= "#{@chef.service_radius} km away" %></div> -->
-  <div><%= image_tag @chef.chef_avatar.url(:medium) if @chef.chef_avatar %></div>
+</div>
+<div><%= image_tag @chef.chef_avatar.url(:medium), class:"img-circle chef_avatar_mobile" if @chef.chef_avatar %></div>
+
+<h1 class="chef_name_mobile"><%= @chef.name %></h1>
+<p class="chef_experience_mobile"><%= "Experience: #{@chef.experience}" %><p>
+<p class="chef_speciality_mobile"><%= "Specialty: #{@chef.specialty}" %><p>
+
+<h3 class="chef_subheader_mobile_1"><%= @chef.name %> offers these dish's:</h3>
+
+<% if current_client %>
+  <%= form_for [@client, @chef, @order] do |f| %>
+
+    <% @chef.products.each do |product| %>
+
+      <div class="field field_mobile">
+        <p><%= image_tag product.product_picture.url(:small) if product.product_picture %></p>
+        <p><strong><%= product.name %></strong></p>
+        <p><%= product.description %></p>
+        <p><%= "$#{product.price}" %></p>
+
+        <%= f.fields_for :line_items, @order.line_items.new do |line_item_form| %>
+
+        <p><%= line_item_form.label :product_id, "Select Dish" %></p>
+        <p><%= line_item_form.check_box :product_id, {}, product.id, nil %></p>
+        <% end %>
+
+      </div>
+
+      <% end %>
+      <br>
+      <div class="action action_mobile">
+        <%= f.submit 'Subscribe to this Chef' %>
+      </div>
+
+    <% end %>
+  <% else %>
+    <p>Please log in to select and view dish's!</p>
+  <% end %>
+
+
+<!-- End Mobile Shiz -->
+
+<h1 class="chef_show_h1"><%= @chef.name %></h1>
+<p class="chef_experience"><%= "Experience: #{@chef.experience}" %></p>
+<p class="chef_speciality"><%= "Specialty: #{@chef.specialty}" %></p>
+
+<p><%= image_tag @chef.chef_avatar.url(:medium), class: "chef_avatar" if @chef.chef_avatar %></p>
 
 
 <br>
 <br>
+
+<h3 class="chef_offers_message"><%= @chef.name %> offers these dish's:</h3>
+
 
 <% if current_client %>
 
@@ -31,8 +76,8 @@
 
     <% @chef.products.each do |product| %>
 
-      <div class="field">
-        <p><%= image_tag product.product_picture.url(:small) if product.product_picture %></p>
+      <div class="field field_desktop">
+        <p><%= image_tag product.product_picture.url(:small), class: "product_picture_desktop" if product.product_picture %></p>
         <p><strong><%= product.name %></strong></p>
         <p><%= product.description %></p>
         <p><%= "$#{product.price}" %></p>
@@ -47,7 +92,7 @@
 
     <% end %>
     <br>
-    <div class="action">
+    <div class="action action_desktop">
       <%= f.submit 'Subscribe to this Chef' %>
     </div>
 
