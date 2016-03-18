@@ -5,7 +5,11 @@
 <!-- <p><div id="rateYo_average"></div></p> -->
 
   <h4>Average star rating:
-    <div id="avRating"><%= @average_rating %></div>
+    <% if @averga_rating %>
+    <%= @average_rating %>
+    <% else %>
+    <p>No ratings yet</p>
+    <% end %>
   </h4>
 
   <div><%= "Address: #{@chef.location}" %></div>
@@ -74,9 +78,8 @@
   <% end %>
 
 
-  <h2>Reviews</h3>
 
-  <p>Reviews for <%= @chef.name %></p>
+  <h3>Reviews for <%= @chef.name %></h3>
 
   <ul class="ratings-list">
     <%= render @chef.ratings %>

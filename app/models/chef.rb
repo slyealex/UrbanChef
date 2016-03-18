@@ -32,8 +32,13 @@ class Chef < ActiveRecord::Base
   end
 
   def serving_chefs_average_rating
+    if self.ratings.any?
     ((self.ratings.sum :rating)/(self.ratings.count :rating)).to_i
   end
+  end
+
+
+
 
 
 end

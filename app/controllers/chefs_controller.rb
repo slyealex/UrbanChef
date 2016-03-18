@@ -30,10 +30,12 @@ class ChefsController < ApplicationController
     @order = Order.new
     @nearby_chefs = @chef.nearbys(1, units: :km)
     @clients_near_chef = Client.near(current_chef, 1.5, units: :km)
-    @average_rating = (@chef.ratings.sum :rating)/(@chef.ratings.count :rating).to_i
+
+    if @average_rating
+      @average_rating = (@chef.ratings.sum :rating)/(@chef.ratings.count :rating).to_i
+    end
 
     if current_client
-
       @rating = Rating.new
     end
 
