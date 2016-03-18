@@ -120,10 +120,82 @@
     z-index: 5;
     border-color: #f2f2f2;
     border-width: 8px;
-    margin-top: 21%;
+    margin-top: 43%;
     background-color: #f2f2f2;
     box-shadow: none;
-    margin-left: 31%;
+    margin-left: 30%;
+    margin-right: 30%;
+    height: 150px;
+    width: 150px;
+  }
+  .chef_show_h1 {
+    text-align: center;
+    margin-top: 5px;
+  }
+  .chef_experience {
+    text-align: center;
+  }
+  .chef_speciality {
+    text-align: center;
+  }
+  .dishes_h3 {
+    text-align: center;
+  }
+  .product_picture_desktop {
+    float: left;
+    margin-left: 30px;
+  }
+  .product_name strong {
+    margin-left: 4px;
+  }
+  .product_description {
+    padding-left: 185px;
+  }
+  .product_price {
+    padding-left: 185px;
+  }
+  .dish_select_label {
+    padding-left: 185px;
+  }
+  .dish_select_box {
+    padding-left: 185px;
+  }
+  .action_desktop {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+  .chef_rating_h4 {
+    text-align: center;
+  }
+  #rateYo {
+    margin-top: 10px;
+    margin-left: 28%;
+  }
+  .label_reviews {
+    margin-left: 47px;
+  }
+  .text_area_reviews {
+    margin-left: -9px;
+  }
+  .rating_submit {
+
+  }
+  .rating_field_2 {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+  .chef_star_rating {
+    text-align: center;
+  }
+  .rating_field_submit {
+    margin-left: 35%;
+    margin-right: 30%;
+  }
+  .reviews_h3 {
+    text-align: center;
+  }
+ ul {
+    list-style: none;
   }
 }
 @media screen and (min-width: 0px) and (max-width: 400px) {
@@ -133,10 +205,11 @@
 
 @media screen and (min-width: 401px) and (max-width: 3000px) {
  /* hide it elsewhere */
-  .jumbotron                     {display: none;}
+  .jumbotron {display: none;}
 
 }
 
+// End chef show page queries
 
 // Media Queries for main page
 @media screen and (min-width: 0px) and (max-width: 400px) {

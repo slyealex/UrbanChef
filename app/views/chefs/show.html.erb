@@ -3,34 +3,35 @@
 
 <!-- <p><div id="rateYo_average"></div></p> -->
 
-  <h4>Average star rating: </h4>
-  <% if @chef.ratings.any? %>
-    <%= @average_rating %>
-  <% else %>
-    <p>No ratings yet</p>
-  <% end %>
+
 
 <!-- Mobile SHiz -->
 <div class="jumbotron">
 
 </div>
 <!-- End Mobile Shiz -->
+<p><%= image_tag @chef.chef_avatar.url(:medium), class: "chef_avatar img-circle" if @chef.chef_avatar %></p>
 
 <h1 class="chef_show_h1"><%= @chef.name %></h1>
+<h4 class="chef_star_rating">Average star rating:   <%= @average_rating %> </h4>
+<% if @chef.ratings.any? %>
+<% else %>
+  <p>No ratings yet</p>
+<% end %>
 <p class="chef_experience"><%= "Experience: #{@chef.experience}" %></p>
 <p class="chef_speciality"><%= "Specialty: #{@chef.specialty}" %></p>
 
-<p><%= image_tag @chef.chef_avatar.url(:medium), class: "chef_avatar" if @chef.chef_avatar %></p>
+
 
 
 <br>
-<br>
+</br>
 
 
 
 <% if current_client %>
 
-  <h3><%= @chef.name %> offers these dish's:</h3>
+  <h3 class="dishes_h3"><%= @chef.name %> offers these dish's:</h3>
 
   <%= form_for [@client, @chef, @order] do |f| %>
 
@@ -38,14 +39,14 @@
 
       <div class="field field_desktop field_mobile">
         <p><%= image_tag product.product_picture.url(:small), class: "product_picture_desktop" if product.product_picture %></p>
-        <p><strong><%= product.name %></strong></p>
-        <p><%= product.description %></p>
-        <p><%= "$#{product.price}" %></p>
+        <p class="product_name"><strong><%= product.name %></strong></p>
+        <p class="product_description"><%= product.description %></p>
+        <p class="product_price"><%= "$#{product.price}" %></p>
 
         <%= f.fields_for :line_items, @order.line_items.new do |line_item_form| %>
 
-        <p><%= line_item_form.label :product_id, "Select Dish" %></p>
-        <p><%= line_item_form.check_box :product_id, {}, product.id, nil %></p>
+        <p class="dish_select_label"><%= line_item_form.label :product_id, "Select Dish" %></p>
+        <p class="dish_select_box"><%= line_item_form.check_box :product_id, {}, product.id, nil %></p>
         <% end %>
 
       </div>
@@ -75,35 +76,35 @@
       <p><%= "$#{product.price}" %></p>
   <% end %>
 <% end %>
-
+  </div>
 
 
     <% if current_client %>
-  <h4>Rate your chef</h4>
+  <h4 class="chef_rating_h4">Rate your chef</h4>
 
   <%= form_for([@chef, @rating], remote: true) do |f| %>
 
   <div id="rateYo"></div>
 
-    <div class="field" style="display:none;">
+    <div class="field rating_field_1" style="display:none;">
       <%= f.label :rating %>
       <%= f.number_field :rating %>
     </div>
 
-    <div class="field">
-      <%= f.label :review %><br />
-      <%= f.text_area :review %>
+    <div class="field rating_field_2">
+      <%= f.label :review, class:"label_reviews"%><br/>
+      <%= f.text_area :review, class:"text_area_reviews" %>
     </div>
 
-    <div class="actions">
-      <%= f.submit %>
+    <div class="actions rating_field_submit">
+      <%= f.submit  %>
     </div>
     <% end %>
   <% end %>
 
 
 
-  <h3>Reviews for <%= @chef.name %></h3>
+  <h3 class="reviews_h3">Reviews for <%= @chef.name %></h3>
 
   <% if @chef.ratings.any? %>
   <ul class="ratings-list">
