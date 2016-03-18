@@ -149,3 +149,9 @@
   .field_mobile                  {display: none;}
   .action_mobile                 {display: none;}
 }
+
+
+// Media Queries for main page
+@media screen and (min-width: 0px) and (max-width: 400px) {
+  .chef_img {display: none;}
+}
