@@ -1,3 +1,26 @@
+// Shared
+
+@media screen and (max-width: 660px) {
+.jumbotron {
+  height: 200px;
+  margin-bottom: -65%;
+  background-image: url(http://i.imgur.com/t186NG1.png);
+  border-bottom: 5px;
+  border-style: solid;
+  border-bottom-color: #e65c00;
+  }
+.client_avatar {
+  visibility: visible;
+  display: inline;
+  z-index: 5;
+  border-color: #f2f2f2;
+  border-width: 8px;
+  margin-top: 21%;
+  background-color: #f2f2f2;
+  box-shadow: none;
+  margin-left: 31%;
+  }
+}
 // Client Show Page Media Queries
 
 @media screen and (max-width: 660px) {
@@ -13,15 +36,9 @@
    margin-top: 21%;
    background-color: #f2f2f2;
    box-shadow: none;
-     margin-left: 31%;
+   margin-left: 31%;
  }
- .jumbotron {
-   height: 200px;
-   margin-bottom: -65%;
-   background-image: url(http://i.imgur.com/t186NG1.png);
-   border-bottom: 5px;
-   border-style: solid;
-   border-bottom-color: #e65c00;
+
  }
  .mobile_profile_info {
    list-style-type:none;
@@ -74,7 +91,7 @@
    margin-bottom: 5px;
    margin-left: 43px;
  }
-}
+
 
 @media screen and (min-width: 0px) and (max-width: 400px) {
   #wrapper { display: none; }  /* show it on small screens */
@@ -97,13 +114,33 @@
 
 // Chef show page media queries
 @media screen and (max-width: 660px) {
-
+  .chef_avatar {
+    visibility: visible;
+    display: inline;
+    z-index: 5;
+    border-color: #f2f2f2;
+    border-width: 8px;
+    margin-top: 21%;
+    background-color: #f2f2f2;
+    box-shadow: none;
+    margin-left: 31%;
+  }
 }
-
 @media screen and (min-width: 0px) and (max-width: 400px) {
-
+/* show it on small screens */
+   #wrapper { display: none; }  /* show it on small screens */
+   .chef_show_h1 { display: none;}
 }
 
 @media screen and (min-width: 401px) and (max-width: 3000px) {
+ /* hide it elsewhere */
+  .jumbotron                     {display: none;}
+  .chef_avatar                   {display: none;}
+  .chef_name_mobile              {display: none;}
+  .chef_experience_mobile        {display: none;}
+  .chef_speciality_mobile        {display: none;}
+  .chef_subheader_mobile_1       {display: none;}
+  .field_mobile                  {display: none;}
+  .action_mobile                 {display: none;}
 
 }
