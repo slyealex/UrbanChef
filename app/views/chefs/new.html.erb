@@ -1,71 +1,73 @@
 <%= render '/shared/navbar' %>
 
-<div class="chef_wrapper">
-  <%= form_for @chef, :html => {:class => "chef-form-signup"} do |f| %>
+<div id="wrapper">
+  <div class="chef_wrapper">
+    <%= form_for @chef, :html => {:class => "chef-form-signup"} do |f| %>
 
-    <h1 class="chef-form-signup-heading">Chef Sign-Up</h1>
+      <h1 class="chef-form-signup-heading">Chef Sign-Up</h1>
 
-    <div class="chef-form-signup-control">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </div>
+      <div class="chef-form-signup-control">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
 
-    <div class="chef-form-signup-control">
-      <%= f.label :email %><br>
-      <%= f.email_field :email %>
-    </div>
+      <div class="chef-form-signup-control">
+        <%= f.label :email %><br>
+        <%= f.email_field :email %>
+      </div>
 
-    <div class="chef-form-signup-control">
-      <%= f.label :location %><br>
-      <%= f.text_field :location %>
-    </div>
+      <div class="chef-form-signup-control">
+        <%= f.label :location %><br>
+        <%= f.text_field :location %>
+      </div>
 
-    <div class="chef-form-signup-control">
-      <%= f.label :experience %><br>
-      <%= f.text_area :experience %>
-    </div>
+      <div class="chef-form-signup-control">
+        <%= f.label :experience %><br>
+        <%= f.text_area :experience %>
+      </div>
 
-    <div class="chef-form-signup-control">
-      <%= f.label :specialty %><br>
-      <%= f.text_area :specialty %>
-    </div>
+      <div class="chef-form-signup-control">
+        <%= f.label :specialty %><br>
+        <%= f.text_area :specialty %>
+      </div>
 
-    <div class="chef-form-signup-control">
-      <%= f.label :service_radius %><br>
-      <%= f.number_field :service_radius %>
-    </div>
+      <div class="chef-form-signup-control">
+        <%= f.label :service_radius %><br>
+        <%= f.number_field :service_radius %>
+      </div>
 
-    <div class="chef-form-signup-control">
-      <%= f.label :password %><br>
-      <%= f.password_field :password %>
-    </div>
+      <div class="chef-form-signup-control">
+        <%= f.label :password %><br>
+        <%= f.password_field :password %>
+      </div>
 
-    <div class="chef-form-signup-control">
-      <%= f.label :password_confirmation %><br>
-      <%= f.password_field :password_confirmation %>
-    </div>
+      <div class="chef-form-signup-control">
+        <%= f.label :password_confirmation %><br>
+        <%= f.password_field :password_confirmation %>
+      </div>
 
-    <div class="chef-form-signup-control">
-      <%= f.label :chef_avatar %>
-      <%= f.file_field :chef_avatar %>
-      <%= f.hidden_field :chef_avatar_cache %>
-    </div>
+      <div class="chef-form-signup-control">
+        <%= f.label :chef_avatar %>
+        <%= f.file_field :chef_avatar %>
+        <%= f.hidden_field :chef_avatar_cache %>
+      </div>
 
-    <!-- Nested Dish Form -->
-    <h1 class="chef-form-signup-heading">Dish's</h1>
+      <!-- Nested Dish Form -->
+      <h1 class="chef-form-signup-heading">Dish's</h1>
 
-    <div id="products">
-      <%= f.fields_for :products do |product_fields| %>
-        <%= render 'product_fields', f: product_fields %>
-      <% end %>
+      <div id="products">
+        <%= f.fields_for :products do |product_fields| %>
+          <%= render 'product_fields', f: product_fields %>
+        <% end %>
 
-    <div class="add-dish-links">
-          <%= link_to_add_association "Add Dish", f, :products, class: 'addbutton' %>
-    </div>
+      <div class="add-dish-links">
+            <%= link_to_add_association "Add Dish", f, :products, class: 'addbutton' %>
+      </div>
 
-    </div>
+      </div>
 
 
+  </div>
 </div>
 
 <div class="btn btn-lg btn-custom btn-block">
