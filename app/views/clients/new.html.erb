@@ -1,46 +1,49 @@
 <%= render '/shared/navbar' %>
 
-<div class="wrapper">
 
-  <%= form_for @client, :html => {:class => "form-signup"} do |f| %>
+<div id="wrapper">
+  <div class="wrapper">
 
-    <h1 class="form-signup-heading">Client Sign-Up</h1>
+    <%= form_for @client, :html => {:class => "form-signup"} do |f| %>
 
-    <div class="form-signup-control">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </div>
+      <h1 class="form-signup-heading">Client Sign-Up</h1>
 
-    <div class="form-signup-control">
-      <%= f.label :email %><br>
-      <%= f.email_field :email %>
-    </div>
+      <div class="form-signup-control">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
 
-    <div class="form-signup-control">
-      <%= f.label :location %><br>
-      <%= f.text_field :location %>
-    </div>
+      <div class="form-signup-control">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </div>
 
-    <div class="form-signup-control">
-      <%= f.label :password %><br>
-      <%= f.password_field :password %>
-    </div>
+      <div class="form-signup-control">
+        <%= f.label :location %>
+        <%= f.text_field :location %>
+      </div>
 
-    <div class="form-signup-control">
-      <%= f.label :password_confirmation %><br>
-      <%= f.password_field :password_confirmation %>
-    </div>
+      <div class="form-signup-control">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
 
-    <div class="form-signup-control avatar_pic">
-      <%= f.label :client_avatar %><br>
-      <%= f.file_field :client_avatar %>
-      <%= f.hidden_field :client_avatar_cache %>
-    </div>
+      <div class="form-signup-control">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+      </div>
 
-    <div class="action btn btn-lg btn-custom btn-block">
-      <%= f.submit "SUBMIT", class: 'sbutton' %>
-    </div>
+      <div class="form-signup-control avatar_pic">
+        <%= f.label :client_avatar %><br>
+        <%= f.file_field :client_avatar %>
+        <%= f.hidden_field :client_avatar_cache %>
+      </div>
 
-  <% end %>
+      <div class="action btn btn-lg btn-block">
+        <%= f.submit "SUBMIT", class: 'sbutton' %>
+      </div>
 
+    <% end %>
+
+  </div>
 </div>
