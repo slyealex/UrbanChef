@@ -50,7 +50,7 @@
 .warpin-start {
   transform: skew(60deg);
   margin-left: -150%;
-  transition:transform .75s, margin .75s;
+  transition:transform 1.75s, margin 1.75s;
   transition-timing-function: cubic-bezier(0.395, -0.340, 0.570, 1.445); /* custom */
 }
 .warpin {
@@ -60,7 +60,7 @@
 .warpin1-start1 {
   transform: skew(60deg);
   margin-right: -150%;
-  transition:transform .75s, margin .75s;
+  transition:transform 1.75s, margin 1.75s;
   transition-timing-function: cubic-bezier(0.395, -0.340, 0.570, 1.445); /* custom */
 }
 .warpin1 {
