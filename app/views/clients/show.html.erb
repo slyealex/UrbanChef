@@ -93,10 +93,10 @@
           <% @serving_chefs.each do |chef| %>
             <div class="row">
               <p class="col-md-4"><%= image_tag chef.chef_avatar.url(:small), class: 'img-rounded' if chef.chef_avatar %></p>
-              <h3 class="col-md-4 chef-link"><%= link_to chef.name, chef_path(chef) %></h3>
+              <h3 class="col-md-6 chef-link"><%= link_to chef.name, chef_path(chef) %></h3>
 
               <% if chef.ratings.any? %>
-                <p class="col-md-4 local-chef-rating"><%= "Star Rating: #{chef.serving_chefs_average_rating}" %></p>
+                <p class="col-md-6 local-chef-rating">Rating: <span class="glyphicon glyphicon-star" aria-hidden="true"></span><%= "#{chef.serving_chefs_average_rating}" %></p>
               <% else %>
                 <p>No ratings yet</p>
               <% end %>
@@ -106,10 +106,10 @@
       <% end %>
   </div>
 
-  <%= render '/shared/footer' %>
 
 </div>
 
+<%= render '/shared/footer' %>
 
 
 <%=  javascript_tag do %>

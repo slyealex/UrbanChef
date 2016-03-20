@@ -27,5 +27,6 @@
     window.nearbys = <%= raw @chefs_clients.map {|client| {latitude: client.latitude, longitude: client.longitude} }.to_json %>
   <% end %>
 
-  <%= render '/shared/footer' %>
 </div>
+
+<%= render '/shared/footer' %>
