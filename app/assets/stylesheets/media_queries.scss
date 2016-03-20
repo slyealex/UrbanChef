@@ -96,6 +96,7 @@
 @media screen and (min-width: 0px) and (max-width: 400px) {
   #wrapper { display: none; }  /* show it on small screens */
   .mobile_profile_info {display:visible;}
+  .client_avatar {display: visible;}
 }
 
 @media screen and (min-width: 401px) and (max-width: 3000px) {
