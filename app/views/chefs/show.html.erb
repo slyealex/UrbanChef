@@ -8,7 +8,7 @@
   <!-- CHEF RATING -->
   <div class="chef-rating row">
     <h4 class="col-md-12">Average star rating</h4>
-      <% if @averga_rating %>
+      <% if @average_rating %>
         <p><%= @average_rating %></p>
       <% else %>
         <p>No ratings yet</p>
@@ -105,6 +105,8 @@
   <% else %>
     <p>No reviews yet.</p>
   <% end %>
+
+  <%= render '/shared/footer' %>
 
 </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.0.1/jquery.rateyo.min.js"></script>
