@@ -55,7 +55,7 @@
 
           <div class="carousel-inner" role="listbox">
             <div class="item">
-                <h2 class="carousel_title">Chef Info</h2>
+                <h2 class="carousel_title">As a Chef</h2>
                 <p class="content_text">
                   <ol class="carousel_list">
                     <li class="slide_title">3 Easy Steps:</li>
@@ -75,7 +75,7 @@
                   on the links to the left and right. </p>
             </div>
             <div class="item">
-              <h2 class="carousel_title">Client Info</h2>
+              <h2 class="carousel_title">As a Client</h2>
                 <p class="content_text">
                   <ol class="carousel_list">
                     <li class="slide_title">3 Easy Steps:</li>
@@ -88,69 +88,16 @@
           </div>
 
           <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-              <p class="glyph_title">Chef Info</p>
+              <p class="glyph_title">More Info</p>
               <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
           </a>
 
           <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-              <p class="glyph_title">Client Info</p>
+              <p class="glyph_title">More Info</p>
               <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
           </a>
         </div>
-
-        <script>
-        $(function() {
-          setTimeout(function() {
-            $(".warpin-start").addClass("warpin");
-          }, 100);
-        });
-        </script>
-
-        <script>
-        $(function() {
-          setTimeout(function() {
-            $(".warpin1-start1").addClass("warpin1");
-          }, 100);
-        });
-        </script>
-
-        <script>
-          $(function() {
-            $('a[href*="#"]:not([href="#"])').click(function() {
-              if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                if (target.length) {
-                  $('html, body').animate({
-                    scrollTop: target.offset().top
-                  }, 1000);
-                  return false;
-                }
-              }
-            });
-          });
-        </script>
-
-        <script>
-        $('.carousel').carousel({
-          wrap: false
-          });
-              $('#myCarousel').carousel(3);
-        </script>
-
-        <script>
-          $(".left").click(function(){
-          $("#myCarousel").carousel("prev");
-          });
-        </script>
-
-        <script>
-        $(".right").click(function(){
-        $("#myCarousel").carousel("next");
-        });
-        </script>
-
 
 </div>
