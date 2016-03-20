@@ -8,13 +8,14 @@
   <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
-        <h1>Your Clients</h1>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="gridSystemModalLabel">Your Clients</h4>
+        </div>
         <% @chef.orders.each do |order| %>
-          <div>
-            <ul>
-              <li>Name: <%= order.client.name %></li>
-              <li>Location: <%= order.client.location %></li>
-            </ul>
+          <div class="modal-styles">
+              <p>Name: <%= order.client.name %></p>
+              <p>Location: <%= order.client.location %></p>
           </div>
         <% end %>
       </div>
