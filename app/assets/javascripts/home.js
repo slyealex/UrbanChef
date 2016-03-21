@@ -1,6 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
+// $(document).on("page:load" function() {
 
   $(function() {
     $('a.page-scroll').bind('click', function(event) {
@@ -50,3 +51,5 @@
     $("#myCarousel").carousel("next");
     });
   });
+
+// });

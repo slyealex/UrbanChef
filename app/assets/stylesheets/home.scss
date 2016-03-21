@@ -184,7 +184,7 @@
 .content_text {
   font-size: 16px;
   display: block;
-  text-align: center;
+  text-align: left;
   color: white;
   margin-left: 25%;
   margin-right: 25%;
@@ -207,16 +207,16 @@
 }
 
 .carousel-control.right {
-background-image: none;
+  background-image: none;
 }
 
 .carousel-control.left, {
-background-image: none;
+  background-image: none;
 }
 
 .carousel_list {
-list-style-type: none;
-text-align: center;
+  list-style-type: none;
+  text-align: center;
 }
 
 .carousel-inner {
@@ -236,6 +236,7 @@ text-align: center;
   font-size: 50px;
 }
 .slide_title {
+  display: block;
   text-align: center;
   font-size: 20px;
   font-weight: bold;;
@@ -243,37 +244,40 @@ text-align: center;
   font-style: normal;
   font-family: monospace;
   margin-bottom: 50px;
+  margin-left: 20px;
 }
 
 .glyphicon.glyphicon-pencil {
   color: #e65c00;
-  display: inline;
-  float: left;
+  display: inline-block;
+  // float: left;
   font-size: 25px;
   font-weight: bolder;
-  margin-left: 75px;
-  margin-right: 20px;
+  // margin-left: 75px;
+  margin-right: 100px;
 }
 .glyphicon.glyphicon-user {
   color: #e65c00;
-  display: inline;
-  float: left;
+  display: inline-block;
+//   float: left;
   font-size: 25px;
   font-weight: bolder;
-  margin-left: 75px;
-  margin-right: 20px;
+//   margin-left: 75px;
+  margin-right: 100px;
 }
 .glyphicon.glyphicon-flash {
   color: #e65c00;
-  display: inline;
-  float: left;
+  display: inline-block;
+//   float: left;
   font-size: 25px;
   font-weight: bolder;
-  margin-left: 75px;
-  margin-right: 20px;
+//   margin-left: 75px;
+  margin-right: 100px;
 }
 .list_text {
-  text-align: left;
+  margin-left: 20px;
+  display: inline-block;
+  text-align: center;
   color: white;
   font-size: 20px;
 }
