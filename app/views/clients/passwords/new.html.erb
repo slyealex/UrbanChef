@@ -1,16 +1,16 @@
-<h2>Forgot your password?</h2>
-
+<div id="wrapper">
+<h2 class="password_error_title">Forgot your password?</h2>
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
+  <div class="field email_lineup">
+    <%= f.label :email, class: 'email_title' %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit "Reset password", class: 'sbutton2' %>
   </div>
 <% end %>
-
 <%= render "clients/shared/links" %>
+</div>
