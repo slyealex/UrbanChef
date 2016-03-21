@@ -40,6 +40,8 @@ gem 'cocoon'
 gem 'devise'
 
 gem 'carrierwave'
+gem 'cloudinary'
+
 gem 'mini_magick'
 
 gem "geocoder"
