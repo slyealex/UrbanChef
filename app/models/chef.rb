@@ -31,11 +31,13 @@ class Chef < ActiveRecord::Base
     new_hash
   end
 
-  def serving_chefs_average_rating
-    if self.ratings.any?
-    ((self.ratings.sum :rating)/(self.ratings.count :rating)).to_i
-  end
-  end
+  # def serving_chefs_average_rating
+  #   if self.ratings.any?
+  #     if self.rating != 0
+  #       ((self.ratings.sum :rating)/(self.ratings.count :rating)).to_i
+  #     end
+  #   end
+  # end
 
 
 
