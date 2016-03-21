@@ -119,6 +119,7 @@
 .ratings-list {
   color: #f2f2f2;
 }
+
 .rating_style {
   display: block;
   margin-left: 30%;
@@ -129,4 +130,17 @@
   text-align: center;
   border-top: 2px solid #e65c00;
   width: 300px;
+}
+
+.dish_error_text {
+  text-align: center;
+  font-family: "Shift", sans-serif;
+  color: #e65c00;
+  font-weight: bolder;
+}
+.review_error_text {
+  text-align: center;
+  font-family: "Shift", sans-serif;
+  color: #f2f2f2;
+  font-weight: bolder;
 }

@@ -58,7 +58,7 @@
 
       <% end %>
     <% else %>
-      <p>Please log in to select and view dish's!</p>
+      <p class="dish_error_text">Please log in to select and view dish's!</p>
     <% end %>
   </div>
 
@@ -102,7 +102,7 @@
       <p><%= render @chef.ratings %></p>
     </div>
   <% else %>
-    <p>No reviews yet.</p>
+    <p class="review_error_text">No reviews yet.</p>
   <% end %>
 
 
