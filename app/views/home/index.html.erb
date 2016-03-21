@@ -7,7 +7,7 @@
         <h2 class="main_title">Find your personal Chef</h2>
           <div class="main_title">
             <% if current_client %>
-              <%= link_to 'View local Chefs', client_path(current_client), class: 'button' %>
+              <%= link_to 'Your Client Dashboard', client_path(current_client), class: 'button' %>
             <% elsif current_chef %>
               <%= link_to 'Your Chef Dashboard', chef_orders_path(current_chef), class: 'button' %>
             <% else %>
