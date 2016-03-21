@@ -1,5 +1,6 @@
 // mobile
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
+
   .list_text {
     text-align: left;
     color: white;
@@ -8,10 +9,16 @@
   .carousel_list {
     margin-bottom: 10px;
   }
+  .chef_img {
+    display: none;
+  }
 }
 
 // tablet
 @media screen and (max-width: 979px) {
+  .chef_img {
+    display: none;
+  }
 
 }
 
