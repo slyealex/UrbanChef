@@ -1,30 +1,28 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-$(document).on("ready page:change", function() {
 
-
-$(function() {
-  $('a.page-scroll').bind('click', function(event) {
-     var $anchor = $(this);
-     $('html, body').stop().animate({
-         scrollTop: $($anchor.attr('href')).offset().top
-     }, 1500, 'easeInOutExpo');
-     event.preventDefault();
+  $(function() {
+    $('a.page-scroll').bind('click', function(event) {
+       var $anchor = $(this);
+       $('html, body').stop().animate({
+           scrollTop: $($anchor.attr('href')).offset().top
+       }, 1500, 'easeInOutExpo');
+       event.preventDefault();
+    });
   });
-});
 
-$(function() {
-  setTimeout(function() {
-    $(".warpin-start").addClass("warpin");
-  }, 100);
-});
+  $(function() {
+    setTimeout(function() {
+      $(".warpin-start").addClass("warpin");
+    }, 100);
+  });
 
-$(function() {
-  setTimeout(function() {
-    $(".warpin1-start1").addClass("warpin1");
-  }, 100);
-});
+  $(function() {
+    setTimeout(function() {
+      $(".warpin1-start1").addClass("warpin1");
+    }, 100);
+  });
 
   $(function() {
     $('a[href*="#"]:not([href="#"])').click(function() {
@@ -41,16 +39,14 @@ $(function() {
     });
   });
 
-$(function() {
-  $(".left").click(function(){
-  $("#myCarousel").carousel("prev");
-  });
-});
-
-$(function() {
-  $(".right").click(function(){
-  $("#myCarousel").carousel("next");
-  });
+  $(function() {
+    $(".left").click(function(){
+    $("#myCarousel").carousel("prev");
+    });
   });
 
-});
+  $(function() {
+    $(".right").click(function(){
+    $("#myCarousel").carousel("next");
+    });
+  });
