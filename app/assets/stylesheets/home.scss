@@ -8,8 +8,9 @@
 #page-top {
   background-image: url(http://i.imgur.com/Qjb41gO.jpg);
 }
+
 .chef_img {
-  display: inline-block;;
+  display: inline-block;
   float: right;;
   height: 300px;
   width: 300px;
@@ -215,6 +216,7 @@ background-image: none;
 
 .carousel_list {
 list-style-type: none;
+text-align: center;
 }
 
 .carousel-inner {
@@ -281,4 +283,8 @@ list-style-type: none;
 
 .logo {
   float: left;
+}
+.container2 {
+  padding-top: 25px;
+  padding-bottom: 20px;
 }
