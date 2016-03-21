@@ -98,11 +98,9 @@
   <h3 class="chef-header">Reviews for Chef: <%= @chef.name.capitalize %></h3>
 
   <% if @chef.ratings.any? %>
-    <ul class="ratings-list">
-      <p><span class="glyphicon glyphicon-star" aria-hidden="true"></span></p>
+    <div class="row ratings-list">
       <p><%= render @chef.ratings %></p>
-
-    </ul>
+    </div>
   <% else %>
     <p>No reviews yet.</p>
   <% end %>

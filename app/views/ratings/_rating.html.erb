@@ -1,13 +1,9 @@
-<li>
+<div class="rating_style col-md-4">
+  <p><%= rating.rating %><span class="glyphicon glyphicon-star" aria-hidden="true"></span></p>
   <p><%= rating.review %></p>
-  <p><%= rating.rating %></p>
   <!-- <p><div id="rateYo_individual"></div></p> -->
-
-
-
-
   <% if rating.client != nil %>
     <em> by <%= rating.client.name %></em>
     Added on: <%= rating.created_at %>
   <% end %>
-</li>
+</div>
