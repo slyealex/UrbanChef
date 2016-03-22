@@ -7,7 +7,7 @@
         <h2 class="main_title">Find your personal Chef</h2>
           <div class="main_title">
             <% if current_client %>
-              <%= link_to 'Your Client Dashboard', client_path(current_client), class: 'button' %>
+              <%= link_to 'View local Chefs', client_path(current_client), class: 'button' %>
             <% elsif current_chef %>
               <%= link_to 'Your Chef Dashboard', chef_orders_path(current_chef), class: 'button' %>
             <% else %>
@@ -55,15 +55,13 @@
 
           <div class="carousel-inner" role="listbox">
             <div class="item">
-                <h2 class="carousel_title">As a Chef</h2>
-                <div class="content_text">
+                <h2 class="carousel_title">BEING A CHEF</h2>
                   <div class="carousel_list">
                     <span class="slide_title">3 Easy Steps:</span>
                     <span class="glyphicon glyphicon-pencil"><p class="list_text">Sign up / Log in</p></span>
-                    <span class="glyphicon glyphicon-user"><p class="list_text">Update menu</p></span>
+                    <span class="glyphicon glyphicon-user"><p class="list_text">Update your menu</p></span>
                     <span class="glyphicon glyphicon-flash"><p class="list_text">Wait for orders</p></span>
                   </div>
-                </div>
             </div>
             <div class="item active">
                 <h2 class="carousel_title">About Urban Chef</h2>
@@ -75,15 +73,13 @@
                   on the links to the left and right. </p>
             </div>
             <div class="item">
-              <h2 class="carousel_title">As a Client</h2>
-                <div class="content_text">
+              <h2 class="carousel_title">BEING A CLIENT</h2>
                   <div class="carousel_list">
-                    <span class="slide_title">3 Easy Steps:</span>
+                    <div class="slide_title">3 Easy Steps:</div>
                     <span class="glyphicon glyphicon-pencil"><p class="list_text">Sign up / Log in</p></span>
                     <span class="glyphicon glyphicon-user"><p class="list_text">View chef profiles</p></span>
                     <span class="glyphicon glyphicon-flash"><p class="list_text">Pick chef & order</p></span>
                   </div>
-                </div>
             </div>
           </div>
 
