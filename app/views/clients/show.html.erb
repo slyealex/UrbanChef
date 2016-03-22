@@ -63,7 +63,7 @@
               <h3 class="col-md-6 chef-link"><%= link_to chef.name, chef_path(chef) %></h3>
 
               <% if chef.ratings.any? %>
-                <p class="col-md-6 local-chef-rating">Rating: <span class="glyphicon glyphicon-star" aria-hidden="true">4.5</span></p>
+                <p class="col-md-6 local-chef-rating">Rating: <span class="glyphicon glyphicon-star" aria-hidden="true"><%= rand(3..5)%></span></p>
               <% else %>
                 <p>No ratings yet</p>
               <% end %>
